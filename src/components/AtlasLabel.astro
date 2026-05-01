@@ -1,0 +1,15 @@
+---
+interface Props {
+  code: string;
+  title: string;
+  text?: string;
+}
+
+const { code, title, text } = Astro.props;
+---
+
+<div class="atlas-label">
+  <span>{code}</span>
+  <strong>{title}</strong>
+  {text && <p>{text}</p>}
+</div>

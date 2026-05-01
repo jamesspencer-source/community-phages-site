@@ -1,0 +1,29 @@
+---
+import AtlasLabel from '@components/AtlasLabel.astro';
+import GenomeTrace from '@components/GenomeTrace.astro';
+import { journeyWeeks } from '@data/site';
+
+interface Props {
+  limit?: number;
+}
+
+const { limit } = Astro.props;
+const steps = typeof limit === 'number' ? journeyWeeks.slice(0, limit) : journeyWeeks;
+---
+
+<div class="method-rail">
+  <div class="method-rail__track" aria-hidden="true">
+    <span></span>
+  </div>
+  <div class="method-rail__steps">
+    {
+      steps.map((week) => (
+        <article class="method-step">
+          <AtlasLabel code={`W${week.week}`} title={week.title} />
+          <p>{week.short}</p>
+          <GenomeTrace />
+        </article>
+      ))
+    }
+  </div>
+</div>

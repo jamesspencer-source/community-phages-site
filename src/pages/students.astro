@@ -1,0 +1,121 @@
+---
+import PageHero from '@components/PageHero.astro';
+import { contact, studentHighlights, studentInfo } from '@data/site';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { mailto, withBase } from '@utils/urls';
+
+const contactHref = mailto(contact.email, contact.subject);
+---
+
+<BaseLayout
+  title="Students"
+  description="Student information for Roxbury Community College students interested in the Community Phages summer research internship at Harvard Medical School."
+>
+  <PageHero
+    title="A first research lab can start here."
+    text="Community Phages is built for Roxbury Community College students who want hands-on experience in a research lab. Students work with HMS researchers to isolate environmental bacteriophages and learn the methods needed to describe them."
+    actions={[
+      { label: 'Program schedule', href: '/program/' },
+      { label: 'Get in touch', href: contactHref, variant: 'secondary' },
+    ]}
+  />
+
+  <section class="section">
+    <div class="section-heading">
+      <h2>What the summer is.</h2>
+      <p>
+        The program is a paid 8-week research internship. Students are usually on campus Monday through Thursday, 9am-2pm, and spend the summer moving from basic lab technique to their own phage data and poster.
+      </p>
+    </div>
+    <div class="lab-rhythm">
+      {
+        studentHighlights.map((item) => (
+          <article>
+            <span>Student</span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section section--band">
+    <div class="section-heading">
+      <h2>What students actually work on.</h2>
+      <p>
+        The summer is organized around one real question: can students find and characterize bacteriophages from environmental samples that infect corynebacterial hosts?
+      </p>
+    </div>
+    <div class="journey journey--compact">
+      <article class="journey-card">
+        <div class="journey-card__marker"><span>1</span></div>
+        <h3>Learn the bench</h3>
+        <p>Pipetting, sterile technique, bacterial cultures, plates, lawns, safety, labels, and notebook habits.</p>
+      </article>
+      <article class="journey-card">
+        <div class="journey-card__marker"><span>2</span></div>
+        <h3>Find plaques</h3>
+        <p>Environmental samples are filtered, plated, enriched, and checked for clearings that suggest phage activity.</p>
+      </article>
+      <article class="journey-card">
+        <div class="journey-card__marker"><span>3</span></div>
+        <h3>Characterize isolates</h3>
+        <p>Students purify phages, prepare lysates, measure titers, image particles, extract DNA, and compare results.</p>
+      </article>
+      <article class="journey-card">
+        <div class="journey-card__marker"><span>4</span></div>
+        <h3>Tell the story</h3>
+        <p>Genome analysis, figures, phage names, poster practice, and final presentations turn results into a scientific explanation.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <h2>Current-year details.</h2>
+      <p>
+        Public pages keep the expectations clear. Year-specific logistics are shared directly with selected students and instructors.
+      </p>
+    </div>
+    <div class="audience-grid">
+      <article class="audience-card">
+        <span>01</span>
+        <div>
+          <p class="small-label">Timing</p>
+          <h3>When the cohort is set</h3>
+          <p>{studentInfo.status}</p>
+        </div>
+      </article>
+      <article class="audience-card">
+        <span>02</span>
+        <div>
+          <p class="small-label">Fit</p>
+          <h3>Who the program is for</h3>
+          <p>{studentInfo.eligibility}</p>
+        </div>
+      </article>
+      <article class="audience-card">
+        <span>03</span>
+        <div>
+          <p class="small-label">Commitment</p>
+          <h3>Expected schedule</h3>
+          <p>{studentInfo.schedule}</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="callout callout--wide">
+      <div>
+        <h2>Questions about student participation?</h2>
+        <p>{studentInfo.note}</p>
+      </div>
+      <div class="action-row">
+        <a class="button button--primary" href={contactHref}>Get in touch</a>
+        <a class="button button--secondary" href={withBase('/resources/')}>Browse resources</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

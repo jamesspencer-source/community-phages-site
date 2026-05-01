@@ -1,0 +1,121 @@
+---
+import PageHero from '@components/PageHero.astro';
+import { contact, instructorHighlights } from '@data/site';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { mailto, withBase } from '@utils/urls';
+
+const contactHref = mailto(contact.email, contact.subject);
+---
+
+<BaseLayout
+  title="Instructors"
+  description="Instructor information for the Community Phages summer research program at Harvard Medical School."
+>
+  <PageHero
+    title="A shared teaching framework for the summer."
+    text="Community Phages is taught by a rotating group of faculty, graduate students, postdocs, staff, alumni, and partner instructors. This page explains how mentors plug into the student research arc and where the public teaching materials live."
+    actions={[
+      { label: 'Open resources', href: '/resources/' },
+      { label: 'Get in touch', href: contactHref, variant: 'secondary' },
+    ]}
+  />
+
+  <section class="section">
+    <div class="section-heading">
+      <h2>What instructors help students do.</h2>
+      <p>
+        The teaching job is concrete: keep students safe at the bench, make the protocols understandable, help troubleshoot real experimental results, and push each student toward a clear poster story.
+      </p>
+    </div>
+    <div class="lab-rhythm">
+      {
+        instructorHighlights.map((item) => (
+          <article>
+            <span>Instructor</span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section section--band">
+    <div class="section-heading">
+      <h2>The instructor role changes over the summer.</h2>
+      <p>
+        Early weeks are heavy on bench orientation. Mid-summer shifts toward troubleshooting, microscopy, DNA work, and bioinformatics. The end of the program is about figures, interpretation, practice talks, and poster presentations.
+      </p>
+    </div>
+    <div class="journey journey--compact">
+      <article class="journey-card">
+        <div class="journey-card__marker"><span>1</span></div>
+        <h3>Teach the method</h3>
+        <p>Walk students through pipetting, aseptic technique, plate setup, sample handling, and notebook expectations.</p>
+      </article>
+      <article class="journey-card">
+        <div class="journey-card__marker"><span>2</span></div>
+        <h3>Troubleshoot the result</h3>
+        <p>Help students read lawns and plaques, decide what to repeat, and understand why phage work can be noisy.</p>
+      </article>
+      <article class="journey-card">
+        <div class="journey-card__marker"><span>3</span></div>
+        <h3>Connect data to biology</h3>
+        <p>Bring in phage structure, host range, bacterial defenses, genome annotation, and comparison to known phages.</p>
+      </article>
+      <article class="journey-card">
+        <div class="journey-card__marker"><span>4</span></div>
+        <h3>Support the poster</h3>
+        <p>Help students choose figures, write claims they can defend, and practice explaining their isolate to an audience.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <h2>Public instructor materials.</h2>
+      <p>
+        The old program site functioned as a manual. This rebuild keeps that practical purpose: protocols, bioinformatics chapters, Day 1 notes, everyday checklist, lab notebook instructions, glossary, and instructor references are still easy to find.
+      </p>
+    </div>
+    <div class="audience-grid">
+      <article class="audience-card">
+        <span>01</span>
+        <div>
+          <p class="small-label">Bench</p>
+          <h3>Lab protocols</h3>
+          <p>Project introduction, pipetting, basic technique, sampling, direct plating, enrichments, purification, lysates, DNA extraction, restriction digest, killing experiments, and host range.</p>
+        </div>
+        <a href={withBase('/resources/')}>Open manual</a>
+      </article>
+      <article class="audience-card">
+        <span>02</span>
+        <div>
+          <p class="small-label">Computational</p>
+          <h3>Bioinformatics</h3>
+          <p>Introductory sequence work, whole phage genome assembly, annotation, BLAST context, and genome figures.</p>
+        </div>
+        <a href={withBase('/resources/')}>Open chapters</a>
+      </article>
+      <article class="audience-card">
+        <span>03</span>
+        <div>
+          <p class="small-label">Teaching</p>
+          <h3>Student support</h3>
+          <p>Day 1 setup, everyday lab checklist, notebook expectations, glossary, program schedule, people, and discoveries.</p>
+        </div>
+        <a href={withBase('/people/')}>Meet the team</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="callout callout--wide">
+      <div>
+        <h2>Questions about teaching?</h2>
+        <p>Use the contact link for instructor participation, schedule questions, or updates to public materials.</p>
+      </div>
+      <a class="button button--primary" href={contactHref}>Get in touch</a>
+    </div>
+  </section>
+</BaseLayout>

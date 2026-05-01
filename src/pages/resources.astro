@@ -1,5 +1,6 @@
 ---
 import PageHero from '@components/PageHero.astro';
+import ProtocolIndex from '@components/ProtocolIndex.astro';
 import ResourceManual from '@components/ResourceManual.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
 ---
@@ -13,7 +14,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
     text="Lab protocols, bioinformatics chapters, Day 1 setup, notebook guidance, glossary, and instructor/public materials are indexed as a working reference."
     actions={[
       { label: 'Program schedule', href: '/program/' },
-      { label: 'Student application info', href: '/apply/', variant: 'secondary' },
+      { label: 'Instructor information', href: '/instructors/', variant: 'secondary' },
     ]}
   />
 
@@ -24,6 +25,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
         The structure mirrors the prior site’s depth while making it easier to move from bench protocol to genome analysis to poster preparation.
       </p>
     </div>
+    <ProtocolIndex />
     <ResourceManual />
   </section>
 
@@ -31,7 +33,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
     <div class="section-heading">
       <h2>Instructor use stays practical.</h2>
       <p>
-        Public instructor references are included in the manual index. Private operations, student records, and internal contact materials belong outside the public site.
+        Instructor references are included in the manual index so new mentors can see the sequence, vocabulary, and expectations before they teach.
       </p>
     </div>
     <div class="lab-rhythm">

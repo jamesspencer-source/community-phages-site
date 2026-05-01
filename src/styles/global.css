@@ -2,13 +2,13 @@
   --ink: #071b22;
   --ink-soft: #243840;
   --muted: #66777a;
-  --page: #f7fbfa;
+  --page: #ffffff;
   --paper: #ffffff;
   --field: #003f3c;
   --field-deep: #002c31;
-  --field-soft: #e6f1ee;
-  --rule: rgba(7, 27, 34, 0.22);
-  --rule-strong: rgba(7, 27, 34, 0.68);
+  --field-soft: #f2f7f5;
+  --rule: rgba(7, 27, 34, 0.16);
+  --rule-strong: rgba(7, 27, 34, 0.54);
   --teal: #007a78;
   --teal-bright: #00aaa0;
   --acid: #d9ef45;
@@ -36,8 +36,8 @@ body {
   margin: 0;
   min-width: 320px;
   background:
-    linear-gradient(rgba(7, 27, 34, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(7, 27, 34, 0.025) 1px, transparent 1px),
+    linear-gradient(rgba(7, 27, 34, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(7, 27, 34, 0.014) 1px, transparent 1px),
     var(--page);
   background-size: 48px 48px, 48px 48px, auto;
   letter-spacing: 0;
@@ -88,12 +88,12 @@ p {
   align-items: center;
   width: min(1240px, calc(100% - 1.5rem));
   margin: 0.75rem auto 0;
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  border: 1px solid var(--rule);
   border-radius: var(--radius);
-  background: rgba(0, 63, 60, 0.96);
-  color: white;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--ink);
   padding: 0.68rem 0.75rem;
-  box-shadow: 0 18px 50px rgba(0, 44, 49, 0.18);
+  box-shadow: 0 16px 42px rgba(7, 27, 34, 0.08);
   backdrop-filter: blur(16px);
 }
 
@@ -148,14 +148,14 @@ p {
   flex-wrap: wrap;
   gap: 0.15rem 0.85rem;
   align-items: center;
-  border-left: 1px solid rgba(255, 255, 255, 0.2);
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid var(--rule);
+  border-right: 1px solid var(--rule);
   padding: 0 1rem;
 }
 
 .nav-link {
   position: relative;
-  color: rgba(255, 255, 255, 0.84);
+  color: var(--ink-soft);
   font-size: 0.92rem;
   font-weight: 760;
   text-decoration: none;
@@ -174,7 +174,7 @@ p {
 .nav-link:hover,
 .nav-link.is-active,
 .nav-link[aria-current="page"] {
-  color: white;
+  color: var(--ink);
 }
 
 .nav-link:hover::after,
@@ -267,10 +267,14 @@ main {
   min-height: 41rem;
   margin-top: -4.2rem;
   border-bottom: 0;
+  border-bottom: 1px solid var(--rule);
   background:
-    radial-gradient(circle at 72% 28%, rgba(0, 170, 160, 0.2), transparent 22rem),
-    linear-gradient(135deg, var(--field) 0%, var(--field-deep) 100%);
-  color: white;
+    linear-gradient(rgba(7, 27, 34, 0.024) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(7, 27, 34, 0.018) 1px, transparent 1px),
+    radial-gradient(circle at 78% 22%, rgba(0, 170, 160, 0.13), transparent 20rem),
+    var(--paper);
+  background-size: 48px 48px, 48px 48px, auto, auto;
+  color: var(--ink);
   padding: 8rem max(1rem, calc((100% - 1180px) / 2)) 4rem;
 }
 
@@ -278,7 +282,7 @@ main {
   position: absolute;
   inset: auto 0 0;
   height: 8rem;
-  background: linear-gradient(180deg, transparent, rgba(247, 251, 250, 0.06));
+  background: linear-gradient(180deg, transparent, rgba(0, 122, 120, 0.04));
   content: "";
   pointer-events: none;
 }
@@ -299,8 +303,8 @@ main {
 }
 
 .page-hero--image .page-hero__copy h1 {
-  color: white;
-  font-size: 5.8rem;
+  color: var(--ink);
+  font-size: 5.55rem;
 }
 
 .page-hero__copy p {
@@ -311,7 +315,7 @@ main {
 }
 
 .page-hero--image .page-hero__copy p {
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--ink-soft);
 }
 
 .action-row {
@@ -325,7 +329,7 @@ main {
   position: relative;
   z-index: 1;
   min-height: 34rem;
-  border-left: 1px solid rgba(255, 255, 255, 0.22);
+  border-left: 1px solid var(--rule);
 }
 
 .specimen-scale {
@@ -333,7 +337,7 @@ main {
   right: 0.75rem;
   top: 1rem;
   writing-mode: vertical-rl;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--muted);
   font-size: 0.82rem;
   font-weight: 800;
 }
@@ -343,7 +347,7 @@ main {
   width: 1px;
   height: 7rem;
   margin-bottom: 0.5rem;
-  background: rgba(255, 255, 255, 0.78);
+  background: var(--rule-strong);
   content: "";
 }
 
@@ -353,8 +357,8 @@ main {
   top: 7%;
   z-index: 3;
   width: 18rem;
-  color: rgba(255, 255, 255, 0.88);
-  filter: drop-shadow(0 28px 60px rgba(0, 0, 0, 0.24));
+  color: var(--ink);
+  filter: drop-shadow(0 24px 42px rgba(7, 27, 34, 0.13));
 }
 
 .hero-phage .phage-mark {
@@ -363,11 +367,11 @@ main {
 }
 
 .hero-phage .phage-mark__head {
-  fill: rgba(217, 239, 69, 0.84);
+  fill: rgba(217, 239, 69, 0.9);
 }
 
 .hero-phage .phage-mark__core {
-  fill: rgba(0, 63, 60, 0.78);
+  fill: var(--paper);
 }
 
 .hero-plate {
@@ -376,7 +380,7 @@ main {
   top: 3rem;
   width: 26rem;
   aspect-ratio: 1;
-  border: 1.1rem solid rgba(255, 255, 255, 0.28);
+  border: 1.1rem solid rgba(7, 27, 34, 0.09);
   border-radius: 50%;
   background:
     radial-gradient(circle at 32% 33%, rgba(7, 27, 34, 0.36) 0 1.25rem, transparent 1.31rem),
@@ -386,7 +390,7 @@ main {
     #dce872;
   box-shadow:
     inset 0 0 0 2px rgba(7, 27, 34, 0.22),
-    0 30px 70px rgba(0, 0, 0, 0.22);
+    0 26px 60px rgba(7, 27, 34, 0.12);
 }
 
 .hero-plate span {
@@ -421,7 +425,7 @@ main {
   height: 100%;
   background:
     linear-gradient(90deg, transparent 0 5%, var(--acid) 5% 7%, transparent 7% 14%, var(--teal-bright) 14% 16%, transparent 16% 25%, var(--amber) 25% 27%, transparent 27% 100%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid var(--rule-strong);
 }
 
 .hero-trace i:nth-child(2) {
@@ -441,8 +445,8 @@ main {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   margin: 0;
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  background: rgba(0, 44, 49, 0.78);
+  border: 1px solid var(--rule);
+  background: rgba(255, 255, 255, 0.88);
 }
 
 .specimen-record div {
@@ -450,11 +454,11 @@ main {
 }
 
 .specimen-record div + div {
-  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid var(--rule);
 }
 
 .specimen-record dt {
-  color: rgba(255, 255, 255, 0.58);
+  color: var(--muted);
   font-size: 0.72rem;
   font-weight: 900;
   text-transform: uppercase;
@@ -462,7 +466,7 @@ main {
 
 .specimen-record dd {
   margin: 0.2rem 0 0;
-  color: white;
+  color: var(--ink);
   font-weight: 850;
 }
 
@@ -519,14 +523,14 @@ main {
   width: 100%;
   max-width: none;
   margin: 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.16);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
   background:
-    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    var(--field);
+    linear-gradient(rgba(7, 27, 34, 0.026) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(7, 27, 34, 0.018) 1px, transparent 1px),
+    var(--field-soft);
   background-size: 48px 48px, 48px 48px, auto;
-  color: white;
+  color: var(--ink);
 }
 
 .section--band > * {
@@ -560,11 +564,11 @@ main {
 }
 
 .section--band .section-heading {
-  border-color: rgba(255, 255, 255, 0.52);
+  border-color: var(--rule-strong);
 }
 
 .section--band .section-heading p {
-  color: rgba(255, 255, 255, 0.76);
+  color: var(--muted);
 }
 
 .small-label {
@@ -575,14 +579,16 @@ main {
   text-transform: uppercase;
 }
 
-.audience-grid {
+.audience-grid,
+.audience-dossier {
   display: grid;
   border-top: 1px solid var(--rule-strong);
   border-bottom: 1px solid var(--rule-strong);
   background: var(--paper);
 }
 
-.audience-card {
+.audience-card,
+.audience-panel {
   display: grid;
   grid-template-columns: 4rem minmax(0, 1fr) auto;
   gap: 1rem;
@@ -590,11 +596,13 @@ main {
   padding: 1.25rem 0;
 }
 
-.audience-card + .audience-card {
+.audience-card + .audience-card,
+.audience-panel + .audience-panel {
   border-top: 1px solid var(--rule);
 }
 
-.audience-card > span:first-child {
+.audience-card > span:first-child,
+.audience-panel__index {
   color: var(--amber);
   font-family: var(--font-serif);
   font-size: 2.2rem;
@@ -602,6 +610,7 @@ main {
 }
 
 .audience-card h3,
+.audience-panel h3,
 .resource-item h3,
 .discovery-card h3,
 .partner-strip h3 {
@@ -612,6 +621,7 @@ main {
 }
 
 .audience-card p,
+.audience-panel p,
 .resource-item p,
 .discovery-card p,
 .partner-strip p,
@@ -620,6 +630,7 @@ main {
 }
 
 .audience-card a,
+.audience-panel a,
 .resource-item a,
 .discovery-card a,
 .manual-list a,
@@ -629,6 +640,7 @@ main {
 }
 
 .audience-card a::after,
+.audience-panel a::after,
 .resource-item a::after,
 .discovery-card a::after,
 .manual-list a::after {
@@ -638,8 +650,8 @@ main {
 .journey {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  border-top: 1px solid rgba(255, 255, 255, 0.38);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.38);
+  border-top: 1px solid var(--rule-strong);
+  border-bottom: 1px solid var(--rule-strong);
 }
 
 .journey-card {
@@ -649,7 +661,7 @@ main {
 }
 
 .journey-card + .journey-card {
-  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid var(--rule);
 }
 
 .journey-card::after {
@@ -658,7 +670,7 @@ main {
   top: 1rem;
   width: 4.5rem;
   aspect-ratio: 1;
-  border: 0.65rem solid rgba(217, 239, 69, 0.18);
+  border: 0.65rem solid rgba(0, 122, 120, 0.08);
   border-radius: 50%;
   content: "";
 }
@@ -670,7 +682,7 @@ main {
   width: 3rem;
   height: 3rem;
   place-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--rule-strong);
   background: var(--acid);
   color: var(--ink);
   font-family: var(--font-serif);
@@ -690,7 +702,7 @@ main {
 .journey-card p {
   position: relative;
   z-index: 1;
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--muted);
 }
 
 .tag-row {
@@ -703,14 +715,14 @@ main {
 }
 
 .tag-row span {
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--ink-soft);
   font-size: 0.78rem;
   font-weight: 800;
 }
 
 .tag-row span + span::before {
   padding-right: 0.25rem;
-  color: rgba(255, 255, 255, 0.44);
+  color: var(--rule-strong);
   content: "/";
 }
 
@@ -859,7 +871,7 @@ main {
 }
 
 .section--band .callout {
-  border-color: rgba(255, 255, 255, 0.48);
+  border-color: var(--rule-strong);
 }
 
 .callout--wide {
@@ -904,6 +916,16 @@ main {
   flex-wrap: wrap;
   gap: 0.8rem;
   justify-content: flex-end;
+}
+
+.footer-links--supporting {
+  grid-column: 2;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.footer-contact {
+  margin: 0;
 }
 
 .footer-note {
@@ -1037,13 +1059,13 @@ main {
   width: 2px;
   height: 100%;
   min-height: 42rem;
-  background: rgba(255, 255, 255, 0.56);
+  background: var(--rule-strong);
 }
 
 .rail-dot {
   width: 1rem;
   height: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--rule-strong);
   background: var(--acid);
 }
 
@@ -1056,12 +1078,12 @@ main {
   grid-template-columns: 5rem minmax(10rem, 0.34fr) minmax(0, 1fr);
   gap: 1rem;
   align-items: stretch;
-  border-top: 1px solid rgba(255, 255, 255, 0.32);
+  border-top: 1px solid var(--rule);
   padding: 1.15rem 0;
 }
 
 .notebook-entry:last-child {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.32);
+  border-bottom: 1px solid var(--rule);
 }
 
 .notebook-entry--alt {
@@ -1082,7 +1104,7 @@ main {
   display: grid;
   align-content: start;
   gap: 0.35rem;
-  color: var(--acid);
+  color: var(--teal);
 }
 
 .specimen-tag span {
@@ -1099,7 +1121,7 @@ main {
 .specimen-visual {
   position: relative;
   min-height: 11rem;
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  border: 1px solid var(--rule);
   background:
     radial-gradient(circle at 34% 42%, rgba(255, 255, 255, 0.84) 0 8%, transparent 9%),
     radial-gradient(circle at 62% 58%, rgba(255, 255, 255, 0.72) 0 6%, transparent 7%),
@@ -1133,7 +1155,7 @@ main {
 
 .notebook-entry__copy p {
   max-width: 48rem;
-  color: rgba(255, 255, 255, 0.78);
+  color: var(--muted);
 }
 
 .notebook-entry__copy ul {
@@ -1146,14 +1168,14 @@ main {
 }
 
 .notebook-entry__copy li {
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--ink-soft);
   font-size: 0.78rem;
   font-weight: 800;
 }
 
 .notebook-entry__copy li + li::before {
   padding-right: 0.3rem;
-  color: rgba(255, 255, 255, 0.42);
+  color: var(--rule-strong);
   content: "/";
 }
 
@@ -1166,7 +1188,7 @@ main {
 }
 
 .section--band .lab-rhythm {
-  border-color: rgba(255, 255, 255, 0.38);
+  border-color: var(--rule-strong);
   background: transparent;
 }
 
@@ -1181,7 +1203,7 @@ main {
 }
 
 .section--band .lab-rhythm article + article {
-  border-left-color: rgba(255, 255, 255, 0.2);
+  border-left-color: var(--rule);
 }
 
 .lab-rhythm span {
@@ -1192,7 +1214,7 @@ main {
 }
 
 .section--band .lab-rhythm span {
-  color: var(--acid);
+  color: var(--teal);
 }
 
 .lab-rhythm h3 {
@@ -1207,7 +1229,7 @@ main {
 }
 
 .section--band .lab-rhythm p {
-  color: rgba(255, 255, 255, 0.74);
+  color: var(--muted);
 }
 
 .protocol-ledger {
@@ -1513,6 +1535,354 @@ main {
   font-weight: 850;
 }
 
+.atlas-label {
+  display: grid;
+  gap: 0.35rem;
+  border-top: 1px solid currentColor;
+  padding-top: 0.65rem;
+}
+
+.atlas-label span {
+  color: var(--teal);
+  font-size: 0.74rem;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.atlas-label strong {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.atlas-label p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.specimen-plate {
+  position: relative;
+  aspect-ratio: 1;
+  border: 0.9rem solid rgba(7, 27, 34, 0.08);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 32% 36%, rgba(7, 27, 34, 0.2) 0 12%, transparent 13%),
+    radial-gradient(circle at 68% 48%, rgba(7, 27, 34, 0.22) 0 9%, transparent 10%),
+    radial-gradient(circle at 46% 70%, rgba(7, 27, 34, 0.18) 0 8%, transparent 9%),
+    #e1ea83;
+  box-shadow: inset 0 0 0 1px rgba(7, 27, 34, 0.16);
+}
+
+.specimen-plate--compact {
+  width: min(8.5rem, 100%);
+}
+
+.specimen-plate--teal {
+  background:
+    radial-gradient(circle at 31% 38%, rgba(255, 255, 255, 0.34) 0 12%, transparent 13%),
+    radial-gradient(circle at 68% 50%, rgba(255, 255, 255, 0.25) 0 8%, transparent 9%),
+    radial-gradient(circle at 48% 72%, rgba(255, 255, 255, 0.22) 0 9%, transparent 10%),
+    #7ccac0;
+}
+
+.specimen-plate--paper {
+  border-color: rgba(255, 255, 255, 0.34);
+  background:
+    radial-gradient(circle at 31% 38%, rgba(0, 63, 60, 0.18) 0 12%, transparent 13%),
+    radial-gradient(circle at 68% 50%, rgba(0, 63, 60, 0.16) 0 8%, transparent 9%),
+    radial-gradient(circle at 48% 72%, rgba(0, 63, 60, 0.14) 0 9%, transparent 10%),
+    #ffffff;
+}
+
+.specimen-plate span {
+  position: absolute;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 50%;
+  background: var(--field);
+}
+
+.specimen-plate span:nth-child(1) { left: 24%; top: 26%; }
+.specimen-plate span:nth-child(2) { right: 22%; top: 52%; }
+.specimen-plate span:nth-child(3) { left: 48%; bottom: 24%; }
+.specimen-plate span:nth-child(4) { right: 36%; top: 20%; }
+
+.genome-trace {
+  display: grid;
+  grid-template-columns: 1fr 0.7fr 1.15fr 0.85fr;
+  gap: 0.25rem;
+  align-items: end;
+  min-height: 4rem;
+}
+
+.genome-trace span {
+  display: block;
+  height: 100%;
+  min-height: 2.5rem;
+  border-bottom: 1px solid var(--rule-strong);
+  background:
+    linear-gradient(90deg, transparent 0 6%, var(--teal) 6% 8%, transparent 8% 18%, var(--amber) 18% 20%, transparent 20% 32%, var(--acid) 32% 34%, transparent 34% 100%);
+}
+
+.genome-trace span:nth-child(2) { height: 78%; }
+.genome-trace span:nth-child(3) { height: 58%; }
+.genome-trace span:nth-child(4) { height: 86%; }
+
+.story-spread__main {
+  display: grid;
+  align-content: space-between;
+  background: var(--field-soft);
+  color: var(--ink);
+}
+
+.story-spread__main::before {
+  border-color: rgba(0, 122, 120, 0.08);
+}
+
+.story-spread__main::after {
+  display: none;
+}
+
+.story-spread__main p {
+  color: var(--ink-soft);
+}
+
+.story-spread__graphics {
+  display: grid;
+  grid-template-columns: 8rem minmax(0, 1fr);
+  gap: 1rem;
+  align-items: end;
+  margin-top: 2rem;
+}
+
+.team-bridge {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--rule-strong);
+  border-bottom: 1px solid var(--rule-strong);
+}
+
+.team-bridge article {
+  min-height: 13rem;
+  padding: 1rem;
+}
+
+.team-bridge article + article {
+  border-left: 1px solid var(--rule);
+}
+
+.method-rail {
+  position: relative;
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr);
+  gap: 1.25rem;
+}
+
+.method-rail__track {
+  display: grid;
+  justify-items: center;
+  padding-top: 0.35rem;
+}
+
+.method-rail__track span {
+  width: 2px;
+  min-height: 100%;
+  background: var(--rule-strong);
+}
+
+.method-rail__steps {
+  display: grid;
+  border-top: 1px solid var(--rule-strong);
+}
+
+.method-step {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.38fr) minmax(0, 1fr) minmax(8rem, 0.3fr);
+  gap: 1.25rem;
+  align-items: center;
+  border-bottom: 1px solid var(--rule);
+  padding: 1.1rem 0;
+}
+
+.method-step p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.method-step .genome-trace {
+  min-height: 2.6rem;
+}
+
+.method-step .genome-trace span {
+  min-height: 1.8rem;
+}
+
+.people-directory--editorial {
+  gap: 4.5rem;
+}
+
+.teaching-map {
+  display: grid;
+  grid-template-columns: minmax(14rem, 0.35fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  border-top: 1px solid var(--rule-strong);
+  border-bottom: 1px solid var(--rule-strong);
+  padding: 1rem 0;
+}
+
+.teaching-map__items {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.teaching-map__items article {
+  padding: 0 1rem;
+}
+
+.teaching-map__items article + article {
+  border-left: 1px solid var(--rule);
+}
+
+.teaching-map__items span {
+  color: var(--amber);
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.teaching-map__items h3 {
+  margin: 0.65rem 0 0.35rem;
+  font-family: var(--font-serif);
+  font-size: 1.55rem;
+  line-height: 1;
+}
+
+.teaching-map__items p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.people-section {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.23fr) minmax(0, 1fr);
+  gap: 1.5rem;
+}
+
+.people-section__heading {
+  position: sticky;
+  top: 7.5rem;
+  align-self: start;
+  border-top: 1px solid var(--rule-strong);
+  padding-top: 0.75rem;
+}
+
+.people-section__heading span {
+  color: var(--teal);
+  font-size: 0.8rem;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.people-section__heading h2 {
+  margin: 0.45rem 0 0;
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  line-height: 0.95;
+}
+
+.people-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.people-leadership {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.people-roster {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--rule-strong);
+}
+
+.person-profile--primary,
+.person-profile--secondary,
+.person-profile--roster {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  border-top: 1px solid var(--rule-strong);
+  background: transparent;
+  padding-top: 0.85rem;
+}
+
+.person-profile--primary {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.person-profile--secondary {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.person-profile--roster {
+  grid-template-columns: 5.25rem minmax(0, 1fr);
+  align-items: center;
+  border-top: 0;
+  border-bottom: 1px solid var(--rule);
+  padding: 0.85rem 0;
+}
+
+.person-profile--primary .person-photo {
+  min-height: auto;
+  aspect-ratio: 4 / 3.25;
+}
+
+.person-profile--secondary .person-photo {
+  min-height: auto;
+  aspect-ratio: 4 / 3;
+}
+
+.person-profile--roster .person-photo {
+  min-height: auto;
+  aspect-ratio: 1;
+}
+
+.person-profile--primary .person-copy h3 {
+  font-size: 2.15rem;
+}
+
+.person-profile--secondary .person-copy h3 {
+  font-size: 1.85rem;
+}
+
+.person-profile--roster .person-copy h3 {
+  margin: 0;
+  font-size: 1.45rem;
+}
+
+.person-profile--roster .person-copy {
+  padding: 0;
+}
+
+.person-profile--roster .person-role {
+  margin: 0.15rem 0 0.2rem;
+  font-size: 0.92rem;
+}
+
+.person-profile--roster p:last-child {
+  margin: 0;
+  color: var(--muted);
+}
+
+.people-section--alumni {
+  opacity: 0.84;
+}
+
 .person-copy > p:last-child {
   max-width: 46rem;
   color: var(--muted);
@@ -1569,6 +1939,9 @@ main {
   .story-spread,
   .protocol-ledger,
   .manual-layout,
+  .method-step,
+  .teaching-map,
+  .people-section,
   .people-group,
   .callout--wide {
     grid-template-columns: 1fr;
@@ -1587,28 +1960,35 @@ main {
   .hero-visual {
     min-height: 30rem;
     border-left: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.22);
+    border-top: 1px solid var(--rule);
   }
 
   .fact-strip,
   .journey,
   .resource-list,
   .partner-strip,
+  .team-bridge,
   .lab-rhythm,
+  .people-feature-grid,
+  .people-leadership,
+  .teaching-map__items,
   .people-list--featured,
   .protocol-ledger__counts {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .audience-card {
+  .audience-card,
+  .audience-panel {
     grid-template-columns: 3.4rem minmax(0, 1fr);
   }
 
-  .audience-card a {
+  .audience-card a,
+  .audience-panel a {
     grid-column: 2;
   }
 
   .manual-nav,
+  .people-section__heading,
   .people-group__heading {
     position: static;
   }
@@ -1640,6 +2020,12 @@ main {
 
   .people-list--compact .person-profile {
     grid-template-columns: 3.6rem 6.5rem minmax(0, 1fr);
+  }
+
+  .team-bridge article:nth-child(3) {
+    grid-column: 1 / -1;
+    border-left: 0;
+    border-top: 1px solid var(--rule);
   }
 }
 
@@ -1711,14 +2097,18 @@ main {
 
   .specimen-record div + div {
     border-left: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 1px solid var(--rule);
   }
 
   .fact-strip,
   .journey,
   .resource-list,
   .partner-strip,
+  .team-bridge,
   .lab-rhythm,
+  .people-feature-grid,
+  .people-leadership,
+  .teaching-map__items,
   .people-list--featured,
   .protocol-ledger__counts {
     grid-template-columns: 1fr;
@@ -1727,6 +2117,8 @@ main {
   .fact-strip li + li,
   .journey-card + .journey-card,
   .partner-strip article + article,
+  .team-bridge article + article,
+  .teaching-map__items article + article,
   .lab-rhythm article + article {
     border-left: 0;
     border-top: 1px solid var(--rule);
@@ -1734,7 +2126,7 @@ main {
 
   .section--band .journey-card + .journey-card,
   .section--band .lab-rhythm article + article {
-    border-top-color: rgba(255, 255, 255, 0.2);
+    border-top-color: var(--rule);
   }
 
   .discovery-card {
@@ -1747,8 +2139,25 @@ main {
     grid-template-columns: 1fr;
   }
 
+  .method-rail {
+    grid-template-columns: 1fr;
+  }
+
+  .method-rail__track {
+    display: none;
+  }
+
+  .method-step {
+    grid-template-columns: 1fr;
+  }
+
+  .story-spread__graphics {
+    grid-template-columns: 1fr;
+  }
+
   .people-list--compact .person-profile,
-  .person-profile {
+  .person-profile,
+  .person-profile--roster {
     grid-template-columns: 5.8rem minmax(0, 1fr);
   }
 

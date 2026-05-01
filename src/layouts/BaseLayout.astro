@@ -1,7 +1,7 @@
 ---
 import PhageMark from '@components/PhageMark.astro';
-import { navItems, siteMeta } from '@data/site';
-import { withBase, withoutBase } from '@utils/urls';
+import { contact, navItems, siteMeta, supportingLinks } from '@data/site';
+import { mailto, withBase, withoutBase } from '@utils/urls';
 import '@styles/global.css';
 
 interface Props {
@@ -48,7 +48,7 @@ const activePath = withoutBase(currentPath);
           ))
         }
       </nav>
-      <a class="header-cta" href={withBase('/apply/')}>Apply</a>
+      <a class="header-cta" href={mailto(contact.email, contact.subject)}>Get in touch</a>
     </header>
     <main id="main">
       <slot />
@@ -58,7 +58,7 @@ const activePath = withoutBase(currentPath);
         <PhageMark />
         <div>
           <strong>Community Phages</strong>
-          <p>Discovery-based summer research for RCC students at Harvard Medical School.</p>
+          <p>An 8-week summer research internship and teaching program for RCC students at Harvard Medical School.</p>
         </div>
       </div>
       <div class="footer-links" aria-label="Footer navigation">
@@ -68,6 +68,16 @@ const activePath = withoutBase(currentPath);
           ))
         }
       </div>
+      <div class="footer-links footer-links--supporting" aria-label="Supporting navigation">
+        {
+          supportingLinks.map((item) => (
+            <a href={withBase(item.href)}>{item.label}</a>
+          ))
+        }
+      </div>
+      <p class="footer-contact">
+        Questions about the program or website? <a href={mailto(contact.email, contact.subject)}>Get in touch</a>.
+      </p>
       <p class="footer-note">
         Public program site. Internal operations and private student materials are maintained separately.
       </p>

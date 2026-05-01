@@ -7,11 +7,11 @@ import { withBase } from '@utils/urls';
 
 <BaseLayout
   title="Discoveries"
-  description="Public-safe Community Phages discoveries, posters, and phage records."
+  description="Published Community Phages discoveries, posters, and phage records."
 >
   <PageHero
-    title="Specimens from the summer."
-    text="Students move from environmental samples to phage names, images, genomes, figures, and public records. This page highlights discovery material that is ready to be public."
+    title="Phages from the summer."
+    text="Students move from environmental samples to phage names, images, genomes, figures, and public records. This page highlights published discovery material from the program."
     actions={[
       { label: 'Open PhagesDB Harvard page', href: 'https://phagesdb.org/institutions/HARV/' },
       { label: 'Browse resources', href: '/resources/', variant: 'secondary' },
@@ -20,9 +20,9 @@ import { withBase } from '@utils/urls';
 
   <section class="section">
     <div class="section-heading">
-      <h2>Public phage records, selected carefully.</h2>
+      <h2>Published phage records.</h2>
       <p>
-        Community Phages discoveries can be represented on PhagesDB once data are ready. Student contact data, unpublished records, and private sheets are not reproduced here.
+        Community Phages discoveries can be represented on PhagesDB once records are ready. The emphasis here is on isolates, methods, figures, and scientific context.
       </p>
     </div>
     <DiscoveryShowcase />
@@ -62,9 +62,9 @@ import { withBase } from '@utils/urls';
   <section class="section">
     <div class="callout callout--wide">
       <div>
-        <h2>Public-safe by design</h2>
+        <h2>What gets published</h2>
         <p>
-          Discovery pages should highlight phages, methods, figures, and public records while leaving student records and internal planning materials out of the public site.
+          Discovery pages should highlight phages, methods, figures, poster claims, and public records. Student records and internal planning materials stay in program systems.
         </p>
       </div>
       <a class="button button--primary" href={withBase('/program/')}>Follow the program arc</a>

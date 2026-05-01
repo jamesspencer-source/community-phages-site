@@ -1,40 +1,140 @@
 ---
-import { people, peopleGroups } from '@data/people';
+import AtlasLabel from '@components/AtlasLabel.astro';
+import { people, type Person, type PersonGroup } from '@data/people';
 import { withBase } from '@utils/urls';
+
+const byGroup = (group: PersonGroup) =>
+  people
+    .filter((person) => person.group === group)
+    .sort((a, b) => (a.order ?? 99) - (b.order ?? 99) || a.name.localeCompare(b.name));
+
+const faculty = byGroup('Faculty Sponsors');
+const leadership = [...byGroup('Program Leadership'), ...byGroup('Lead Instructors')];
+const mentors = byGroup('Mentors and Instructors');
+const alumni = byGroup('Program Alumni');
+
+const profileClass = (person: Person, level: 'primary' | 'secondary' | 'roster') => [
+  'person-profile',
+  `person-profile--${person.featureLevel ?? level}`,
+  !person.current && 'person-profile--past',
+];
 ---
 
-<div class="people-directory">
-  {
-    peopleGroups.map((group) => {
-      const groupPeople = people.filter((person) => person.group === group);
-      if (groupPeople.length === 0) return null;
-      const slug = group.toLowerCase().replaceAll(' ', '-').replaceAll('and', 'and');
-      const isCompact = group === 'Mentors and Instructors' || group === 'Program Alumni';
+<div class="people-directory people-directory--editorial">
+  <section class="teaching-map" aria-label="Teaching map">
+    <AtlasLabel code="Teaching map" title="How the team supports the program" />
+    <div class="teaching-map__items">
+      <article>
+        <span>01</span>
+        <h3>Scientific direction</h3>
+        <p>Faculty sponsors connect student discoveries to phage biology, bacterial evolution, immunity, and research context.</p>
+      </article>
+      <article>
+        <span>02</span>
+        <h3>Program leadership</h3>
+        <p>Program leads organize the lab environment, field-to-genome sequence, materials, safety, and daily teaching plan.</p>
+      </article>
+      <article>
+        <span>03</span>
+        <h3>Mentor support</h3>
+        <p>Instructors help students troubleshoot bench work, analyze genomes, build figures, and prepare final posters.</p>
+      </article>
+    </div>
+  </section>
 
-      return (
-        <section class:list={['people-group', `people-group--${slug}`]} id={group.toLowerCase().replaceAll(' ', '-')}>
-          <div class="people-group__heading">
-            <span>{groupPeople.length} {groupPeople.length === 1 ? 'person' : 'people'}</span>
-            <h2>{group}</h2>
-          </div>
-          <div class:list={['people-list', isCompact ? 'people-list--compact' : 'people-list--featured']}>
-            {groupPeople.map((person, index) => (
-              <article class:list={['person-profile', !person.current && 'person-profile--past']}>
-                <span class="person-index">{String(index + 1).padStart(2, '0')}</span>
-                <div class="person-photo">
-                  {person.image ? <img src={withBase(person.image)} alt={`${person.name} headshot`} loading="lazy" /> : <span>{person.initials}</span>}
-                </div>
-                <div class="person-copy">
-                  <p class="small-label">{person.current ? 'Current team' : 'Past instructor'}</p>
-                  <h3>{person.name}</h3>
-                  <p class="person-role">{person.role} · {person.affiliation}</p>
-                  <p>{person.bio}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-      );
-    })
+  <section class="people-section people-section--faculty">
+    <div class="people-section__heading">
+      <span>{faculty.length} faculty sponsors</span>
+      <h2>Scientific sponsors</h2>
+    </div>
+    <div class="people-feature-grid">
+      {
+        faculty.map((person) => (
+          <article class:list={profileClass(person, 'primary')}>
+            <div class="person-photo">
+              {person.image ? <img src={withBase(person.image)} alt={`${person.name} headshot`} loading="lazy" /> : <span>{person.initials}</span>}
+            </div>
+            <div class="person-copy">
+              <p class="small-label">{person.focus}</p>
+              <h3>{person.name}</h3>
+              <p class="person-role">{person.role} · {person.affiliation}</p>
+              <p>{person.bio}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="people-section">
+    <div class="people-section__heading">
+      <span>{leadership.length} program leads</span>
+      <h2>Program and lead instruction</h2>
+    </div>
+    <div class="people-leadership">
+      {
+        leadership.map((person) => (
+          <article class:list={profileClass(person, 'secondary')}>
+            <div class="person-photo">
+              {person.image ? <img src={withBase(person.image)} alt={`${person.name} headshot`} loading="lazy" /> : <span>{person.initials}</span>}
+            </div>
+            <div class="person-copy">
+              <p class="small-label">{person.focus}</p>
+              <h3>{person.name}</h3>
+              <p class="person-role">{person.role} · {person.affiliation}</p>
+              <p>{person.bio}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="people-section">
+    <div class="people-section__heading">
+      <span>{mentors.length} current mentors</span>
+      <h2>Mentors and instructors</h2>
+    </div>
+    <div class="people-roster">
+      {
+        mentors.map((person) => (
+          <article class:list={profileClass(person, 'roster')}>
+            <div class="person-photo">
+              {person.image ? <img src={withBase(person.image)} alt={`${person.name} headshot`} loading="lazy" /> : <span>{person.initials}</span>}
+            </div>
+            <div class="person-copy">
+              <h3>{person.name}</h3>
+              <p class="person-role">{person.role} · {person.affiliation}</p>
+              <p>{person.focus ?? person.bio}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  {
+    alumni.length > 0 && (
+      <section class="people-section people-section--alumni">
+        <div class="people-section__heading">
+          <span>{alumni.length} alum</span>
+          <h2>Program alumni</h2>
+        </div>
+        <div class="people-roster people-roster--archive">
+          {alumni.map((person) => (
+            <article class:list={profileClass(person, 'roster')}>
+              <div class="person-photo">
+                {person.image ? <img src={withBase(person.image)} alt={`${person.name} headshot`} loading="lazy" /> : <span>{person.initials}</span>}
+              </div>
+              <div class="person-copy">
+                <h3>{person.name}</h3>
+                <p class="person-role">{person.role} · {person.affiliation}</p>
+                <p>{person.focus ?? person.bio}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    )
   }
 </div>

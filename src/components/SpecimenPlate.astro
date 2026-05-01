@@ -1,0 +1,15 @@
+---
+interface Props {
+  compact?: boolean;
+  tone?: 'acid' | 'teal' | 'paper';
+}
+
+const { compact = false, tone = 'acid' } = Astro.props;
+---
+
+<div class:list={['specimen-plate', compact && 'specimen-plate--compact', `specimen-plate--${tone}`]} aria-hidden="true">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>

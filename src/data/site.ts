@@ -1,17 +1,27 @@
 export const siteMeta = {
   title: 'Community Phages',
   description:
-    'A paid summer research program where Roxbury Community College students discover and characterize environmental bacteriophages at Harvard Medical School.',
+    'An 8-week summer research internship and teaching program where Roxbury Community College students partner with Harvard Medical School researchers to isolate and characterize environmental bacteriophages.',
   url: 'https://phages.hms.harvard.edu',
+};
+
+export const contact = {
+  email: 'James_Spencer@hms.harvard.edu',
+  subject: 'Community Phages website query',
 };
 
 export const navItems = [
   { label: 'Program', href: '/program/' },
-  { label: 'Apply', href: '/apply/' },
+  { label: 'Students', href: '/students/' },
+  { label: 'Instructors', href: '/instructors/' },
   { label: 'People', href: '/people/' },
-  { label: 'Discoveries', href: '/discoveries/' },
   { label: 'Resources', href: '/resources/' },
+  { label: 'Discoveries', href: '/discoveries/' },
+];
+
+export const supportingLinks = [
   { label: 'Partners', href: '/partners/' },
+  { label: 'History', href: '/history/' },
 ];
 
 export const programFacts = [
@@ -24,24 +34,47 @@ export const programFacts = [
 export const audiencePaths = [
   {
     audience: 'Students',
-    title: 'Paid summer research for RCC students.',
-    text: 'Eight weeks at HMS, Monday-Thursday, learning the habits of lab work while isolating environmental corynephages.',
-    href: '/apply/',
-    action: 'See how to apply',
-  },
-  {
-    audience: 'Partners',
-    title: 'A focused bridge into biomedical research.',
-    text: 'Students move through field sampling, wet-lab characterization, sequencing, public records, and final posters.',
-    href: '/partners/',
-    action: 'View partners',
+    title: 'A paid 8-week summer research internship for RCC students.',
+    text: 'Students come to Harvard Medical School Monday through Thursday, learn the bench skills needed for phage work, and build a poster from their own samples and data.',
+    href: '/students/',
+    action: 'Student information',
   },
   {
     audience: 'Instructors',
-    title: 'Mentorship organized around real unknowns.',
-    text: 'Graduate students, postdocs, staff, and faculty teach through protocols, troubleshooting, data analysis, and poster work.',
-    href: '/people/',
-    action: 'Meet the team',
+    title: 'A working teaching site for HMS mentors and staff.',
+    text: 'Instructors use the same public protocol sequence, schedule logic, glossary, and bioinformatics chapters so student support stays consistent across the summer.',
+    href: '/instructors/',
+    action: 'Instructor information',
+  },
+];
+
+export const studentHighlights = [
+  {
+    title: 'What students do in the lab',
+    text: 'Collect environmental samples, plate them on host bacteria, look for plaques, purify phages, prepare lysates, extract DNA, analyze genomes, and present final posters.',
+  },
+  {
+    title: 'What students learn along the way',
+    text: 'Sterile technique, pipetting, bacterial lawns, phage purification, titers, microscopy, restriction digests, Geneious, BLAST, notebook habits, and scientific communication.',
+  },
+  {
+    title: 'What the schedule is like',
+    text: 'The program typically runs Monday through Thursday, 9am-2pm, for eight weeks from May to July, with exact dates set each year.',
+  },
+];
+
+export const instructorHighlights = [
+  {
+    title: 'How instructors plug in',
+    text: 'Graduate students, postdocs, staff, alumni, and faculty help teach bench work, troubleshoot experiments, guide bioinformatics sessions, and support poster preparation.',
+  },
+  {
+    title: 'What this site provides',
+    text: 'A public protocol manual, bioinformatics chapters, Day 1 notes, lab notebook guidance, glossary, schedule context, and instructor-facing references.',
+  },
+  {
+    title: 'What students need from mentors',
+    text: 'Clear instructions, patient troubleshooting, help connecting experiments to phage biology, and support turning raw observations into poster figures and claims.',
   },
 ];
 
@@ -247,7 +280,7 @@ export const resourceGroups = [
     items: [
       {
         title: 'Instructor info',
-        text: 'Public-facing notes on instructor rotation and handoff practices. Private planning links stay out of the website.',
+        text: 'Public notes on instructor rotation and handoff practices, with program operations maintained separately.',
         href: 'https://phages.hms.harvard.edu/resources/07_instructorinfo.html',
       },
       {
@@ -276,7 +309,7 @@ export const partners = [
   },
   {
     name: 'Harvard Medical School',
-    role: 'Research home, mentoring community, lab environment, and scientific infrastructure.',
+    role: 'Research home, mentoring community, lab environment, and scientific equipment.',
   },
   {
     name: 'Bernhardt Lab and HMS mentors',
@@ -296,13 +329,13 @@ export const partners = [
   },
 ];
 
-export const applicationInfo = {
-  status: 'Applications are usually organized in late winter or early spring for a May-July summer cohort.',
+export const studentInfo = {
+  status: 'Student selection and dates are coordinated each year with Roxbury Community College and program leads. The usual summer window is May-July.',
   eligibility:
     'The program is built for Roxbury Community College students who can commit to the full 8-week schedule and are excited to learn in a research lab.',
   schedule: 'Typical hours are Monday-Thursday, 9am-2pm, for 8 weeks.',
   note:
-    'Application links and exact dates should be updated each year once RCC and program leads confirm the next cohort timeline.',
+    'For current-year timing, student participation, or teaching questions, use the contact link and include Community Phages in the subject line.',
 };
 
 export const historyYears = [
@@ -318,7 +351,7 @@ export const historyYears = [
   },
   {
     year: '2024',
-    title: 'Deeper program infrastructure',
+    title: 'Deeper program structure',
     text: 'Public protocols, year-specific resources, instructor rotation, and student-facing materials became more formalized.',
   },
   {

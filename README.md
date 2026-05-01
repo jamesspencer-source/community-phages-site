@@ -31,7 +31,7 @@ Most annual program updates live in `src/data/site.ts`:
 - navigation labels
 - program facts
 - weekly journey copy
-- application status
+- student status and annual timing
 - public discovery links
 - public resource links
 - partner descriptions

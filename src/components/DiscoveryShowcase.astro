@@ -1,4 +1,5 @@
 ---
+import SpecimenPlate from '@components/SpecimenPlate.astro';
 import { discoveries } from '@data/site';
 import { withBase } from '@utils/urls';
 ---
@@ -8,11 +9,7 @@ import { withBase } from '@utils/urls';
     discoveries.map((discovery, index) => (
       <article class="discovery-card">
         <span class="specimen-number">{String(index + 1).padStart(2, '0')}</span>
-        <div class="plate-art" aria-hidden="true">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+        <SpecimenPlate compact tone={index % 2 === 0 ? 'acid' : 'teal'} />
         <div>
           <p class="small-label">{discovery.year}</p>
           <h3>{discovery.name}</h3>

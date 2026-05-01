@@ -3,11 +3,11 @@ import { audiencePaths } from '@data/site';
 import { withBase } from '@utils/urls';
 ---
 
-<div class="audience-grid">
+<div class="audience-dossier">
   {
     audiencePaths.map((path, index) => (
-      <article class="audience-card">
-        <span>{String(index + 1).padStart(2, '0')}</span>
+      <article class="audience-panel">
+        <div class="audience-panel__index">{String(index + 1).padStart(2, '0')}</div>
         <div>
           <p class="small-label">{path.audience}</p>
           <h3>{path.title}</h3>

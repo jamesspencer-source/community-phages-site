@@ -13,3 +13,7 @@ export function withoutBase(path: string) {
 
   return path.startsWith(base) ? `/${path.slice(base.length)}` : path;
 }
+
+export function mailto(email: string, subject: string) {
+  return `mailto:${email}?subject=${encodeURIComponent(subject)}`;
+}
