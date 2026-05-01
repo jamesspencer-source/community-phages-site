@@ -8,7 +8,7 @@ const byGroup = (group: PersonGroup) =>
     .sort((a, b) => (a.order ?? 99) - (b.order ?? 99) || a.name.localeCompare(b.name));
 
 const faculty = byGroup('Faculty Sponsors');
-const leadership = [...byGroup('Program Leadership'), ...byGroup('Lead Instructors')];
+const leadership = byGroup('Program Leadership');
 const mentors = byGroup('Mentors and Instructors');
 const alumni = byGroup('Program Alumni');
 
@@ -23,7 +23,7 @@ const profileClass = (person: Person, level: 'primary' | 'secondary' | 'roster')
   <section class="people-section people-section--faculty">
     <div class="people-section__heading">
       <span>{faculty.length} current</span>
-      <h2>Faculty sponsors</h2>
+      <h2><span class="no-break">Faculty sponsors</span></h2>
     </div>
     <div class="people-feature-grid">
       {
@@ -46,7 +46,7 @@ const profileClass = (person: Person, level: 'primary' | 'secondary' | 'roster')
   <section class="people-section">
     <div class="people-section__heading">
       <span>{leadership.length} current</span>
-      <h2>Program leads</h2>
+      <h2><span class="no-break">Program leads</span></h2>
     </div>
     <div class="people-leadership">
       {
@@ -94,7 +94,7 @@ const profileClass = (person: Person, level: 'primary' | 'secondary' | 'roster')
       <section class="people-section people-section--alumni">
         <div class="people-section__heading">
           <span>{alumni.length} past</span>
-          <h2>Program alumni</h2>
+          <h2><span class="no-break">Program alumni</span></h2>
         </div>
         <div class="people-roster people-roster--archive">
           {alumni.map((person) => (

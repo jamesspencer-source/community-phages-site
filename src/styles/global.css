@@ -56,20 +56,22 @@ img {
 
 h1,
 h2,
-h3,
-p {
-  overflow-wrap: break-word;
-}
-
-h1,
-h2,
 h3 {
+  overflow-wrap: normal;
   word-break: normal;
+  hyphens: none;
   text-wrap: balance;
 }
 
-p {
+p,
+li,
+dd {
+  overflow-wrap: break-word;
   text-wrap: pretty;
+}
+
+.no-break {
+  white-space: nowrap;
 }
 
 .skip-link {
@@ -551,7 +553,7 @@ main {
 
 .section-heading {
   display: grid;
-  grid-template-columns: minmax(0, 0.76fr) minmax(17rem, 0.45fr);
+  grid-template-columns: minmax(22rem, 0.82fr) minmax(18rem, 0.45fr);
   gap: 2rem;
   align-items: end;
   margin-bottom: 2rem;
@@ -561,9 +563,9 @@ main {
 
 .section-heading h2 {
   margin: 0;
-  max-width: 14ch;
+  max-width: 16ch;
   font-family: var(--font-serif);
-  font-size: 3.85rem;
+  font-size: clamp(3.05rem, 5vw, 3.85rem);
   font-weight: 700;
   line-height: 0.94;
 }
@@ -1520,9 +1522,9 @@ main {
 .person-photo img {
   width: 100%;
   height: 100%;
-  min-height: inherit;
+  min-height: 0;
   object-fit: contain;
-  object-position: center center;
+  object-position: center top;
   background: var(--paper);
   filter: saturate(0.95) contrast(1.03);
 }
@@ -1779,7 +1781,7 @@ main {
 
 .people-section {
   display: grid;
-  grid-template-columns: minmax(11rem, 0.2fr) minmax(0, 1fr);
+  grid-template-columns: minmax(15rem, 0.28fr) minmax(0, 1fr);
   gap: 2rem;
 }
 
@@ -1801,9 +1803,9 @@ main {
 .people-section__heading h2 {
   margin: 0.45rem 0 0;
   font-family: var(--font-serif);
-  font-size: clamp(2.15rem, 3.4vw, 3rem);
-  line-height: 0.98;
-  text-wrap: balance;
+  font-size: clamp(2rem, 2.7vw, 2.45rem);
+  line-height: 1;
+  text-wrap: normal;
 }
 
 .people-feature-grid {
@@ -1837,7 +1839,7 @@ main {
 }
 
 .person-profile--primary {
-  grid-template-columns: minmax(12rem, 14.5rem) minmax(0, 1fr);
+  grid-template-columns: minmax(11rem, 13rem) minmax(0, 1fr);
   align-items: start;
   border-top: 0;
   border-bottom: 1px solid var(--rule);
@@ -1845,7 +1847,7 @@ main {
 }
 
 .person-profile--secondary {
-  grid-template-columns: minmax(10.5rem, 13rem) minmax(0, 1fr);
+  grid-template-columns: minmax(10rem, 12rem) minmax(0, 1fr);
   align-items: start;
   border-top: 0;
   border-bottom: 1px solid var(--rule);
@@ -1853,26 +1855,26 @@ main {
 }
 
 .person-profile--roster {
-  grid-template-columns: 5.25rem minmax(0, 1fr);
-  align-items: center;
+  grid-template-columns: 4.75rem minmax(0, 1fr);
+  align-items: start;
   border-top: 0;
   border-bottom: 1px solid var(--rule);
-  padding: 0.85rem 0;
+  padding: 0.95rem 0;
 }
 
 .person-profile--primary .person-photo {
   min-height: auto;
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 5;
 }
 
 .person-profile--secondary .person-photo {
   min-height: auto;
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 5;
 }
 
 .person-profile--roster .person-photo {
   min-height: auto;
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 5;
 }
 
 .person-profile--primary .person-copy h3 {
@@ -1885,7 +1887,8 @@ main {
 
 .person-profile--roster .person-copy h3 {
   margin: 0;
-  font-size: 1.45rem;
+  font-size: 1.22rem;
+  line-height: 1.08;
 }
 
 .person-profile--roster .person-copy {
@@ -1895,12 +1898,15 @@ main {
 
 .person-profile--roster .person-role {
   margin: 0.15rem 0 0.2rem;
-  font-size: 0.92rem;
+  font-size: 0.88rem;
+  line-height: 1.35;
 }
 
 .person-profile--roster p:last-child {
   margin: 0;
   color: var(--muted);
+  line-height: 1.45;
+  max-width: 52rem;
 }
 
 .people-section--alumni {

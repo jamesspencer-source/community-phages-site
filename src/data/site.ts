@@ -285,7 +285,7 @@ export const resourceGroups = [
       },
       {
         title: 'Program schedule',
-        text: 'The 8-week course arc, recurring daily rhythm, and core public dates.',
+        text: 'The 8-week schedule, daily blocks, and core public dates.',
         href: '/program/',
       },
       {
