@@ -28,7 +28,7 @@ export const programFacts = [
   { value: '8 weeks', label: 'summer research internship' },
   { value: '20 hrs/week', label: 'Monday-Thursday, 9am-2pm' },
   { value: 'RCC + HMS', label: 'community college students in a research lab' },
-  { value: 'Field to genome', label: 'sampling, wet lab, microscopy, sequencing, posters' },
+  { value: 'Corynephages', label: 'environmental phages infecting corynebacteria' },
 ];
 
 export const audiencePaths = [
@@ -42,7 +42,7 @@ export const audiencePaths = [
   {
     audience: 'Instructors',
     title: 'A working teaching site for HMS mentors and staff.',
-    text: 'Instructors use the same public protocol sequence, schedule logic, glossary, and bioinformatics chapters so student support stays consistent across the summer.',
+    text: 'Instructors use shared protocols, schedule notes, glossary entries, and bioinformatics chapters so students hear consistent instructions across the summer.',
     href: '/instructors/',
     action: 'Instructor information',
   },

@@ -3,7 +3,6 @@ import AudiencePaths from '@components/AudiencePaths.astro';
 import AtlasLabel from '@components/AtlasLabel.astro';
 import DiscoveryShowcase from '@components/DiscoveryShowcase.astro';
 import FactStrip from '@components/FactStrip.astro';
-import GraphicDivider from '@components/GraphicDivider.astro';
 import GenomeTrace from '@components/GenomeTrace.astro';
 import MethodRail from '@components/MethodRail.astro';
 import PageHero from '@components/PageHero.astro';
@@ -23,18 +22,16 @@ import { withBase } from '@utils/urls';
     ]}
   />
   <FactStrip />
-  <GraphicDivider label="sample / plaque / genome / poster" />
 
   <section class="section">
     <div class="section-heading">
-      <h2>Students and instructors share the same research sequence.</h2>
+      <h2>Students and instructors work from the same protocols.</h2>
       <p>
         Students collect samples, test bacterial lawns, purify isolates, image phages, work with DNA, analyze sequence data, and build a poster from their own results. Instructors use the same methods and vocabulary to keep support consistent from week to week.
       </p>
     </div>
     <div class="story-spread">
       <div class="story-spread__main">
-        <AtlasLabel code="Program specimen" title="RCC student research at HMS" />
         <h3>From an environmental sample to a poster another scientist can read.</h3>
         <p>
           The program starts with practical lab skills and sample collection, then moves through plaques, purification, titers, microscopy, DNA extraction, restriction digest, genome analysis, and final presentation.
@@ -58,7 +55,7 @@ import { withBase } from '@utils/urls';
     <MethodRail limit={5} />
     <div class="callout callout--wide">
       <div>
-        <h3>Follow the full sequence</h3>
+        <h3>See the weekly plan</h3>
         <p>See how the summer is organized for students and for the instructors teaching each block of work.</p>
       </div>
       <a class="button button--primary" href={withBase('/program/')}>Program schedule</a>
@@ -67,7 +64,7 @@ import { withBase } from '@utils/urls';
 
   <section class="section">
     <div class="section-heading">
-      <h2>Discoveries are treated as specimens.</h2>
+      <h2>Student discoveries become public phage records.</h2>
       <p>
         Plaques, phage names, genome assemblies, public records, and final posters make student work visible beyond the teaching bench.
       </p>
@@ -78,7 +75,7 @@ import { withBase } from '@utils/urls';
   <section class="section">
     <div class="callout callout--wide">
       <div>
-        <h3>The manual has one home.</h3>
+        <h3>Protocols and teaching materials are on Resources.</h3>
         <p>Resources is the full working index for lab protocols, bioinformatics chapters, Day 1 material, notebook guidance, glossary, and instructor references.</p>
       </div>
       <a class="button button--primary" href={withBase('/resources/')}>Open resources</a>
