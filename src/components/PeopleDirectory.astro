@@ -1,5 +1,4 @@
 ---
-import AtlasLabel from '@components/AtlasLabel.astro';
 import { people, type Person, type PersonGroup } from '@data/people';
 import { withBase } from '@utils/urls';
 
@@ -21,31 +20,10 @@ const profileClass = (person: Person, level: 'primary' | 'secondary' | 'roster')
 ---
 
 <div class="people-directory people-directory--editorial">
-  <section class="teaching-map" aria-label="Teaching map">
-    <AtlasLabel code="Roles" title="How the team supports the program" />
-    <div class="teaching-map__items">
-      <article>
-        <span>01</span>
-        <h3>Scientific direction</h3>
-        <p>Faculty sponsors connect student discoveries to phage biology, bacterial evolution, immunity, and research context.</p>
-      </article>
-      <article>
-        <span>02</span>
-        <h3>Program leadership</h3>
-        <p>Program leads organize the lab environment, shared protocols, materials, safety, and daily teaching plan.</p>
-      </article>
-      <article>
-        <span>03</span>
-        <h3>Mentor support</h3>
-        <p>Instructors help students troubleshoot bench work, analyze genomes, build figures, and prepare final posters.</p>
-      </article>
-    </div>
-  </section>
-
   <section class="people-section people-section--faculty">
     <div class="people-section__heading">
-      <span>{faculty.length} faculty sponsors</span>
-      <h2>Scientific sponsors</h2>
+      <span>{faculty.length} current</span>
+      <h2>Faculty sponsors</h2>
     </div>
     <div class="people-feature-grid">
       {
@@ -55,7 +33,6 @@ const profileClass = (person: Person, level: 'primary' | 'secondary' | 'roster')
               {person.image ? <img src={withBase(person.image)} alt={`${person.name} headshot`} loading="lazy" /> : <span>{person.initials}</span>}
             </div>
             <div class="person-copy">
-              <p class="small-label">{person.focus}</p>
               <h3>{person.name}</h3>
               <p class="person-role">{person.role} · {person.affiliation}</p>
               <p>{person.bio}</p>
@@ -68,8 +45,8 @@ const profileClass = (person: Person, level: 'primary' | 'secondary' | 'roster')
 
   <section class="people-section">
     <div class="people-section__heading">
-      <span>{leadership.length} program leads</span>
-      <h2>Program and lead instruction</h2>
+      <span>{leadership.length} current</span>
+      <h2>Program leads</h2>
     </div>
     <div class="people-leadership">
       {
@@ -79,7 +56,6 @@ const profileClass = (person: Person, level: 'primary' | 'secondary' | 'roster')
               {person.image ? <img src={withBase(person.image)} alt={`${person.name} headshot`} loading="lazy" /> : <span>{person.initials}</span>}
             </div>
             <div class="person-copy">
-              <p class="small-label">{person.focus}</p>
               <h3>{person.name}</h3>
               <p class="person-role">{person.role} · {person.affiliation}</p>
               <p>{person.bio}</p>
@@ -92,7 +68,7 @@ const profileClass = (person: Person, level: 'primary' | 'secondary' | 'roster')
 
   <section class="people-section">
     <div class="people-section__heading">
-      <span>{mentors.length} current mentors</span>
+      <span>{mentors.length} current</span>
       <h2>Mentors and instructors</h2>
     </div>
     <div class="people-roster">
@@ -105,7 +81,7 @@ const profileClass = (person: Person, level: 'primary' | 'secondary' | 'roster')
             <div class="person-copy">
               <h3>{person.name}</h3>
               <p class="person-role">{person.role} · {person.affiliation}</p>
-              <p>{person.focus ?? person.bio}</p>
+              <p>{person.bio}</p>
             </div>
           </article>
         ))
@@ -117,7 +93,7 @@ const profileClass = (person: Person, level: 'primary' | 'secondary' | 'roster')
     alumni.length > 0 && (
       <section class="people-section people-section--alumni">
         <div class="people-section__heading">
-          <span>{alumni.length} alum</span>
+          <span>{alumni.length} past</span>
           <h2>Program alumni</h2>
         </div>
         <div class="people-roster people-roster--archive">
@@ -129,7 +105,7 @@ const profileClass = (person: Person, level: 'primary' | 'secondary' | 'roster')
               <div class="person-copy">
                 <h3>{person.name}</h3>
                 <p class="person-role">{person.role} · {person.affiliation}</p>
-                <p>{person.focus ?? person.bio}</p>
+                <p>{person.bio}</p>
               </div>
             </article>
           ))}
