@@ -1,0 +1,50 @@
+---
+import { resourceGroups } from '@data/site';
+import { withBase } from '@utils/urls';
+
+const descriptions: Record<string, string> = {
+  'Lab Protocols': 'Bench methods for samples, bacterial lawns, plaque work, lysates, DNA, and host range experiments.',
+  Bioinformatics: 'Sequence assembly, BLAST, genome annotation, and the computational work behind poster figures.',
+  'Student Resources': 'Day 1 setup, lab notebook habits, glossary, IT notes, videos, and daily reference material.',
+  'Instructor and Public Materials': 'Public-facing teaching references, schedule context, people, history, and partner material.',
+};
+---
+
+<div class="manual-layout">
+  <aside class="manual-nav" aria-label="Resource categories">
+    <strong>Manual index</strong>
+    {
+      resourceGroups.map((group) => (
+        <a href={`#${group.group.toLowerCase().replaceAll(' ', '-').replaceAll('&', 'and')}`}>
+          {group.group}
+          <span>{group.items.length}</span>
+        </a>
+      ))
+    }
+  </aside>
+  <div class="manual-sections">
+    {
+      resourceGroups.map((group, groupIndex) => (
+        <section class={`manual-section manual-section--${group.color}`} id={group.group.toLowerCase().replaceAll(' ', '-').replaceAll('&', 'and')}>
+          <div class="manual-section__head">
+            <span>{String(groupIndex + 1).padStart(2, '0')}</span>
+            <div>
+              <h2>{group.group}</h2>
+              <p>{descriptions[group.group] ?? `${group.items.length} public resources from the program manual.`}</p>
+            </div>
+          </div>
+          <ol class="manual-list">
+            {group.items.map((item) => (
+              <li>
+                <a href={withBase(item.href)}>
+                  <strong>{item.title}</strong>
+                  <span>{item.text}</span>
+                </a>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ))
+    }
+  </div>
+</div>

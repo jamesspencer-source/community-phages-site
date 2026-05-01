@@ -1,0 +1,29 @@
+---
+import PageHero from '@components/PageHero.astro';
+import PeopleDirectory from '@components/PeopleDirectory.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="People"
+  description="Current Community Phages faculty sponsors, program leaders, instructors, and mentors."
+>
+  <PageHero
+    title="Our people."
+    text="Community Phages is taught by faculty sponsors, program leaders, graduate students, postdocs, staff, and alumni who help RCC students build confidence at the bench and turn observations into a scientific story."
+    actions={[
+      { label: 'Program timeline', href: '/program/' },
+      { label: 'Resources', href: '/resources/', variant: 'secondary' },
+    ]}
+  />
+
+  <section class="section">
+    <div class="section-heading">
+      <h2>Current team first, with public-safe profiles.</h2>
+      <p>
+        Real submitted or previously public headshots are used where available. Public pages omit email addresses and internal contact details.
+      </p>
+    </div>
+    <PeopleDirectory />
+  </section>
+</BaseLayout>

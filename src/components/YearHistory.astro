@@ -1,0 +1,17 @@
+---
+import { historyYears } from '@data/site';
+---
+
+<div class="history-river">
+  {
+    historyYears.map((year) => (
+      <article>
+        <span>{year.year}</span>
+        <div>
+          <h2>{year.title}</h2>
+          <p>{year.text}</p>
+        </div>
+      </article>
+    ))
+  }
+</div>

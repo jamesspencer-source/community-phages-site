@@ -1,0 +1,76 @@
+---
+import PhageMark from '@components/PhageMark.astro';
+import { navItems, siteMeta } from '@data/site';
+import { withBase, withoutBase } from '@utils/urls';
+import '@styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description = siteMeta.description } = Astro.props;
+const pageTitle = title ? `${title} | ${siteMeta.title}` : siteMeta.title;
+const currentPath = Astro.url.pathname;
+const activePath = withoutBase(currentPath);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+    <link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" data-current-path={currentPath}>
+      <a class="brand" href={withBase('/')} aria-label="Community Phages home">
+        <PhageMark />
+        <span>Community Phages</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        {
+          navItems.map((item) => (
+            <a
+              href={withBase(item.href)}
+              class:list={['nav-link', { 'is-active': activePath.startsWith(item.href) }]}
+              aria-current={activePath.startsWith(item.href) ? 'page' : undefined}
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </nav>
+      <a class="header-cta" href={withBase('/apply/')}>Apply</a>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <PhageMark />
+        <div>
+          <strong>Community Phages</strong>
+          <p>Discovery-based summer research for RCC students at Harvard Medical School.</p>
+        </div>
+      </div>
+      <div class="footer-links" aria-label="Footer navigation">
+        {
+          navItems.map((item) => (
+            <a href={withBase(item.href)}>{item.label}</a>
+          ))
+        }
+      </div>
+      <p class="footer-note">
+        Public program site. Internal operations and private student materials are maintained separately.
+      </p>
+    </footer>
+  </body>
+</html>

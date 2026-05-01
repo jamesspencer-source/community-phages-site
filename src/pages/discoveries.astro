@@ -1,0 +1,73 @@
+---
+import DiscoveryShowcase from '@components/DiscoveryShowcase.astro';
+import PageHero from '@components/PageHero.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { withBase } from '@utils/urls';
+---
+
+<BaseLayout
+  title="Discoveries"
+  description="Public-safe Community Phages discoveries, posters, and phage records."
+>
+  <PageHero
+    title="Specimens from the summer."
+    text="Students move from environmental samples to phage names, images, genomes, figures, and public records. This page highlights discovery material that is ready to be public."
+    actions={[
+      { label: 'Open PhagesDB Harvard page', href: 'https://phagesdb.org/institutions/HARV/' },
+      { label: 'Browse resources', href: '/resources/', variant: 'secondary' },
+    ]}
+  />
+
+  <section class="section">
+    <div class="section-heading">
+      <h2>Public phage records, selected carefully.</h2>
+      <p>
+        Community Phages discoveries can be represented on PhagesDB once data are ready. Student contact data, unpublished records, and private sheets are not reproduced here.
+      </p>
+    </div>
+    <DiscoveryShowcase />
+  </section>
+
+  <section class="section section--band">
+    <div class="section-heading">
+      <h2>From sample to poster claim.</h2>
+      <p>
+        The scientific output is more than a name. Students learn how to turn observations into figures, claims, comparisons, and a presentation for a real audience.
+      </p>
+    </div>
+    <div class="journey journey--compact">
+      <article class="journey-card">
+        <div class="journey-card__marker"><span>1</span></div>
+        <h3>Environmental sample</h3>
+        <p>Students collect soil or water and document where each sample came from.</p>
+      </article>
+      <article class="journey-card">
+        <div class="journey-card__marker"><span>2</span></div>
+        <h3>Plaque evidence</h3>
+        <p>Clearings on bacterial lawns become the first visible hint of phage activity.</p>
+      </article>
+      <article class="journey-card">
+        <div class="journey-card__marker"><span>3</span></div>
+        <h3>Genome context</h3>
+        <p>Sequencing and bioinformatics connect each phage to relatives, genes, and hypotheses.</p>
+      </article>
+      <article class="journey-card">
+        <div class="journey-card__marker"><span>4</span></div>
+        <h3>Poster story</h3>
+        <p>Students assemble figures, practice explanations, and present what they learned.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="callout callout--wide">
+      <div>
+        <h2>Public-safe by design</h2>
+        <p>
+          Discovery pages should highlight phages, methods, figures, and public records while leaving student records and internal planning materials out of the public site.
+        </p>
+      </div>
+      <a class="button button--primary" href={withBase('/program/')}>Follow the program arc</a>
+    </div>
+  </section>
+</BaseLayout>

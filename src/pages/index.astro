@@ -1,0 +1,101 @@
+---
+import AudiencePaths from '@components/AudiencePaths.astro';
+import DiscoveryShowcase from '@components/DiscoveryShowcase.astro';
+import FactStrip from '@components/FactStrip.astro';
+import GraphicDivider from '@components/GraphicDivider.astro';
+import JourneyTimeline from '@components/JourneyTimeline.astro';
+import PageHero from '@components/PageHero.astro';
+import PartnerStrip from '@components/PartnerStrip.astro';
+import ProtocolIndex from '@components/ProtocolIndex.astro';
+import ResourceIndex from '@components/ResourceIndex.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { withBase } from '@utils/urls';
+---
+
+<BaseLayout>
+  <PageHero
+    image
+    title="Cataloguing phages. Expanding knowledge."
+    text="Roxbury Community College students spend eight paid weeks at Harvard Medical School finding environmental corynephages, reading their plaques and genomes, and adding their discoveries to public science."
+    actions={[
+      { label: 'Apply for the summer', href: '/apply/' },
+      { label: 'Explore discoveries', href: '/discoveries/', variant: 'secondary' },
+    ]}
+  />
+  <FactStrip />
+  <GraphicDivider label="sample / plaque / genome / poster" />
+
+  <section class="section">
+    <div class="section-heading">
+      <h2>A research program built as a sequence of evidence.</h2>
+      <p>
+        Students do not rehearse a demonstration. They collect samples, test bacterial lawns, purify isolates, image phages, work with DNA, analyze sequence data, and build a poster from their own results.
+      </p>
+    </div>
+    <div class="story-spread">
+      <div class="story-spread__main">
+        <h3>From an environmental sample to a record that another scientist can read.</h3>
+        <p>
+          Each phage becomes a specimen with context: where it came from, how it infects a host, what it looks like by microscopy, what its genome encodes, and how it compares to known relatives.
+        </p>
+      </div>
+      <AudiencePaths />
+    </div>
+  </section>
+
+  <section class="section section--band">
+    <div class="section-heading">
+      <h2>The 8-week research journey.</h2>
+      <p>
+        The summer moves from field sampling and bench skills to plaques, lysates, micrographs, DNA, genome assembly, figures, and a final poster.
+      </p>
+    </div>
+    <JourneyTimeline compact />
+    <div class="callout callout--wide">
+      <div>
+        <h3>Follow the full sequence</h3>
+        <p>Follow the program from soil and water samples to poster figures, public records, and research conversations.</p>
+      </div>
+      <a class="button button--primary" href={withBase('/program/')}>Program schedule</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <h2>Discoveries are treated as specimens.</h2>
+      <p>
+        Plaques, phage names, genome assemblies, public records, and final posters make the summer visible beyond the classroom.
+      </p>
+    </div>
+    <DiscoveryShowcase />
+  </section>
+
+  <section class="section">
+    <ProtocolIndex />
+    <ResourceIndex limitGroups={1} />
+    <div class="callout callout--wide">
+      <div>
+        <h3>The public manual stays close to the research.</h3>
+        <p>Browse lab protocols, bioinformatics chapters, Day 1 material, notebook guidance, glossary, and instructor/public references.</p>
+      </div>
+      <a class="button button--secondary" href={withBase('/resources/')}>Open resources</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <h2>The teaching team is part of the infrastructure.</h2>
+      <p>
+        Faculty sponsors, lead instructors, mentors, lab staff, RCC partners, and supporters create the structure students move through every week.
+      </p>
+    </div>
+    <PartnerStrip compact />
+    <div class="callout callout--wide">
+      <div>
+        <h3>Meet the current team</h3>
+        <p>Current people appear first, with real submitted or previously public headshots where available.</p>
+      </div>
+      <a class="button button--primary" href={withBase('/people/')}>People</a>
+    </div>
+  </section>
+</BaseLayout>

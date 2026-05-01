@@ -1,0 +1,21 @@
+---
+import { resourceGroups } from '@data/site';
+
+const protocols = resourceGroups.find((group) => group.group === 'Lab Protocols')?.items ?? [];
+const bioinformatics = resourceGroups.find((group) => group.group === 'Bioinformatics')?.items ?? [];
+---
+
+<section class="protocol-ledger">
+  <div class="protocol-ledger__copy">
+    <h2>Protocol depth is part of the program, not an appendix.</h2>
+    <p>
+      The website should preserve the manual students and instructors actually use: lab protocols, bioinformatics chapters, student setup notes, and instructor/public materials.
+    </p>
+  </div>
+  <div class="protocol-ledger__counts" aria-label="Resource count">
+    <span><strong>{protocols.length}</strong> lab protocols</span>
+    <span><strong>{bioinformatics.length}</strong> bioinformatics chapters</span>
+    <span><strong>6</strong> student resources</span>
+    <span><strong>4</strong> instructor/public references</span>
+  </div>
+</section>

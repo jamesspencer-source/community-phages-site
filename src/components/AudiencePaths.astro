@@ -1,0 +1,20 @@
+---
+import { audiencePaths } from '@data/site';
+import { withBase } from '@utils/urls';
+---
+
+<div class="audience-grid">
+  {
+    audiencePaths.map((path, index) => (
+      <article class="audience-card">
+        <span>{String(index + 1).padStart(2, '0')}</span>
+        <div>
+          <p class="small-label">{path.audience}</p>
+          <h3>{path.title}</h3>
+          <p>{path.text}</p>
+        </div>
+        <a href={withBase(path.href)}>{path.action}</a>
+      </article>
+    ))
+  }
+</div>

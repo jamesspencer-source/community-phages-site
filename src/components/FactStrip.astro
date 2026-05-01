@@ -1,0 +1,15 @@
+---
+import { programFacts } from '@data/site';
+---
+
+<ul class="fact-strip" aria-label="Program facts">
+  {
+    programFacts.map((fact, index) => (
+      <li>
+        <span class="fact-index">{String(index + 1).padStart(2, '0')}</span>
+        <strong>{fact.value}</strong>
+        <span>{fact.label}</span>
+      </li>
+    ))
+  }
+</ul>

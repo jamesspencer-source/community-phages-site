@@ -1,0 +1,48 @@
+---
+import PageHero from '@components/PageHero.astro';
+import YearHistory from '@components/YearHistory.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { withBase } from '@utils/urls';
+---
+
+<BaseLayout
+  title="History"
+  description="Community Phages program history, mission, and acknowledgments."
+>
+  <PageHero
+    title="A program built year by year."
+    text="Community Phages has grown from a discovery-based summer program into a public research bridge with protocols, instructors, partners, PhagesDB records, and student poster sessions."
+    actions={[
+      { label: 'Meet the team', href: '/people/' },
+      { label: 'Open resources', href: '/resources/', variant: 'secondary' },
+    ]}
+  />
+
+  <section class="section">
+    <div class="section-heading">
+      <h2>Program history.</h2>
+      <p>
+        Prior program pages are now summarized in one public history surface so the site keeps institutional memory without duplicating private planning records.
+      </p>
+    </div>
+    <YearHistory />
+  </section>
+
+  <section class="section section--band">
+    <div class="section-heading">
+      <h2>Diversity and equity mission.</h2>
+      <p>
+        Community Phages is committed to an engaging, immersive research experience and to an equitable environment where students are supported and given room to flourish.
+      </p>
+    </div>
+    <div class="callout callout--wide">
+      <div>
+        <h3>Acknowledgments</h3>
+        <p>
+          The program was inspired by HHMI SEA-PHAGES, with protocols and materials adapted or reproduced with permission. The site also recognizes the HMS, RCC, sponsor, field-site, and mentor communities that keep the program running.
+        </p>
+      </div>
+      <a class="button button--primary" href={withBase('/partners/')}>Partners</a>
+    </div>
+  </section>
+</BaseLayout>

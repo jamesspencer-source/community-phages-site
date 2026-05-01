@@ -1,0 +1,14 @@
+---
+interface Props {
+  label?: string;
+}
+
+const { label = 'phage specimen' } = Astro.props;
+---
+
+<div class="graphic-divider" aria-hidden="true">
+  <span class="graphic-divider__line"></span>
+  <span class="graphic-divider__phage"></span>
+  <span class="graphic-divider__line"></span>
+  <span class="graphic-divider__label">{label}</span>
+</div>

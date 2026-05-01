@@ -1,0 +1,40 @@
+---
+import { people, peopleGroups } from '@data/people';
+import { withBase } from '@utils/urls';
+---
+
+<div class="people-directory">
+  {
+    peopleGroups.map((group) => {
+      const groupPeople = people.filter((person) => person.group === group);
+      if (groupPeople.length === 0) return null;
+      const slug = group.toLowerCase().replaceAll(' ', '-').replaceAll('and', 'and');
+      const isCompact = group === 'Mentors and Instructors' || group === 'Program Alumni';
+
+      return (
+        <section class:list={['people-group', `people-group--${slug}`]} id={group.toLowerCase().replaceAll(' ', '-')}>
+          <div class="people-group__heading">
+            <span>{groupPeople.length} {groupPeople.length === 1 ? 'person' : 'people'}</span>
+            <h2>{group}</h2>
+          </div>
+          <div class:list={['people-list', isCompact ? 'people-list--compact' : 'people-list--featured']}>
+            {groupPeople.map((person, index) => (
+              <article class:list={['person-profile', !person.current && 'person-profile--past']}>
+                <span class="person-index">{String(index + 1).padStart(2, '0')}</span>
+                <div class="person-photo">
+                  {person.image ? <img src={withBase(person.image)} alt={`${person.name} headshot`} loading="lazy" /> : <span>{person.initials}</span>}
+                </div>
+                <div class="person-copy">
+                  <p class="small-label">{person.current ? 'Current team' : 'Past instructor'}</p>
+                  <h3>{person.name}</h3>
+                  <p class="person-role">{person.role} · {person.affiliation}</p>
+                  <p>{person.bio}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      );
+    })
+  }
+</div>

@@ -1,0 +1,21 @@
+---
+import { partners } from '@data/site';
+
+interface Props {
+  compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+const shown = compact ? partners.slice(0, 4) : partners;
+---
+
+<div class="partner-strip">
+  {
+    shown.map((partner) => (
+      <article>
+        <h3>{partner.name}</h3>
+        <p>{partner.role}</p>
+      </article>
+    ))
+  }
+</div>

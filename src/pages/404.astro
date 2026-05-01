@@ -1,0 +1,17 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { withBase } from '@utils/urls';
+---
+
+<BaseLayout title="Page not found">
+  <section class="page-hero">
+    <div class="page-hero__copy">
+      <h1>That plaque is missing.</h1>
+      <p>The page could not be found. Start from the program overview or the resource library.</p>
+      <div class="action-row">
+        <a class="button button--primary" href={withBase('/program/')}>Program</a>
+        <a class="button button--secondary" href={withBase('/resources/')}>Resources</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,67 @@
+---
+import PhageMark from './PhageMark.astro';
+import { withBase } from '@utils/urls';
+
+interface Props {
+  title: string;
+  text: string;
+  image?: boolean;
+  actions?: { label: string; href: string; variant?: 'primary' | 'secondary' }[];
+}
+
+const { title, text, image = false, actions = [] } = Astro.props;
+---
+
+<section class:list={['page-hero', image && 'page-hero--image']}>
+  <div class="page-hero__copy">
+    <h1>{title}</h1>
+    <p>{text}</p>
+    {
+      actions.length > 0 && (
+        <div class="action-row">
+          {actions.map((action) => (
+            <a class:list={['button', action.variant === 'secondary' ? 'button--secondary' : 'button--primary']} href={withBase(action.href)}>
+              {action.label}
+            </a>
+          ))}
+        </div>
+      )
+    }
+  </div>
+  {
+    image && (
+      <div class="hero-visual">
+        <div class="specimen-scale" aria-hidden="true">200 nm</div>
+        <div class="hero-phage" aria-hidden="true">
+          <PhageMark />
+        </div>
+        <div class="hero-plate" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="hero-trace" aria-hidden="true">
+          <i></i>
+          <i></i>
+          <i></i>
+        </div>
+        <dl class="specimen-record">
+          <div>
+            <dt>Program</dt>
+            <dd>Community Phages</dd>
+          </div>
+          <div>
+            <dt>Host</dt>
+            <dd>Corynebacterium</dd>
+          </div>
+          <div>
+            <dt>Arc</dt>
+            <dd>Sample to genome</dd>
+          </div>
+        </dl>
+      </div>
+    )
+  }
+</section>

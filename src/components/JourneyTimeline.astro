@@ -1,0 +1,31 @@
+---
+import { journeyWeeks } from '@data/site';
+
+interface Props {
+  compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+const weeks = compact ? journeyWeeks.slice(0, 4) : journeyWeeks;
+---
+
+<div class:list={['journey', compact && 'journey--compact']}>
+  {
+    weeks.map((week) => (
+      <article class="journey-card">
+        <div class="journey-card__marker">
+          <span>{String(Number(week.week)).padStart(2, '0')}</span>
+        </div>
+        <div>
+          <h3>{week.title}</h3>
+          <p>{week.short}</p>
+          <div class="tag-row">
+            {week.tags.map((tag) => (
+              <span>{tag}</span>
+            ))}
+          </div>
+        </div>
+      </article>
+    ))
+  }
+</div>

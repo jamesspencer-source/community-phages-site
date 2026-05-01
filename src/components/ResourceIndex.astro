@@ -1,0 +1,34 @@
+---
+import { resourceGroups } from '@data/site';
+import { withBase } from '@utils/urls';
+
+interface Props {
+  limitGroups?: number;
+}
+
+const { limitGroups } = Astro.props;
+const groups = typeof limitGroups === 'number' ? resourceGroups.slice(0, limitGroups) : resourceGroups;
+---
+
+<div class="resource-index">
+  {
+    groups.map((group) => (
+      <section class={`resource-group resource-group--${group.color}`}>
+        <div class="resource-group__heading">
+          <h2>{group.group}</h2>
+          <span>{group.items.length} public items</span>
+        </div>
+        <div class="resource-list">
+          {group.items.map((item, index) => (
+            <article class="resource-item">
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+              <a href={withBase(item.href)}>{item.href.startsWith('http') ? 'Open resource' : 'View section'}</a>
+            </article>
+          ))}
+        </div>
+      </section>
+    ))
+  }
+</div>

@@ -1,0 +1,36 @@
+---
+import { journeyWeeks } from '@data/site';
+---
+
+<section class="notebook-timeline" aria-label="Eight-week program timeline">
+  <div class="notebook-rail" aria-hidden="true">
+    <span class="rail-dot rail-dot--top"></span>
+    <span class="rail-line"></span>
+    <span class="rail-dot rail-dot--bottom"></span>
+  </div>
+  <div class="notebook-entries">
+    {
+      journeyWeeks.map((week, index) => (
+        <article class:list={['notebook-entry', index % 2 === 1 && 'notebook-entry--alt']}>
+          <div class="specimen-tag">
+            <span>{String(index + 1).padStart(2, '0')}</span>
+            <strong>Week {week.week}</strong>
+          </div>
+          <div class="specimen-visual" aria-hidden="true">
+            <span class="plate-ring"></span>
+            <span class="trace-line"></span>
+          </div>
+          <div class="notebook-entry__copy">
+            <h3>{week.title}</h3>
+            <p>{week.short}</p>
+            <ul>
+              {week.tags.map((tag) => (
+                <li>{tag}</li>
+              ))}
+            </ul>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>

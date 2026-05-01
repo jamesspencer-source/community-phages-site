@@ -1,0 +1,70 @@
+---
+import FactStrip from '@components/FactStrip.astro';
+import PageHero from '@components/PageHero.astro';
+import ProgramNotebookTimeline from '@components/ProgramNotebookTimeline.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { withBase } from '@utils/urls';
+---
+
+<BaseLayout
+  title="Program"
+  description="The Community Phages program arc from lab bootcamp and field sampling to phage discovery, sequencing, bioinformatics, and final posters."
+>
+  <PageHero
+    title="The 8-week specimen sequence."
+    text="Each week adds a new kind of evidence: sample context, plaques, purified lysates, micrographs, DNA, genome comparisons, figures, and a final poster."
+    actions={[
+      { label: 'Application details', href: '/apply/' },
+      { label: 'Browse resources', href: '/resources/', variant: 'secondary' },
+    ]}
+  />
+  <FactStrip />
+
+  <section class="section section--band">
+    <div class="section-heading">
+      <h2>From field sampling to public explanation.</h2>
+      <p>
+        The calendar changes each year, but the research logic stays stable: skills, sampling, plaques, purification, microscopy, DNA, genome analysis, host range, and posters.
+      </p>
+    </div>
+    <ProgramNotebookTimeline />
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <h2>The day has a repeatable lab rhythm.</h2>
+      <p>
+        Students are usually on campus Monday-Thursday from 9am-2pm. The work alternates between setup, bench time, notebook/data work, and discussion.
+      </p>
+    </div>
+    <div class="lab-rhythm">
+      <article>
+        <span>Morning</span>
+        <h3>Frame the experiment</h3>
+        <p>Connect the day’s protocol to phage biology, host cells, or the poster story students are building.</p>
+      </article>
+      <article>
+        <span>Midday</span>
+        <h3>Run the work</h3>
+        <p>Plate samples, pick plaques, prepare lysates, run gels, image phages, compare strains, or analyze sequence data.</p>
+      </article>
+      <article>
+        <span>Close</span>
+        <h3>Record and interpret</h3>
+        <p>Notebook entries, calculations, figure sketches, and group discussion keep the research story moving.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="callout callout--wide">
+      <div>
+        <h2>Every method points back to the phage.</h2>
+        <p>
+          Students collect samples, make measurements, name discoveries, learn the language of phage biology, and build a scientific narrative from their own data.
+        </p>
+      </div>
+      <a class="button button--primary" href={withBase('/discoveries/')}>See discoveries</a>
+    </div>
+  </section>
+</BaseLayout>

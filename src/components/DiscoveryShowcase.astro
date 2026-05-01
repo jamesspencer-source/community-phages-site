@@ -1,0 +1,25 @@
+---
+import { discoveries } from '@data/site';
+import { withBase } from '@utils/urls';
+---
+
+<div class="discovery-grid">
+  {
+    discoveries.map((discovery, index) => (
+      <article class="discovery-card">
+        <span class="specimen-number">{String(index + 1).padStart(2, '0')}</span>
+        <div class="plate-art" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div>
+          <p class="small-label">{discovery.year}</p>
+          <h3>{discovery.name}</h3>
+          <p>{discovery.summary}</p>
+          <a href={withBase(discovery.href)}>Open public record</a>
+        </div>
+      </article>
+    ))
+  }
+</div>

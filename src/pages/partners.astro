@@ -1,0 +1,60 @@
+---
+import PageHero from '@components/PageHero.astro';
+import PartnerStrip from '@components/PartnerStrip.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Partners"
+  description="The HMS, RCC, sponsor, mentor, and field-site ecosystem that makes Community Phages possible."
+>
+  <PageHero
+    title="The partner ecosystem."
+    text="Community Phages depends on RCC student support, HMS mentorship, sponsor generosity, field access, research infrastructure, and public science networks."
+    actions={[
+      { label: 'Explore the program', href: '/program/' },
+      { label: 'Student information', href: '/apply/', variant: 'secondary' },
+    ]}
+  />
+
+  <section class="section">
+    <div class="section-heading">
+      <h2>Public partner roles.</h2>
+      <p>
+        The site names public partner roles at a high level and avoids publishing internal contacts, sponsor correspondence, budgets, or private planning materials.
+      </p>
+    </div>
+    <PartnerStrip />
+  </section>
+
+  <section class="section section--band">
+    <div class="section-heading">
+      <h2>Why partnership matters.</h2>
+      <p>
+        The program is a bridge between community college talent and biomedical research infrastructure. Partners help make that bridge paid, mentored, welcoming, and scientifically real.
+      </p>
+    </div>
+    <div class="journey journey--compact">
+      <article class="journey-card">
+        <div class="journey-card__marker"><span>R</span></div>
+        <h3>Recruitment and access</h3>
+        <p>RCC connections help the program reach students who can benefit from a first research experience.</p>
+      </article>
+      <article class="journey-card">
+        <div class="journey-card__marker"><span>M</span></div>
+        <h3>Mentorship</h3>
+        <p>HMS instructors turn research infrastructure into a supported learning environment.</p>
+      </article>
+      <article class="journey-card">
+        <div class="journey-card__marker"><span>S</span></div>
+        <h3>Support</h3>
+        <p>Sponsors and program supporters help sustain student pay, supplies, field trips, and scientific resources.</p>
+      </article>
+      <article class="journey-card">
+        <div class="journey-card__marker"><span>P</span></div>
+        <h3>Public science</h3>
+        <p>Repositories, poster sessions, and community events make student work visible beyond the classroom.</p>
+      </article>
+    </div>
+  </section>
+</BaseLayout>
