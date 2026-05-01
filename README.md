@@ -12,23 +12,17 @@ npm run build
 
 The local dev server runs at `http://127.0.0.1:4321/`.
 
-## GitHub Pages
+## Public Hosting
 
-This repository is configured for GitHub Pages through `.github/workflows/deploy.yml`.
+The source repository is:
 
-Recommended public repository:
+[https://github.com/jamesspencer-source/community-phages-site](https://github.com/jamesspencer-source/community-phages-site)
 
-```text
-jamesspencer-source/community-phages-site
-```
+The public GitHub Pages site is:
 
-Once the repository exists on GitHub and this project is pushed to `main`, the workflow builds Astro and publishes `dist/` to:
+[https://jamesspencer-source.github.io/community-phages-site/](https://jamesspencer-source.github.io/community-phages-site/)
 
-```text
-https://jamesspencer-source.github.io/community-phages-site/
-```
-
-In the GitHub repository settings, set Pages to deploy from GitHub Actions.
+The `main` branch contains the Astro source. The `gh-pages` branch contains the built static output served by GitHub Pages.
 
 ## Content Updates
 
