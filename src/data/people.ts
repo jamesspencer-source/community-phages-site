@@ -15,6 +15,7 @@ export interface Person {
   featureLevel?: PersonFeatureLevel;
   order?: number;
   image?: string;
+  imagePosition?: string;
   initials: string;
   current: boolean;
 }
@@ -124,6 +125,8 @@ export const people: Person[] = [
     bio: 'Helps with bench instruction and poster feedback during the wet-lab phase.',
     featureLevel: 'roster',
     order: 4,
+    image: '/assets/people/ophelia-lee.jpg',
+    imagePosition: 'center center',
     initials: 'OL',
     current: true,
   },
@@ -159,6 +162,7 @@ export const people: Person[] = [
     bio: 'Helps teach virology methods and phage-discovery troubleshooting.',
     featureLevel: 'roster',
     order: 7,
+    image: '/assets/people/jess-oros.jpg',
     initials: 'JO',
     current: true,
   },

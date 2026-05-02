@@ -17,6 +17,9 @@ const profileClass = (person: Person, level: 'primary' | 'secondary' | 'roster')
   `person-profile--${person.featureLevel ?? level}`,
   !person.current && 'person-profile--past',
 ];
+
+const imageStyle = (person: Person) =>
+  person.imagePosition ? `--person-image-position: ${person.imagePosition};` : undefined;
 ---
 
 <div class="people-directory people-directory--editorial">
@@ -29,7 +32,7 @@ const profileClass = (person: Person, level: 'primary' | 'secondary' | 'roster')
       {
         faculty.map((person) => (
           <article class:list={profileClass(person, 'primary')}>
-            <div class="person-photo">
+            <div class="person-photo" style={imageStyle(person)}>
               {person.image ? <img src={withBase(person.image)} alt={`${person.name} headshot`} loading="lazy" /> : <span>{person.initials}</span>}
             </div>
             <div class="person-copy">
@@ -52,7 +55,7 @@ const profileClass = (person: Person, level: 'primary' | 'secondary' | 'roster')
       {
         leadership.map((person) => (
           <article class:list={profileClass(person, 'secondary')}>
-            <div class="person-photo">
+            <div class="person-photo" style={imageStyle(person)}>
               {person.image ? <img src={withBase(person.image)} alt={`${person.name} headshot`} loading="lazy" /> : <span>{person.initials}</span>}
             </div>
             <div class="person-copy">
@@ -75,7 +78,7 @@ const profileClass = (person: Person, level: 'primary' | 'secondary' | 'roster')
       {
         mentors.map((person) => (
           <article class:list={profileClass(person, 'roster')}>
-            <div class="person-photo">
+            <div class="person-photo" style={imageStyle(person)}>
               {person.image ? <img src={withBase(person.image)} alt={`${person.name} headshot`} loading="lazy" /> : <span>{person.initials}</span>}
             </div>
             <div class="person-copy">
@@ -99,7 +102,7 @@ const profileClass = (person: Person, level: 'primary' | 'secondary' | 'roster')
         <div class="people-roster people-roster--archive">
           {alumni.map((person) => (
             <article class:list={profileClass(person, 'roster')}>
-              <div class="person-photo">
+              <div class="person-photo" style={imageStyle(person)}>
                 {person.image ? <img src={withBase(person.image)} alt={`${person.name} headshot`} loading="lazy" /> : <span>{person.initials}</span>}
               </div>
               <div class="person-copy">
