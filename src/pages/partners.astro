@@ -1,6 +1,7 @@
 ---
 import PageHero from '@components/PageHero.astro';
 import PartnerStrip from '@components/PartnerStrip.astro';
+import InsetFigure from '@components/InsetFigure.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
 ---
 
@@ -55,6 +56,15 @@ import BaseLayout from '@layouts/BaseLayout.astro';
         <h3>Public science</h3>
         <p>Repositories, poster sessions, and community events make student work visible beyond the classroom.</p>
       </article>
+    </div>
+    <div class="inset-row inset-row--after inset-row--compact">
+      <InsetFigure
+        src="/assets/neb-logo.png"
+        alt="New England Biolabs logo"
+        label="Support"
+        caption="The old public site acknowledged New England Biolabs support; partner recognition remains part of the public site."
+        tone="logo"
+      />
     </div>
   </section>
 </BaseLayout>

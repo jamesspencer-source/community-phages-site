@@ -1,5 +1,6 @@
 ---
 import FactStrip from '@components/FactStrip.astro';
+import InsetFigure from '@components/InsetFigure.astro';
 import PageHero from '@components/PageHero.astro';
 import ProgramNotebookTimeline from '@components/ProgramNotebookTimeline.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
@@ -53,6 +54,15 @@ import { withBase } from '@utils/urls';
         <h3>Record and interpret</h3>
         <p>Record observations, calculations, gels, plaques, images, and next steps while the work is still fresh.</p>
       </article>
+    </div>
+    <div class="inset-row inset-row--after">
+      <InsetFigure
+        src="/assets/hero-phage-world.png"
+        alt="Community Phages visual motif showing phages and environmental discovery"
+        label="Workflow"
+        caption="The public story stays tied to work students actually do: sample, plaque, isolate, image, sequence, explain."
+        tone="graphic"
+      />
     </div>
   </section>
 

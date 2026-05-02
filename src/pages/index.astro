@@ -4,6 +4,7 @@ import AtlasLabel from '@components/AtlasLabel.astro';
 import DiscoveryShowcase from '@components/DiscoveryShowcase.astro';
 import FactStrip from '@components/FactStrip.astro';
 import GenomeTrace from '@components/GenomeTrace.astro';
+import InsetFigure from '@components/InsetFigure.astro';
 import MethodRail from '@components/MethodRail.astro';
 import PageHero from '@components/PageHero.astro';
 import SpecimenPlate from '@components/SpecimenPlate.astro';
@@ -42,6 +43,22 @@ import { withBase } from '@utils/urls';
         </div>
       </div>
       <AudiencePaths />
+    </div>
+    <div class="inset-row inset-row--after">
+      <InsetFigure
+        src="/assets/hero-phage-world.png"
+        alt="Illustrated phage specimens and plaque world used for Community Phages visual identity"
+        label="Program image"
+        caption="A public visual anchor for the discovery workflow: environmental samples, plaques, phages, genomes, and posters."
+        tone="graphic"
+      />
+      <InsetFigure
+        src="/assets/community-phages-archive-banner.png"
+        alt="Community Phages banner artwork from the prior public program manual"
+        label="Archive"
+        caption="The prior public manual emphasized protocols and resources; this rebuild keeps that practical purpose."
+        tone="graphic"
+      />
     </div>
   </section>
 

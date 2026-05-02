@@ -1,0 +1,23 @@
+---
+import { withBase } from '@utils/urls';
+
+interface Props {
+  src: string;
+  alt: string;
+  label: string;
+  caption: string;
+  tone?: 'photo' | 'graphic' | 'logo';
+}
+
+const { src, alt, label, caption, tone = 'photo' } = Astro.props;
+---
+
+<figure class:list={['inset-figure', `inset-figure--${tone}`]}>
+  <div class="inset-figure__media">
+    <img src={withBase(src)} alt={alt} loading="lazy" />
+  </div>
+  <figcaption>
+    <span>{label}</span>
+    {caption}
+  </figcaption>
+</figure>

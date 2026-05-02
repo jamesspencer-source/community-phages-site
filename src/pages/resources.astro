@@ -2,6 +2,7 @@
 import PageHero from '@components/PageHero.astro';
 import ProtocolIndex from '@components/ProtocolIndex.astro';
 import ResourceManual from '@components/ResourceManual.astro';
+import InsetFigure from '@components/InsetFigure.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
 ---
 
@@ -24,6 +25,15 @@ import BaseLayout from '@layouts/BaseLayout.astro';
       <p>
         The structure keeps the prior site’s protocol depth while making it easier to find bench protocols, genome-analysis chapters, notebook guidance, glossary entries, and poster support.
       </p>
+    </div>
+    <div class="inset-row">
+      <InsetFigure
+        src="/assets/community-phages-archive-banner.png"
+        alt="Community Phages public banner artwork from the previous manual"
+        label="Public manual"
+        caption="Resources are still the working manual for protocols, bioinformatics, Day 1 setup, notebooks, glossary, and teaching references."
+        tone="graphic"
+      />
     </div>
     <ProtocolIndex />
     <ResourceManual />

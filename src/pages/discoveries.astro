@@ -1,5 +1,6 @@
 ---
 import DiscoveryShowcase from '@components/DiscoveryShowcase.astro';
+import InsetFigure from '@components/InsetFigure.astro';
 import PageHero from '@components/PageHero.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { withBase } from '@utils/urls';
@@ -56,6 +57,15 @@ import { withBase } from '@utils/urls';
         <h3>Poster story</h3>
         <p>Students assemble figures, practice explanations, and present what they learned.</p>
       </article>
+    </div>
+    <div class="inset-row inset-row--after">
+      <InsetFigure
+        src="/assets/hero-phage-world.png"
+        alt="Illustrated phage specimens and plaque world"
+        label="Discovery record"
+        caption="The visual system stays specimen-based while the content points to public records and student-generated outputs."
+        tone="graphic"
+      />
     </div>
   </section>
 

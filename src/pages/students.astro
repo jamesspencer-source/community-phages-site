@@ -1,5 +1,6 @@
 ---
 import PageHero from '@components/PageHero.astro';
+import InsetFigure from '@components/InsetFigure.astro';
 import { contact, studentHighlights, studentInfo } from '@data/site';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { mailto, withBase } from '@utils/urls';
@@ -68,6 +69,15 @@ const contactHref = mailto(contact.email, contact.subject);
         <h3>Tell the story</h3>
         <p>Genome analysis, figures, phage names, poster practice, and final presentations turn results into a scientific explanation.</p>
       </article>
+    </div>
+    <div class="inset-row inset-row--after">
+      <InsetFigure
+        src="/assets/community-phages-archive-banner.png"
+        alt="Community Phages public banner artwork"
+        label="Public program"
+        caption="The student-facing pages are written from the same program premise as the original manual: RCC students doing real phage discovery at HMS."
+        tone="graphic"
+      />
     </div>
   </section>
 

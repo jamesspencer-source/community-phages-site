@@ -1,5 +1,6 @@
 ---
 import PageHero from '@components/PageHero.astro';
+import InsetFigure from '@components/InsetFigure.astro';
 import { contact, instructorHighlights } from '@data/site';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { mailto, withBase } from '@utils/urls';
@@ -106,6 +107,15 @@ const contactHref = mailto(contact.email, contact.subject);
         </div>
         <a href={withBase('/people/')}>Meet the team</a>
       </article>
+    </div>
+    <div class="inset-row inset-row--after">
+      <InsetFigure
+        src="/assets/community-phages-archive-banner.png"
+        alt="Community Phages banner artwork from the prior public manual"
+        label="Manual lineage"
+        caption="The new site keeps the old site’s protocol-manual function, but presents it with clearer public navigation and instructor context."
+        tone="graphic"
+      />
     </div>
   </section>
 

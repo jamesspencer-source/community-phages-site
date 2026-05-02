@@ -1,6 +1,7 @@
 ---
 import PageHero from '@components/PageHero.astro';
 import YearHistory from '@components/YearHistory.astro';
+import InsetFigure from '@components/InsetFigure.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { withBase } from '@utils/urls';
 ---
@@ -24,6 +25,15 @@ import { withBase } from '@utils/urls';
       <p>
         Prior program pages are summarized here so the site keeps institutional memory as the program changes year to year.
       </p>
+    </div>
+    <div class="inset-row">
+      <InsetFigure
+        src="/assets/community-phages-archive-banner.png"
+        alt="Community Phages banner artwork from the prior public program website"
+        label="Archive"
+        caption="The previous public site was a protocol manual for the summer program; the history page keeps that continuity visible."
+        tone="graphic"
+      />
     </div>
     <YearHistory />
   </section>
