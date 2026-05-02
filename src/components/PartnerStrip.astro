@@ -15,6 +15,7 @@ const shown = compact ? partners.slice(0, 4) : partners;
       <article>
         <h3>{partner.name}</h3>
         <p>{partner.role}</p>
+        {partner.href && <a href={partner.href} target="_blank" rel="noreferrer">Open partner site</a>}
       </article>
     ))
   }

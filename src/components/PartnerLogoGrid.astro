@@ -1,0 +1,31 @@
+---
+import { partnerLogos } from '@data/site';
+import { withBase } from '@utils/urls';
+
+interface Props {
+  compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+---
+
+<div class:list={['partner-logo-grid', compact && 'partner-logo-grid--compact']}>
+  {
+    partnerLogos.map((partner) => (
+      <a class="partner-logo-card" href={partner.href} target="_blank" rel="noreferrer">
+        <span class="partner-logo-card__index">{partner.code}</span>
+        <span class="partner-logo-card__media">
+          <img src={withBase(partner.logo)} alt={partner.alt} loading="lazy" />
+        </span>
+        {
+          !compact && (
+            <span class="partner-logo-card__copy">
+              <strong>{partner.name}</strong>
+              <span>{partner.role}</span>
+            </span>
+          )
+        }
+      </a>
+    ))
+  }
+</div>

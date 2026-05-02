@@ -306,10 +306,12 @@ export const partners = [
   {
     name: 'Roxbury Community College',
     role: 'Student recruitment, academic partnership, and community connection.',
+    href: 'https://www.rcc.mass.edu/',
   },
   {
-    name: 'Harvard Medical School',
+    name: 'HMS Department of Microbiology',
     role: 'Research home, mentoring community, lab environment, and scientific equipment.',
+    href: 'https://micro.hms.harvard.edu/',
   },
   {
     name: 'Bernhardt Lab and HMS mentors',
@@ -318,14 +320,51 @@ export const partners = [
   {
     name: 'New England Biolabs',
     role: 'Program support, reagents, field trip opportunities, and sequencing-related resources.',
+    href: 'https://www.neb.com/',
   },
   {
     name: 'HHMI',
     role: 'Program support for accessible, discovery-based science education.',
+    href: 'https://www.hhmi.org/',
   },
   {
     name: 'Field, microscopy, and community partners',
     role: 'Sampling sites, microscopy access, career panels, and public science connections.',
+  },
+];
+
+export const partnerLogos = [
+  {
+    code: 'HMS',
+    name: 'Harvard Medical School Department of Microbiology',
+    role: 'HMS department home for the teaching lab, mentors, and scientific community.',
+    href: 'https://micro.hms.harvard.edu/',
+    logo: '/assets/logos/hms-microbiology-logo.svg',
+    alt: 'Harvard Medical School Department of Microbiology logo',
+  },
+  {
+    code: 'RCC',
+    name: 'Roxbury Community College',
+    role: 'Student partnership and recruitment home for the Community Phages cohort.',
+    href: 'https://www.rcc.mass.edu/',
+    logo: '/assets/logos/rcc-logo.svg',
+    alt: 'Roxbury Community College logo',
+  },
+  {
+    code: 'HHMI',
+    name: 'Howard Hughes Medical Institute',
+    role: 'Program support and science education context.',
+    href: 'https://www.hhmi.org/',
+    logo: '/assets/logos/hhmi-logo.png',
+    alt: 'Howard Hughes Medical Institute logo',
+  },
+  {
+    code: 'NEB',
+    name: 'New England Biolabs',
+    role: 'Program support, reagents, and sequencing-related resources.',
+    href: 'https://www.neb.com/',
+    logo: '/assets/neb-logo.png',
+    alt: 'New England Biolabs logo',
   },
 ];
 
