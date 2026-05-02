@@ -384,25 +384,63 @@ main {
 
 .hero-phage {
   position: absolute;
-  left: 12%;
-  top: 7%;
+  left: 10%;
+  top: 1.1rem;
   z-index: 3;
-  width: 18rem;
+  width: 14.75rem;
   color: var(--ink);
   filter: drop-shadow(0 24px 42px rgba(7, 27, 34, 0.13));
 }
 
-.hero-phage .phage-mark {
+.hero-phage__svg {
   width: 100%;
   height: auto;
+  overflow: visible;
 }
 
-.hero-phage .phage-mark__head {
+.hero-phage__head {
   fill: rgba(207, 228, 90, 0.72);
+  stroke: currentColor;
+  stroke-linejoin: round;
+  stroke-width: 3;
 }
 
-.hero-phage .phage-mark__core {
+.hero-phage__facet {
   fill: var(--paper);
+  stroke: currentColor;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.hero-phage__capsid {
+  fill: var(--field);
+}
+
+.hero-phage__neck,
+.hero-phage__tail-sheath,
+.hero-phage__base {
+  fill: var(--paper);
+  stroke: currentColor;
+  stroke-linejoin: round;
+  stroke-width: 3;
+}
+
+.hero-phage__tail-core,
+.hero-phage__tail-rings,
+.hero-phage__fibers {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 4;
+}
+
+.hero-phage__tail-rings {
+  stroke-width: 2.6;
+}
+
+.hero-phage__fibers {
+  stroke-width: 3.4;
 }
 
 .hero-plate {
@@ -2233,7 +2271,8 @@ main {
 
   .hero-phage {
     left: 4%;
-    width: 13rem;
+    top: 0.8rem;
+    width: 10.75rem;
   }
 
   .hero-plate {

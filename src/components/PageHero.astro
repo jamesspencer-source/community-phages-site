@@ -1,5 +1,5 @@
 ---
-import PhageMark from './PhageMark.astro';
+import HeroPhage from './HeroPhage.astro';
 import { withBase } from '@utils/urls';
 
 interface Props {
@@ -33,7 +33,7 @@ const { title, text, image = false, actions = [] } = Astro.props;
       <div class="hero-visual">
         <div class="specimen-scale" aria-hidden="true">200 nm</div>
         <div class="hero-phage" aria-hidden="true">
-          <PhageMark />
+          <HeroPhage />
         </div>
         <div class="hero-plate" aria-hidden="true">
           <span></span>
