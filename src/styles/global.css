@@ -1062,6 +1062,11 @@ main {
   margin: 1.45rem 0 0;
 }
 
+.inset-row--single {
+  grid-template-columns: minmax(0, 42rem);
+  justify-content: center;
+}
+
 .inset-row--compact {
   grid-template-columns: minmax(16rem, 0.42fr);
 }
@@ -1098,6 +1103,15 @@ main {
   aspect-ratio: 16 / 8.2;
 }
 
+.inset-row--single .inset-figure--graphic .inset-figure__media {
+  aspect-ratio: 1420 / 748;
+}
+
+.inset-row--single .inset-figure--graphic .inset-figure__media img {
+  min-height: 0;
+  object-fit: contain;
+}
+
 .inset-figure--logo .inset-figure__media {
   min-height: 10rem;
   aspect-ratio: 16 / 7;
@@ -1120,6 +1134,14 @@ main {
   color: var(--muted);
   font-size: 0.9rem;
   line-height: 1.45;
+}
+
+.inset-row--single .inset-figure figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+  align-items: baseline;
+  padding: 0.55rem 0.15rem 0.75rem;
 }
 
 .inset-figure figcaption span {
