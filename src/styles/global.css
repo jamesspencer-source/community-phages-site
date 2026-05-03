@@ -1954,12 +1954,137 @@ main {
   color: var(--muted);
 }
 
-.method-step .genome-trace {
-  min-height: 2.6rem;
+.method-signal {
+  position: relative;
+  min-height: 5.1rem;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  background:
+    linear-gradient(rgba(7, 27, 34, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(7, 27, 34, 0.028) 1px, transparent 1px),
+    rgba(251, 253, 251, 0.76);
+  background-size: 18px 18px;
 }
 
-.method-step .genome-trace span {
-  min-height: 1.8rem;
+.method-signal::after {
+  position: absolute;
+  inset: auto 0 0;
+  height: 0.28rem;
+  background: var(--acid);
+  content: "";
+  opacity: 0.86;
+}
+
+.method-signal__label {
+  position: absolute;
+  top: 0.45rem;
+  left: 0.55rem;
+  z-index: 1;
+  color: var(--ink-soft);
+  font-size: 0.68rem;
+  font-weight: 950;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.method-signal svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--ink);
+}
+
+.method-signal__sheet,
+.method-signal__fold,
+.method-signal__plate,
+.method-signal__mini-plate,
+.method-signal__gel,
+.method-signal__figure {
+  fill: var(--paper);
+  stroke: currentColor;
+  stroke-width: 2.3;
+  vector-effect: non-scaling-stroke;
+}
+
+.method-signal__fold,
+.method-signal__figure {
+  fill: rgba(0, 122, 120, 0.08);
+}
+
+.method-signal__line,
+.method-signal__grid,
+.method-signal__band,
+.method-signal__phage {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.4;
+  vector-effect: non-scaling-stroke;
+}
+
+.method-signal__grid {
+  stroke-width: 1.9;
+}
+
+.method-signal__band {
+  stroke: var(--teal);
+  stroke-width: 3.1;
+}
+
+.method-signal__plate,
+.method-signal__mini-plate {
+  fill: var(--acid-soft);
+}
+
+.method-signal__plaque {
+  fill: var(--paper);
+  stroke: currentColor;
+  stroke-width: 1.7;
+  vector-effect: non-scaling-stroke;
+}
+
+.method-signal__dot {
+  fill: var(--acid);
+  stroke: currentColor;
+  stroke-width: 1.8;
+  vector-effect: non-scaling-stroke;
+}
+
+.method-signal__dot--teal {
+  fill: rgba(0, 122, 120, 0.74);
+}
+
+.method-signal__dot--amber {
+  fill: rgba(243, 106, 61, 0.78);
+}
+
+.method-signal__gene {
+  fill: var(--acid-soft);
+  stroke: currentColor;
+  stroke-linejoin: round;
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+
+.method-signal__gene--teal {
+  fill: rgba(0, 122, 120, 0.18);
+}
+
+.method-signal__gene--amber {
+  fill: rgba(243, 106, 61, 0.18);
+}
+
+.method-signal--plaques::after,
+.method-signal--genome::after {
+  background: var(--teal-bright);
+}
+
+.method-signal--image::after,
+.method-signal--poster::after {
+  background: var(--amber);
 }
 
 .people-directory--editorial {

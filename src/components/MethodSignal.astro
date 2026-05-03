@@ -1,0 +1,102 @@
+---
+interface Props {
+  label: string;
+  variant: 'sample' | 'plaques' | 'purify' | 'image' | 'host' | 'genome' | 'figures' | 'poster';
+}
+
+const { label, variant } = Astro.props;
+---
+
+<div class:list={['method-signal', `method-signal--${variant}`]} aria-hidden="true">
+  <span class="method-signal__label">{label}</span>
+  {
+    variant === 'sample' && (
+      <svg viewBox="0 0 160 86" focusable="false">
+        <path class="method-signal__sheet" d="M24 17h81l20 20v35H24z" />
+        <path class="method-signal__fold" d="M105 17v20h20" />
+        <path class="method-signal__line" d="M38 36h45M38 48h64M38 60h38" />
+        <circle class="method-signal__dot method-signal__dot--teal" cx="119" cy="58" r="8" />
+        <circle class="method-signal__dot method-signal__dot--amber" cx="136" cy="44" r="5" />
+        <circle class="method-signal__dot" cx="130" cy="67" r="4" />
+      </svg>
+    )
+  }
+  {
+    variant === 'plaques' && (
+      <svg viewBox="0 0 160 86" focusable="false">
+        <circle class="method-signal__plate" cx="82" cy="43" r="31" />
+        <circle class="method-signal__plaque" cx="65" cy="35" r="8" />
+        <circle class="method-signal__plaque" cx="93" cy="42" r="6" />
+        <circle class="method-signal__plaque" cx="78" cy="57" r="9" />
+        <circle class="method-signal__plaque" cx="101" cy="60" r="4" />
+        <path class="method-signal__line" d="M20 68h124" />
+      </svg>
+    )
+  }
+  {
+    variant === 'purify' && (
+      <svg viewBox="0 0 160 86" focusable="false">
+        <path class="method-signal__line" d="M24 44h112M78 32l14 12-14 12" />
+        <circle class="method-signal__mini-plate" cx="39" cy="43" r="17" />
+        <circle class="method-signal__mini-plate" cx="84" cy="43" r="17" />
+        <circle class="method-signal__mini-plate" cx="129" cy="43" r="17" />
+        <circle class="method-signal__plaque" cx="34" cy="38" r="4" />
+        <circle class="method-signal__plaque" cx="45" cy="49" r="5" />
+        <circle class="method-signal__plaque" cx="84" cy="43" r="6" />
+        <circle class="method-signal__plaque" cx="129" cy="43" r="4" />
+      </svg>
+    )
+  }
+  {
+    variant === 'image' && (
+      <svg viewBox="0 0 160 86" focusable="false">
+        <path class="method-signal__gel" d="M20 18h42v52H20z" />
+        <path class="method-signal__band" d="M30 30h7M45 38h7M30 52h7M45 60h7" />
+        <path class="method-signal__phage" d="M111 12l24 14v27l-24 17-24-17V26zM111 69v12M99 76l-15 8M123 76l15 8" />
+        <circle class="method-signal__dot method-signal__dot--teal" cx="111" cy="41" r="7" />
+      </svg>
+    )
+  }
+  {
+    variant === 'host' && (
+      <svg viewBox="0 0 160 86" focusable="false">
+        <path class="method-signal__grid" d="M24 22h112v42H24zM52 22v42M80 22v42M108 22v42M24 43h112" />
+        <circle class="method-signal__dot method-signal__dot--teal" cx="38" cy="32" r="4" />
+        <circle class="method-signal__dot method-signal__dot--amber" cx="66" cy="53" r="5" />
+        <circle class="method-signal__dot" cx="94" cy="32" r="4" />
+        <circle class="method-signal__dot method-signal__dot--teal" cx="122" cy="53" r="4" />
+      </svg>
+    )
+  }
+  {
+    variant === 'genome' && (
+      <svg viewBox="0 0 160 86" focusable="false">
+        <path class="method-signal__line" d="M20 44h120" />
+        <path class="method-signal__gene method-signal__gene--teal" d="M26 34h24l8 10-8 10H26z" />
+        <path class="method-signal__gene" d="M62 34h31l8 10-8 10H62z" />
+        <path class="method-signal__gene method-signal__gene--amber" d="M106 34h22l8 10-8 10h-22z" />
+      </svg>
+    )
+  }
+  {
+    variant === 'figures' && (
+      <svg viewBox="0 0 160 86" focusable="false">
+        <path class="method-signal__sheet" d="M24 18h112v50H24z" />
+        <path class="method-signal__line" d="M37 56h28M37 45h18M37 34h38" />
+        <circle class="method-signal__plate" cx="105" cy="43" r="18" />
+        <circle class="method-signal__plaque" cx="100" cy="38" r="4" />
+        <circle class="method-signal__plaque" cx="111" cy="48" r="5" />
+      </svg>
+    )
+  }
+  {
+    variant === 'poster' && (
+      <svg viewBox="0 0 160 86" focusable="false">
+        <path class="method-signal__sheet" d="M28 14h104v58H28z" />
+        <path class="method-signal__line" d="M42 28h48M42 39h28M42 61h76" />
+        <path class="method-signal__figure" d="M98 27h20v20H98z" />
+        <circle class="method-signal__dot method-signal__dot--amber" cx="108" cy="37" r="6" />
+      </svg>
+    )
+  }
+</div>

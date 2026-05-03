@@ -1,6 +1,6 @@
 ---
 import AtlasLabel from '@components/AtlasLabel.astro';
-import GenomeTrace from '@components/GenomeTrace.astro';
+import MethodSignal from '@components/MethodSignal.astro';
 import { programWeeks } from '@data/site';
 
 interface Props {
@@ -9,6 +9,16 @@ interface Props {
 
 const { limit } = Astro.props;
 const steps = typeof limit === 'number' ? programWeeks.slice(0, limit) : programWeeks;
+const signals = [
+  { label: 'Sample', variant: 'sample' },
+  { label: 'Plaques', variant: 'plaques' },
+  { label: 'Purify', variant: 'purify' },
+  { label: 'Image / DNA', variant: 'image' },
+  { label: 'Host range', variant: 'host' },
+  { label: 'Genome', variant: 'genome' },
+  { label: 'Figures', variant: 'figures' },
+  { label: 'Poster', variant: 'poster' },
+] as const;
 ---
 
 <div class="method-rail">
@@ -17,11 +27,11 @@ const steps = typeof limit === 'number' ? programWeeks.slice(0, limit) : program
   </div>
   <div class="method-rail__steps">
     {
-      steps.map((week) => (
+      steps.map((week, index) => (
         <article class="method-step">
           <AtlasLabel code={`W${week.week}`} title={week.title} />
           <p>{week.short}</p>
-          <GenomeTrace />
+          <MethodSignal {...signals[index % signals.length]} />
         </article>
       ))
     }
