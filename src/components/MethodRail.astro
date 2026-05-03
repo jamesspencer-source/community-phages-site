@@ -1,14 +1,14 @@
 ---
 import AtlasLabel from '@components/AtlasLabel.astro';
 import GenomeTrace from '@components/GenomeTrace.astro';
-import { journeyWeeks } from '@data/site';
+import { programWeeks } from '@data/site';
 
 interface Props {
   limit?: number;
 }
 
 const { limit } = Astro.props;
-const steps = typeof limit === 'number' ? journeyWeeks.slice(0, limit) : journeyWeeks;
+const steps = typeof limit === 'number' ? programWeeks.slice(0, limit) : programWeeks;
 ---
 
 <div class="method-rail">

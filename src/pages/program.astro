@@ -1,6 +1,5 @@
 ---
 import FactStrip from '@components/FactStrip.astro';
-import InsetFigure from '@components/InsetFigure.astro';
 import PageHero from '@components/PageHero.astro';
 import ProgramNotebookTimeline from '@components/ProgramNotebookTimeline.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
@@ -35,10 +34,10 @@ import { withBase } from '@utils/urls';
     <div class="section-heading">
       <h2>A typical lab day.</h2>
       <p>
-        Students are usually on campus Monday-Thursday from 9am-2pm. Most days include a short setup discussion, bench work or bioinformatics, notebook/data time, and a closeout conversation.
+        Students are usually on campus Monday-Thursday from 9am-2pm. Most days include setup, bench work or bioinformatics, notebook/data time, and discussion of the next experiment.
       </p>
     </div>
-    <div class="lab-rhythm">
+    <div class="lab-blocks">
       <article>
         <span>Morning</span>
         <h3>Set up the experiment</h3>
@@ -55,21 +54,12 @@ import { withBase } from '@utils/urls';
         <p>Record observations, calculations, gels, plaques, images, and next steps while the work is still fresh.</p>
       </article>
     </div>
-    <div class="inset-row inset-row--after">
-      <InsetFigure
-        src="/assets/hero-phage-world.png"
-        alt="Illustrated phage specimens and plaques"
-        label="Workflow"
-        caption="Sample, plaque, isolate, image, sequence, explain."
-        tone="graphic"
-      />
-    </div>
   </section>
 
   <section class="section">
     <div class="callout callout--wide">
       <div>
-        <h2>Methods stay tied to a phage isolate.</h2>
+        <h2>Student data become final posters.</h2>
         <p>
           Students collect samples, purify phages, document measurements, analyze DNA sequence when available, and use those data in final posters.
         </p>

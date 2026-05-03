@@ -1,6 +1,5 @@
 ---
 import DiscoveryShowcase from '@components/DiscoveryShowcase.astro';
-import InsetFigure from '@components/InsetFigure.astro';
 import PageHero from '@components/PageHero.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { withBase } from '@utils/urls';
@@ -31,50 +30,41 @@ import { withBase } from '@utils/urls';
 
   <section class="section section--band">
     <div class="section-heading">
-      <h2>From sample to poster claim.</h2>
+      <h2>From sample to poster.</h2>
       <p>
-        The scientific output is more than a name. Students learn how to turn observations into figures, claims, comparisons, and a presentation for a real audience.
+        Students collect samples, look for plaques, compare genomes when sequence data are available, and present the results.
       </p>
     </div>
-    <div class="journey journey--compact">
-      <article class="journey-card">
-        <div class="journey-card__marker"><span>1</span></div>
+    <div class="method-sequence method-sequence--compact">
+      <article class="method-sequence-card">
+        <div class="method-sequence-card__marker"><span>1</span></div>
         <h3>Environmental sample</h3>
         <p>Students collect soil or water and document where each sample came from.</p>
       </article>
-      <article class="journey-card">
-        <div class="journey-card__marker"><span>2</span></div>
+      <article class="method-sequence-card">
+        <div class="method-sequence-card__marker"><span>2</span></div>
         <h3>Plaque evidence</h3>
         <p>Clearings on bacterial lawns become the first visible hint of phage activity.</p>
       </article>
-      <article class="journey-card">
-        <div class="journey-card__marker"><span>3</span></div>
+      <article class="method-sequence-card">
+        <div class="method-sequence-card__marker"><span>3</span></div>
         <h3>Genome context</h3>
         <p>Sequencing and bioinformatics connect each phage to relatives, genes, and hypotheses.</p>
       </article>
-      <article class="journey-card">
-        <div class="journey-card__marker"><span>4</span></div>
+      <article class="method-sequence-card">
+        <div class="method-sequence-card__marker"><span>4</span></div>
         <h3>Poster story</h3>
         <p>Students assemble figures, practice explanations, and present what they learned.</p>
       </article>
-    </div>
-    <div class="inset-row inset-row--after">
-      <InsetFigure
-        src="/assets/hero-phage-world.png"
-        alt="Illustrated phage specimens and plaque world"
-        label="Discovery"
-        caption="Isolate, image, genome, poster."
-        tone="graphic"
-      />
     </div>
   </section>
 
   <section class="section">
     <div class="callout callout--wide">
       <div>
-        <h2>Phages, figures, posters.</h2>
+        <h2>Student posters.</h2>
         <p>
-          Phages, methods, figures, poster claims, and PhagesDB records.
+          Final posters include methods, figures, phage names, and comparisons to related phages.
         </p>
       </div>
       <a class="button button--primary" href={withBase('/program/')}>Program schedule</a>

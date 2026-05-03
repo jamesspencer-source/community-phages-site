@@ -35,14 +35,14 @@ export const audiencePaths = [
   {
     audience: 'Students',
     title: 'A paid 8-week summer research internship for RCC students.',
-    text: 'Students come to Harvard Medical School Monday through Thursday, learn the bench skills needed for phage work, and build a poster from their own samples and data.',
+    text: 'Students come to Harvard Medical School Monday through Thursday, learn the bench skills needed for phage experiments, and build a poster from their own samples and data.',
     href: '/students/',
     action: 'Student information',
   },
   {
     audience: 'Instructors',
-    title: 'A shared teaching framework for HMS mentors and staff.',
-    text: 'Instructors use shared protocols, schedule notes, glossary entries, and bioinformatics chapters across the summer.',
+    title: 'HMS instructors teach bench work, bioinformatics, and posters.',
+    text: 'Instructors help students learn methods, read experimental results, analyze genomes, and prepare final posters.',
     href: '/instructors/',
     action: 'Instructor information',
   },
@@ -69,7 +69,7 @@ export const instructorHighlights = [
     text: 'Graduate students, postdocs, staff, alumni, and faculty help teach bench work, troubleshoot experiments, guide bioinformatics sessions, and support poster preparation.',
   },
   {
-    title: 'Teaching materials',
+    title: 'Instructor materials',
     text: 'Protocols, bioinformatics chapters, Day 1 notes, lab notebook guidance, glossary, schedule context, and instructor references.',
   },
   {
@@ -78,7 +78,7 @@ export const instructorHighlights = [
   },
 ];
 
-export const journeyWeeks = [
+export const programWeeks = [
   {
     week: '1',
     title: 'Bootcamp and sampling',
@@ -157,12 +157,12 @@ export const resourceGroups = [
     items: [
       {
         title: '1. Project introduction',
-        text: 'The research question, phage discovery workflow, and how the summer fits together.',
+        text: 'Program question, host strains, and phage discovery overview.',
         href: 'https://phages.hms.harvard.edu/labprotocols/protocol_01-intro.html',
       },
       {
         title: '2. Pipetting exercises',
-        text: 'Practice with volumes, technique, and accuracy before quantitative phage work begins.',
+        text: 'Practice with volumes, technique, and accuracy before plaque and titer experiments begin.',
         href: 'https://phages.hms.harvard.edu/labprotocols/protocol_02_pipettingexercises.html',
       },
       {
@@ -275,7 +275,7 @@ export const resourceGroups = [
     ],
   },
   {
-    group: 'Program Materials',
+    group: 'Instructor Information',
     color: 'blue',
     items: [
       {
@@ -295,7 +295,7 @@ export const resourceGroups = [
       },
       {
         title: 'Program history',
-        text: 'Prior years, program evolution, equity mission, and acknowledgments.',
+        text: 'Prior years, mission, and acknowledgments.',
         href: '/history/',
       },
     ],
@@ -305,12 +305,12 @@ export const resourceGroups = [
 export const partners = [
   {
     name: 'Roxbury Community College',
-    role: 'Student recruitment, academic partnership, and community connection.',
+    role: 'RCC student recruitment and academic partnership.',
     href: 'https://www.rcc.mass.edu/',
   },
   {
     name: 'HMS Department of Microbiology',
-    role: 'Research home, mentoring community, lab environment, and scientific equipment.',
+    role: 'HMS labs, instructors, research equipment, and meeting space.',
     href: 'https://micro.hms.harvard.edu/',
   },
   {
@@ -324,7 +324,7 @@ export const partners = [
   },
   {
     name: 'HHMI',
-    role: 'Program support for accessible, discovery-based science education.',
+    role: 'Program support for summer research education.',
     href: 'https://www.hhmi.org/',
   },
   {
@@ -385,12 +385,12 @@ export const historyYears = [
   },
   {
     year: '2023',
-    title: 'Expanded instructor network',
+    title: 'More instructors',
     text: 'The teaching team broadened across HMS labs, adding more phage defense, microbial evolution, and microscopy expertise.',
   },
   {
     year: '2024',
-    title: 'Deeper program structure',
+    title: 'More public materials',
     text: 'Protocols, year-specific resources, instructor rotation, and student materials became more formalized.',
   },
   {

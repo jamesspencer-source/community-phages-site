@@ -4,7 +4,6 @@ import AtlasLabel from '@components/AtlasLabel.astro';
 import DiscoveryShowcase from '@components/DiscoveryShowcase.astro';
 import FactStrip from '@components/FactStrip.astro';
 import GenomeTrace from '@components/GenomeTrace.astro';
-import InsetFigure from '@components/InsetFigure.astro';
 import MethodRail from '@components/MethodRail.astro';
 import PageHero from '@components/PageHero.astro';
 import PartnerLogoGrid from '@components/PartnerLogoGrid.astro';
@@ -27,16 +26,16 @@ import { withBase } from '@utils/urls';
 
   <section class="section">
     <div class="section-heading">
-      <h2>Students and instructors work from the same protocols.</h2>
+      <h2>For RCC students and HMS instructors.</h2>
       <p>
-        Students collect samples, test bacterial lawns, purify isolates, image phages, work with DNA, analyze sequence data, and build a poster from their own results. Instructors use the same methods and vocabulary to keep support consistent from week to week.
+        Students learn lab methods by working on their own phage samples. Instructors teach the bench work, bioinformatics, troubleshooting, and poster preparation.
       </p>
     </div>
     <div class="story-spread">
       <div class="story-spread__main">
-        <h3>From an environmental sample to a poster another scientist can read.</h3>
+        <h3>Environmental samples, plaques, DNA, posters.</h3>
         <p>
-          The program starts with practical lab skills and sample collection, then moves through plaques, purification, titers, microscopy, DNA extraction, restriction digest, genome analysis, and final presentation.
+          The program starts with pipetting, sterile technique, and sample collection. Students then plate samples, purify phages, prepare lysates, work with DNA, analyze genomes, and present final posters.
         </p>
         <div class="story-spread__graphics" aria-hidden="true">
           <SpecimenPlate compact tone="paper" />
@@ -44,22 +43,6 @@ import { withBase } from '@utils/urls';
         </div>
       </div>
       <AudiencePaths />
-    </div>
-    <div class="inset-row inset-row--after">
-      <InsetFigure
-        src="/assets/hero-phage-world.png"
-        alt="Illustrated phage specimens and plaques"
-        label="Phage work"
-        caption="Samples, plaques, genomes, posters."
-        tone="graphic"
-      />
-      <InsetFigure
-        src="/assets/community-phages-archive-banner.png"
-        alt="Community Phages banner"
-        label="Community Phages"
-        caption="RCC students at HMS."
-        tone="graphic"
-      />
     </div>
   </section>
 
@@ -91,20 +74,10 @@ import { withBase } from '@utils/urls';
   </section>
 
   <section class="section">
-    <div class="callout callout--wide">
-      <div>
-        <h3>Protocols, notebooks, glossary, and bioinformatics.</h3>
-        <p>Lab and teaching materials for the summer.</p>
-      </div>
-      <a class="button button--primary" href={withBase('/resources/')}>Resources</a>
-    </div>
-  </section>
-
-  <section class="section">
     <div class="section-heading">
-      <h2>The program runs on teaching time.</h2>
+      <h2>Faculty, instructors, and mentors.</h2>
       <p>
-        Faculty sponsors, program leads, instructors, mentors, lab staff, RCC partners, and supporters create the structure students move through every week.
+        The team includes HMS faculty sponsors, program leads, graduate students, postdocs, staff, alumni, RCC partners, and program supporters.
       </p>
     </div>
     <div class="team-bridge">

@@ -720,24 +720,24 @@ main {
   content: " ->";
 }
 
-.journey {
+.method-sequence {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   border-top: 1px solid var(--rule-strong);
   border-bottom: 1px solid var(--rule-strong);
 }
 
-.journey-card {
+.method-sequence-card {
   position: relative;
   min-height: 18rem;
   padding: 1rem;
 }
 
-.journey-card + .journey-card {
+.method-sequence-card + .method-sequence-card {
   border-left: 1px solid var(--rule);
 }
 
-.journey-card::after {
+.method-sequence-card::after {
   position: absolute;
   right: 1rem;
   top: 1rem;
@@ -748,7 +748,7 @@ main {
   content: "";
 }
 
-.journey-card__marker {
+.method-sequence-card__marker {
   position: relative;
   z-index: 1;
   display: grid;
@@ -764,7 +764,7 @@ main {
   box-shadow: inset 0 -0.34rem 0 var(--acid);
 }
 
-.journey-card h3 {
+.method-sequence-card h3 {
   position: relative;
   z-index: 1;
   margin: 1.4rem 0 0;
@@ -773,7 +773,7 @@ main {
   line-height: 1;
 }
 
-.journey-card p {
+.method-sequence-card p {
   position: relative;
   z-index: 1;
   color: var(--muted);
@@ -1420,7 +1420,7 @@ main {
   content: "/";
 }
 
-.lab-rhythm {
+.lab-blocks {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   border-top: 2px solid var(--rule-strong);
@@ -1428,48 +1428,48 @@ main {
   background: var(--paper);
 }
 
-.section--band .lab-rhythm {
+.section--band .lab-blocks {
   border-color: var(--rule-strong);
   background: transparent;
 }
 
-.lab-rhythm article {
+.lab-blocks article {
   position: relative;
   min-height: 14rem;
   padding: 1.25rem;
 }
 
-.lab-rhythm article + article {
+.lab-blocks article + article {
   border-left: 1px solid var(--rule);
 }
 
-.section--band .lab-rhythm article + article {
+.section--band .lab-blocks article + article {
   border-left-color: var(--rule);
 }
 
-.lab-rhythm span {
+.lab-blocks span {
   color: var(--teal);
   font-size: 0.78rem;
   font-weight: 950;
   text-transform: uppercase;
 }
 
-.section--band .lab-rhythm span {
+.section--band .lab-blocks span {
   color: var(--teal);
 }
 
-.lab-rhythm h3 {
+.lab-blocks h3 {
   margin: 0.45rem 0 0;
   font-family: var(--font-serif);
   font-size: clamp(1.65rem, 2.6vw, 1.9rem);
   line-height: 1;
 }
 
-.lab-rhythm p {
+.lab-blocks p {
   color: var(--muted);
 }
 
-.section--band .lab-rhythm p {
+.section--band .lab-blocks p {
   color: var(--muted);
 }
 
@@ -2235,12 +2235,12 @@ main {
   }
 
   .fact-strip,
-  .journey,
+  .method-sequence,
   .resource-list,
   .partner-strip,
   .partner-logo-grid,
   .team-bridge,
-  .lab-rhythm,
+  .lab-blocks,
   .inset-row,
   .people-feature-grid,
   .people-leadership,
@@ -2390,12 +2390,12 @@ main {
   }
 
   .fact-strip,
-  .journey,
+  .method-sequence,
   .resource-list,
   .partner-strip,
   .partner-logo-grid,
   .team-bridge,
-  .lab-rhythm,
+  .lab-blocks,
   .inset-row,
   .people-feature-grid,
   .people-leadership,
@@ -2406,18 +2406,18 @@ main {
   }
 
   .fact-strip li + li,
-  .journey-card + .journey-card,
+  .method-sequence-card + .method-sequence-card,
   .partner-strip article + article,
   .partner-logo-card + .partner-logo-card,
   .team-bridge article + article,
   .teaching-map__items article + article,
-  .lab-rhythm article + article {
+  .lab-blocks article + article {
     border-left: 0;
     border-top: 1px solid var(--rule);
   }
 
-  .section--band .journey-card + .journey-card,
-  .section--band .lab-rhythm article + article {
+  .section--band .method-sequence-card + .method-sequence-card,
+  .section--band .lab-blocks article + article {
     border-top-color: var(--rule);
   }
 
