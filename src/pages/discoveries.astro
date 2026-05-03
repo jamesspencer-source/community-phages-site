@@ -12,10 +12,10 @@ import { withBase } from '@utils/urls';
 >
   <PageHero
     title="Phages from the summer."
-    text="Students move from environmental samples to phage names, images, genomes, figures, and public records. This page highlights published discovery material from the program."
+    text="Students move from environmental samples to phage names, images, genomes, figures, and records in PhagesDB."
     actions={[
-      { label: 'Open PhagesDB Harvard page', href: 'https://phagesdb.org/institutions/HARV/' },
-      { label: 'Browse resources', href: '/resources/', variant: 'secondary' },
+      { label: 'PhagesDB Harvard page', href: 'https://phagesdb.org/institutions/HARV/' },
+      { label: 'Resources', href: '/resources/', variant: 'secondary' },
     ]}
   />
 
@@ -23,7 +23,7 @@ import { withBase } from '@utils/urls';
     <div class="section-heading">
       <h2>Published phage records.</h2>
       <p>
-        Community Phages discoveries can be represented on PhagesDB once records are ready. The emphasis here is on isolates, methods, figures, and scientific context.
+        Student isolates, methods, figures, and scientific context.
       </p>
     </div>
     <DiscoveryShowcase />
@@ -62,8 +62,8 @@ import { withBase } from '@utils/urls';
       <InsetFigure
         src="/assets/hero-phage-world.png"
         alt="Illustrated phage specimens and plaque world"
-        label="Discovery record"
-        caption="The visual system stays specimen-based while the content points to public records and student-generated outputs."
+        label="Discovery"
+        caption="Isolate, image, genome, poster."
         tone="graphic"
       />
     </div>
@@ -72,12 +72,12 @@ import { withBase } from '@utils/urls';
   <section class="section">
     <div class="callout callout--wide">
       <div>
-        <h2>What gets published</h2>
+        <h2>Phages, figures, posters.</h2>
         <p>
-          Discovery pages should highlight phages, methods, figures, poster claims, and public records. Student records and internal planning materials stay in program systems.
+          Phages, methods, figures, poster claims, and PhagesDB records.
         </p>
       </div>
-      <a class="button button--primary" href={withBase('/program/')}>See the program schedule</a>
+      <a class="button button--primary" href={withBase('/program/')}>Program schedule</a>
     </div>
   </section>
 </BaseLayout>

@@ -6,13 +6,13 @@ const descriptions: Record<string, string> = {
   'Lab Protocols': 'Bench methods for samples, bacterial lawns, plaque work, lysates, DNA, and host range experiments.',
   Bioinformatics: 'Sequence assembly, BLAST, genome annotation, and the computational work behind poster figures.',
   'Student Resources': 'Day 1 setup, lab notebook habits, glossary, IT notes, videos, and daily reference material.',
-  'Instructor and Public Materials': 'Public-facing teaching references, schedule context, people, history, and partner material.',
+  'Program Materials': 'Instructor references, schedule context, people, history, and partner material.',
 };
 ---
 
 <div class="manual-layout">
   <aside class="manual-nav" aria-label="Resource categories">
-    <strong>Manual index</strong>
+    <strong>Resources</strong>
     {
       resourceGroups.map((group) => (
         <a href={`#${group.group.toLowerCase().replaceAll(' ', '-').replaceAll('&', 'and')}`}>
@@ -30,7 +30,7 @@ const descriptions: Record<string, string> = {
             <span>{String(groupIndex + 1).padStart(2, '0')}</span>
             <div>
               <h2>{group.group}</h2>
-              <p>{descriptions[group.group] ?? `${group.items.length} public resources from the program manual.`}</p>
+              <p>{descriptions[group.group] ?? `${group.items.length} program resources.`}</p>
             </div>
           </div>
           <ol class="manual-list">

@@ -16,7 +16,7 @@ const groups = typeof limitGroups === 'number' ? resourceGroups.slice(0, limitGr
       <section class={`resource-group resource-group--${group.color}`}>
         <div class="resource-group__heading">
           <h2>{group.group}</h2>
-          <span>{group.items.length} public items</span>
+          <span>{group.items.length} items</span>
         </div>
         <div class="resource-list">
           {group.items.map((item, index) => (
@@ -24,7 +24,7 @@ const groups = typeof limitGroups === 'number' ? resourceGroups.slice(0, limitGr
               <span>{String(index + 1).padStart(2, '0')}</span>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
-              <a href={withBase(item.href)}>{item.href.startsWith('http') ? 'Open resource' : 'View section'}</a>
+              <a href={withBase(item.href)}>{item.href.startsWith('http') ? 'Resource' : 'Section'}</a>
             </article>
           ))}
         </div>

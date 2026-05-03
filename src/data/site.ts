@@ -41,8 +41,8 @@ export const audiencePaths = [
   },
   {
     audience: 'Instructors',
-    title: 'A working teaching site for HMS mentors and staff.',
-    text: 'Instructors use shared protocols, schedule notes, glossary entries, and bioinformatics chapters so students hear consistent instructions across the summer.',
+    title: 'A shared teaching framework for HMS mentors and staff.',
+    text: 'Instructors use shared protocols, schedule notes, glossary entries, and bioinformatics chapters across the summer.',
     href: '/instructors/',
     action: 'Instructor information',
   },
@@ -69,8 +69,8 @@ export const instructorHighlights = [
     text: 'Graduate students, postdocs, staff, alumni, and faculty help teach bench work, troubleshoot experiments, guide bioinformatics sessions, and support poster preparation.',
   },
   {
-    title: 'What this site provides',
-    text: 'A public protocol manual, bioinformatics chapters, Day 1 notes, lab notebook guidance, glossary, schedule context, and instructor-facing references.',
+    title: 'Teaching materials',
+    text: 'Protocols, bioinformatics chapters, Day 1 notes, lab notebook guidance, glossary, schedule context, and instructor references.',
   },
   {
     title: 'What students need from mentors',
@@ -124,7 +124,7 @@ export const journeyWeeks = [
   {
     week: '8',
     title: 'Present and share',
-    short: 'Practice talks, final posters, public phage records where appropriate, reflection, and lab cleanup.',
+    short: 'Practice talks, final posters, PhagesDB records where appropriate, reflection, and lab cleanup.',
     tags: ['poster session', 'PhagesDB', 'reflection'],
   },
 ];
@@ -133,7 +133,7 @@ export const discoveries = [
   {
     name: 'Flashwig',
     year: '2025',
-    summary: 'A student-isolated phage from the 2025 cohort with a public PhagesDB record.',
+    summary: 'A student-isolated phage from the 2025 cohort with a PhagesDB record.',
     href: 'https://phagesdb.org/phages/Flashwig/',
   },
   {
@@ -144,8 +144,8 @@ export const discoveries = [
   },
   {
     name: 'Harvard phage collection',
-    year: 'Public record',
-    summary: 'Community Phages discoveries are represented on the public Harvard PhagesDB institution page.',
+    year: 'PhagesDB',
+    summary: 'Community Phages discoveries are represented on the Harvard PhagesDB institution page.',
     href: 'https://phagesdb.org/institutions/HARV/',
   },
 ];
@@ -275,22 +275,22 @@ export const resourceGroups = [
     ],
   },
   {
-    group: 'Instructor and Public Materials',
+    group: 'Program Materials',
     color: 'blue',
     items: [
       {
         title: 'Instructor info',
-        text: 'Public notes on instructor rotation and handoff practices, with program operations maintained separately.',
+        text: 'Instructor rotation, handoff practices, and teaching expectations.',
         href: 'https://phages.hms.harvard.edu/resources/07_instructorinfo.html',
       },
       {
         title: 'Program schedule',
-        text: 'The 8-week schedule, daily blocks, and core public dates.',
+        text: 'The 8-week schedule and daily blocks.',
         href: '/program/',
       },
       {
         title: 'People and mentors',
-        text: 'Current team, faculty sponsors, instructors, and mentors without private contact details.',
+        text: 'Current team, faculty sponsors, instructors, and mentors.',
         href: '/people/',
       },
       {
@@ -329,7 +329,7 @@ export const partners = [
   },
   {
     name: 'Field, microscopy, and community partners',
-    role: 'Sampling sites, microscopy access, career panels, and public science connections.',
+    role: 'Sampling sites, microscopy access, career panels, and science connections.',
   },
 ];
 
@@ -337,7 +337,7 @@ export const partnerLogos = [
   {
     code: 'HMS',
     name: 'Harvard Medical School Department of Microbiology',
-    role: 'HMS department home for the teaching lab, mentors, and scientific community.',
+    role: 'Teaching lab, mentors, and scientific community.',
     href: 'https://micro.hms.harvard.edu/',
     logo: '/assets/logos/hms-microbiology-logo.svg',
     alt: 'Harvard Medical School Department of Microbiology logo',
@@ -345,7 +345,7 @@ export const partnerLogos = [
   {
     code: 'RCC',
     name: 'Roxbury Community College',
-    role: 'Student partnership and recruitment home for the Community Phages cohort.',
+    role: 'Student partnership and recruitment.',
     href: 'https://www.rcc.mass.edu/',
     logo: '/assets/logos/rcc-logo.svg',
     alt: 'Roxbury Community College logo',
@@ -353,7 +353,7 @@ export const partnerLogos = [
   {
     code: 'HHMI',
     name: 'Howard Hughes Medical Institute',
-    role: 'Program support and science education context.',
+    role: 'Program support and science education.',
     href: 'https://www.hhmi.org/',
     logo: '/assets/logos/hhmi-logo.png',
     alt: 'Howard Hughes Medical Institute logo',
@@ -374,7 +374,7 @@ export const studentInfo = {
     'The program is built for Roxbury Community College students who can commit to the full 8-week schedule and are excited to learn in a research lab.',
   schedule: 'Typical hours are Monday-Thursday, 9am-2pm, for 8 weeks.',
   note:
-    'For current-year timing, student participation, or teaching questions, use the contact link and include Community Phages in the subject line.',
+    'Current-year timing, student participation, and teaching questions can go through the contact link.',
 };
 
 export const historyYears = [
@@ -391,12 +391,12 @@ export const historyYears = [
   {
     year: '2024',
     title: 'Deeper program structure',
-    text: 'Public protocols, year-specific resources, instructor rotation, and student-facing materials became more formalized.',
+    text: 'Protocols, year-specific resources, instructor rotation, and student materials became more formalized.',
   },
   {
     year: '2025',
     title: 'Public phage collection',
-    text: 'Student discoveries were prepared for public PhagesDB records, and poster/session practices became a stronger capstone.',
+    text: 'Student discoveries were prepared for PhagesDB records, and poster-session practices became a stronger capstone.',
   },
   {
     year: '2026',

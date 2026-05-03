@@ -14,9 +14,9 @@ const contactHref = mailto(contact.email, contact.subject);
 >
   <PageHero
     title="A shared teaching framework for the summer."
-    text="Community Phages is taught by a rotating group of faculty, graduate students, postdocs, staff, alumni, and partner instructors. This page explains what mentors teach, where the public materials live, and how students are supported at the bench."
+    text="Community Phages is taught by a rotating group of faculty, graduate students, postdocs, staff, alumni, and partner instructors. Mentors teach bench work, troubleshoot experiments, guide bioinformatics, and help students prepare posters."
     actions={[
-      { label: 'Open resources', href: '/resources/' },
+      { label: 'Resources', href: '/resources/' },
       { label: 'Get in touch', href: contactHref, variant: 'secondary' },
     ]}
   />
@@ -74,9 +74,9 @@ const contactHref = mailto(contact.email, contact.subject);
 
   <section class="section">
     <div class="section-heading">
-      <h2>Public instructor materials.</h2>
+      <h2>Instructor materials.</h2>
       <p>
-        The old program site functioned as a manual. This rebuild keeps that practical purpose: protocols, bioinformatics chapters, Day 1 notes, everyday checklist, lab notebook instructions, glossary, and instructor references are still easy to find.
+        Protocols, bioinformatics chapters, Day 1 notes, the everyday checklist, notebook instructions, glossary, and instructor references.
       </p>
     </div>
     <div class="audience-grid">
@@ -87,7 +87,7 @@ const contactHref = mailto(contact.email, contact.subject);
           <h3>Lab protocols</h3>
           <p>Project introduction, pipetting, basic technique, sampling, direct plating, enrichments, purification, lysates, DNA extraction, restriction digest, killing experiments, and host range.</p>
         </div>
-        <a href={withBase('/resources/')}>Open manual</a>
+        <a href={withBase('/resources/')}>Protocols</a>
       </article>
       <article class="audience-card">
         <span>02</span>
@@ -96,7 +96,7 @@ const contactHref = mailto(contact.email, contact.subject);
           <h3>Bioinformatics</h3>
           <p>Introductory sequence work, whole phage genome assembly, annotation, BLAST context, and genome figures.</p>
         </div>
-        <a href={withBase('/resources/')}>Open chapters</a>
+        <a href={withBase('/resources/')}>Bioinformatics</a>
       </article>
       <article class="audience-card">
         <span>03</span>
@@ -111,9 +111,9 @@ const contactHref = mailto(contact.email, contact.subject);
     <div class="inset-row inset-row--after">
       <InsetFigure
         src="/assets/community-phages-archive-banner.png"
-        alt="Community Phages banner artwork from the prior public manual"
-        label="Manual lineage"
-        caption="The new site keeps the old site’s protocol-manual function, but presents it with clearer public navigation and instructor context."
+        alt="Community Phages banner"
+        label="Community Phages"
+        caption="Protocols, bioinformatics, notebooks, posters."
         tone="graphic"
       />
     </div>
@@ -123,7 +123,7 @@ const contactHref = mailto(contact.email, contact.subject);
     <div class="callout callout--wide">
       <div>
         <h2>Questions about teaching?</h2>
-        <p>Use the contact link for instructor participation, schedule questions, or updates to public materials.</p>
+        <p>Instructor participation, schedule questions, or updates to program materials.</p>
       </div>
       <a class="button button--primary" href={contactHref}>Get in touch</a>
     </div>
