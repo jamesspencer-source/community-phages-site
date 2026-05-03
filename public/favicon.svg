@@ -1,12 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <defs>
-    <linearGradient id="g" x1="8" x2="56" y1="6" y2="58" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#ff5a5f"/>
-      <stop offset=".5" stop-color="#ffd447"/>
-      <stop offset="1" stop-color="#00a6a6"/>
-    </linearGradient>
-  </defs>
-  <path d="M32 4 53 16v24L32 60 11 40V16L32 4Z" fill="url(#g)"/>
-  <path d="M32 11 46 19v17L32 49 18 36V19l14-8Z" fill="#111827"/>
-  <circle cx="32" cy="28" r="8" fill="#f7fbff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Cartoon bacteriophage icon">
+  <rect width="64" height="64" rx="14" fill="#f6faf8"/>
+  <path d="M7 49c11-4 21-4 32 0 7 3 13 3 18-1" fill="none" stroke="#d8e6e0" stroke-width="3" stroke-linecap="round"/>
+  <path d="M32 7 47 16v17L32 43 17 33V16L32 7Z" fill="#43c6bb" stroke="#15231f" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M24 18h16M22 27h20" stroke="#d9fff7" stroke-width="3" stroke-linecap="round" opacity=".85"/>
+  <circle cx="27" cy="27" r="2.2" fill="#15231f"/>
+  <circle cx="37" cy="27" r="2.2" fill="#15231f"/>
+  <path d="M29 33c2 1.8 4 1.8 6 0" fill="none" stroke="#15231f" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M32 43v4" stroke="#15231f" stroke-width="3" stroke-linecap="round"/>
+  <path d="M25 47h14" stroke="#15231f" stroke-width="3" stroke-linecap="round"/>
+  <path d="M32 47v12" stroke="#15231f" stroke-width="4" stroke-linecap="round"/>
+  <path d="M32 52h-7M32 52h7M32 59l-9-6M32 59l9-6" stroke="#15231f" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="32" cy="48" r="3" fill="#ffc84a" stroke="#15231f" stroke-width="2"/>
 </svg>
