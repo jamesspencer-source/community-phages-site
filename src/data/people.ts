@@ -210,6 +210,7 @@ export const people: Person[] = [
     featureLevel: 'roster',
     order: 9,
     image: '/assets/people/jess-oros.jpg',
+    imagePosition: 'center 38%',
     initials: 'JO',
     current: true,
     years: ['2026'],

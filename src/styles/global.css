@@ -143,33 +143,69 @@ dd {
 }
 
 .phage-mark {
-  width: 2.55rem;
-  height: 2.55rem;
+  width: 2.42rem;
+  height: 2.96rem;
   flex: 0 0 auto;
   color: currentColor;
 }
 
+.phage-mark * {
+  vector-effect: non-scaling-stroke;
+}
+
 .phage-mark__head {
+  fill: var(--field);
+  stroke: currentColor;
+  stroke-linejoin: round;
+  stroke-width: 2.7;
+}
+
+.phage-mark__facet {
   fill: var(--acid);
   stroke: currentColor;
-  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-width: 1.3;
 }
 
 .phage-mark__core {
-  fill: var(--field);
-  stroke: currentColor;
-  stroke-width: 1.6;
-}
-
-.phage-mark__spot {
   fill: var(--paper);
+  stroke: currentColor;
+  stroke-linejoin: round;
+  stroke-width: 1.1;
 }
 
-.phage-mark__tail {
+.phage-mark__eye {
+  fill: currentColor;
+}
+
+.phage-mark__smile,
+.phage-mark__neck,
+.phage-mark__tail,
+.phage-mark__tail-ring,
+.phage-mark__base,
+.phage-mark__fiber {
   fill: none;
   stroke: currentColor;
   stroke-linecap: round;
-  stroke-width: 4;
+  stroke-linejoin: round;
+}
+
+.phage-mark__tail {
+  stroke-width: 3.4;
+}
+
+.phage-mark__neck,
+.phage-mark__base {
+  stroke-width: 3;
+}
+
+.phage-mark__tail-ring,
+.phage-mark__fiber {
+  stroke-width: 2.4;
+}
+
+.phage-mark__smile {
+  stroke-width: 1.8;
 }
 
 .site-nav {
@@ -1462,7 +1498,7 @@ main {
 }
 
 .site-footer .phage-mark {
-  color: var(--field);
+  color: var(--ink);
 }
 
 .footer-links {
