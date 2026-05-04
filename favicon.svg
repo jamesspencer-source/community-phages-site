@@ -1,14 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Cartoon bacteriophage icon">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Community Phages icon">
   <rect width="64" height="64" rx="14" fill="#f6faf8"/>
-  <path d="M7 49c11-4 21-4 32 0 7 3 13 3 18-1" fill="none" stroke="#d8e6e0" stroke-width="3" stroke-linecap="round"/>
-  <path d="M32 7 47 16v17L32 43 17 33V16L32 7Z" fill="#43c6bb" stroke="#15231f" stroke-width="3" stroke-linejoin="round"/>
-  <path d="M24 18h16M22 27h20" stroke="#d9fff7" stroke-width="3" stroke-linecap="round" opacity=".85"/>
-  <circle cx="27" cy="27" r="2.2" fill="#15231f"/>
-  <circle cx="37" cy="27" r="2.2" fill="#15231f"/>
-  <path d="M29 33c2 1.8 4 1.8 6 0" fill="none" stroke="#15231f" stroke-width="2.2" stroke-linecap="round"/>
-  <path d="M32 43v4" stroke="#15231f" stroke-width="3" stroke-linecap="round"/>
-  <path d="M25 47h14" stroke="#15231f" stroke-width="3" stroke-linecap="round"/>
-  <path d="M32 47v12" stroke="#15231f" stroke-width="4" stroke-linecap="round"/>
-  <path d="M32 52h-7M32 52h7M32 59l-9-6M32 59l9-6" stroke="#15231f" stroke-width="3" stroke-linecap="round"/>
-  <circle cx="32" cy="48" r="3" fill="#ffc84a" stroke="#15231f" stroke-width="2"/>
+  <path d="M9 48c9-4 18-4 28 0 7 3 13 3 18-1" fill="none" stroke="#dcebe5" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M32 6 48 16v18L32 45 16 34V16L32 6Z" fill="#43c6bb" stroke="#15231f" stroke-width="3.2" stroke-linejoin="round"/>
+  <path d="M32 14 41 20v11l-9 7-9-7V20l9-6Z" fill="#d9ff4f" stroke="#15231f" stroke-width="1.8" stroke-linejoin="round"/>
+  <path d="M25 19h14" stroke="#fbfdfb" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+  <circle cx="27" cy="29" r="2.2" fill="#15231f"/>
+  <circle cx="37" cy="29" r="2.2" fill="#15231f"/>
+  <path d="M29 35c2 1.6 4 1.6 6 0" fill="none" stroke="#15231f" stroke-width="2.1" stroke-linecap="round"/>
+  <path d="M32 45v5M25 50h14M32 50v10" fill="none" stroke="#15231f" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M25 56h14M32 60l-11-6M32 60l11-6" fill="none" stroke="#15231f" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
