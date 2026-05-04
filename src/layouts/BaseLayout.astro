@@ -1,6 +1,6 @@
 ---
 import PhageMark from '@components/PhageMark.astro';
-import { contact, navItems, siteMeta, supportingLinks } from '@data/site';
+import { aboutNavItems, contact, navItems, siteMeta, supportingLinks } from '@data/site';
 import { mailto, withBase, withoutBase } from '@utils/urls';
 import '@styles/global.css';
 
@@ -13,6 +13,9 @@ const { title, description = siteMeta.description } = Astro.props;
 const pageTitle = title ? `${title} | ${siteMeta.title}` : siteMeta.title;
 const currentPath = Astro.url.pathname;
 const activePath = withoutBase(currentPath);
+const isActivePath = (href: string) => activePath.startsWith(href);
+const isAboutActive = aboutNavItems.some((item) => isActivePath(item.href));
+const footerLinks = [...aboutNavItems, ...navItems];
 ---
 
 <!doctype html>
@@ -36,12 +39,30 @@ const activePath = withoutBase(currentPath);
         <span>Community Phages</span>
       </a>
       <nav class="site-nav" aria-label="Main navigation">
+        <details class:list={['nav-dropdown', { 'is-active': isAboutActive }]}>
+          <summary class="nav-dropdown__summary" aria-current={isAboutActive ? 'page' : undefined}>
+            About
+          </summary>
+          <div class="nav-dropdown__menu">
+            {
+              aboutNavItems.map((item) => (
+                <a
+                  href={withBase(item.href)}
+                  class:list={['nav-dropdown__link', { 'is-active': isActivePath(item.href) }]}
+                  aria-current={isActivePath(item.href) ? 'page' : undefined}
+                >
+                  {item.label}
+                </a>
+              ))
+            }
+          </div>
+        </details>
         {
           navItems.map((item) => (
             <a
               href={withBase(item.href)}
-              class:list={['nav-link', { 'is-active': activePath.startsWith(item.href) }]}
-              aria-current={activePath.startsWith(item.href) ? 'page' : undefined}
+              class:list={['nav-link', { 'is-active': isActivePath(item.href) }]}
+              aria-current={isActivePath(item.href) ? 'page' : undefined}
             >
               {item.label}
             </a>
@@ -63,7 +84,7 @@ const activePath = withoutBase(currentPath);
       </div>
       <div class="footer-links" aria-label="Footer navigation">
         {
-          navItems.map((item) => (
+          footerLinks.map((item) => (
             <a href={withBase(item.href)}>{item.label}</a>
           ))
         }

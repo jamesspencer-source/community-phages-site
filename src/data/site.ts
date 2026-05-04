@@ -11,12 +11,15 @@ export const contact = {
 };
 
 export const navItems = [
-  { label: 'Program', href: '/program/' },
-  { label: 'Students', href: '/students/' },
-  { label: 'Instructors', href: '/instructors/' },
   { label: 'People', href: '/people/' },
   { label: 'Resources', href: '/resources/' },
   { label: 'Discoveries', href: '/discoveries/' },
+];
+
+export const aboutNavItems = [
+  { label: 'About the program', href: '/program/' },
+  { label: 'For students', href: '/students/' },
+  { label: 'For instructors', href: '/instructors/' },
 ];
 
 export const supportingLinks = [
