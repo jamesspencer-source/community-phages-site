@@ -2034,6 +2034,12 @@ main {
   color: var(--muted);
 }
 
+.year-roster__bio {
+  margin-top: 0.45rem;
+  font-size: 0.94rem;
+  line-height: 1.48;
+}
+
 .year-index a {
   color: var(--teal);
   font-weight: 900;

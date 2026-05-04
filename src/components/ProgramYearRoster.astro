@@ -23,6 +23,7 @@ const peopleByName = new Map(people.map((person) => [person.name, person]));
           <div>
             <h3>{name}</h3>
             {person && <p>{person.role} · {person.affiliation}</p>}
+            {person?.bio && <p class="year-roster__bio">{person.bio}</p>}
           </div>
         </article>
       );
