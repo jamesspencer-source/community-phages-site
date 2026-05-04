@@ -322,7 +322,7 @@ export const partners = [
   },
   {
     name: 'New England Biolabs',
-    role: 'Program support, reagents, field trip opportunities, and sequencing-related resources.',
+    role: 'Program sponsor and funding support, with reagents, field trip opportunities, and sequencing-related resources.',
     href: 'https://www.neb.com/',
   },
   {
@@ -364,7 +364,7 @@ export const partnerLogos = [
   {
     code: 'NEB',
     name: 'New England Biolabs',
-    role: 'Program support, reagents, and sequencing-related resources.',
+    role: 'Program sponsor and funding support, with reagents and sequencing-related resources.',
     href: 'https://www.neb.com/',
     logo: '/assets/neb-logo.png',
     alt: 'New England Biolabs logo',
