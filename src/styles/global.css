@@ -1187,6 +1187,60 @@ main {
   max-height: 5.15rem;
 }
 
+.institution-block--home-feature {
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.institution-block--home-feature .institution-block__intro {
+  display: grid;
+  grid-template-columns: minmax(14rem, 0.36fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: end;
+  border-right: 0;
+  border-bottom: 1px solid var(--rule);
+  padding: 1.25rem 0 1.35rem;
+}
+
+.institution-block--home-feature .institution-block__intro h2 {
+  max-width: none;
+  font-size: clamp(2.15rem, 3.6vw, 2.95rem);
+}
+
+.institution-block--home-feature .institution-block__intro p {
+  max-width: 44rem;
+  margin: 0;
+  font-size: 1.08rem;
+}
+
+.institution-block--home-feature .partner-logo-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.institution-block--home-feature .partner-logo-card {
+  grid-template-rows: auto minmax(7.1rem, 1fr) auto;
+  gap: 1rem;
+  min-height: 14.25rem;
+  padding: 1.25rem 1.35rem 1.35rem;
+}
+
+.institution-block--home-feature .partner-logo-card:nth-child(n + 3) {
+  border-top: 1px solid var(--rule);
+}
+
+.institution-block--home-feature .partner-logo-card:nth-child(2n + 1) {
+  border-left: 0;
+}
+
+.institution-block--home-feature .partner-logo-card__media {
+  justify-items: center;
+}
+
+.institution-block--home-feature .partner-logo-card__media img {
+  max-width: min(100%, 24rem);
+  max-height: 7.2rem;
+}
+
 .partner-logo-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -3387,6 +3441,12 @@ main {
     padding-right: 0;
   }
 
+  .institution-block--home-feature .institution-block__intro {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+    align-items: start;
+  }
+
   .notebook-timeline {
     grid-template-columns: 1fr;
   }
@@ -3515,6 +3575,14 @@ main {
   .people-list--featured,
   .protocol-ledger__counts {
     grid-template-columns: 1fr;
+  }
+
+  .institution-block--home-feature .partner-logo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .institution-block--home-feature .partner-logo-card {
+    min-height: 12.5rem;
   }
 
   .fact-strip li + li,
