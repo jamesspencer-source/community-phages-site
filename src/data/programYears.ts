@@ -35,7 +35,6 @@ export const programYearRosters: ProgramYearRoster[] = [
       'James Spencer',
       'Sam Hobbs',
       'Alex Johnson',
-      'Indra González Ojeda',
       'Baylee Russell',
       "Brendan O'Hara",
       'Kemardo Henry',
