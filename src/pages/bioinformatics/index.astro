@@ -1,0 +1,23 @@
+---
+import ManualCategory from '@components/ManualCategory.astro';
+import PageHero from '@components/PageHero.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Bioinformatics"
+  description="Community Phages bioinformatics chapters for command line work, genome assembly, BLAST, and annotation."
+>
+  <PageHero
+    title="Bioinformatics."
+    text="Sequence analysis material from the Community Phages manual."
+    actions={[
+      { label: 'Lab protocols', href: '/labprotocols/' },
+      { label: 'Resources', href: '/resources/', variant: 'secondary' },
+    ]}
+  />
+  <ManualCategory
+    section="bioinformatics"
+    text="These chapters cover the computational work students use to interpret phage genomes."
+  />
+</BaseLayout>

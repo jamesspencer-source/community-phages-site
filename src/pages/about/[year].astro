@@ -1,0 +1,39 @@
+---
+import PageHero from '@components/PageHero.astro';
+import ProgramYearRoster from '@components/ProgramYearRoster.astro';
+import { programYearRosters, type ProgramYearRoster as ProgramYearRosterData } from '@data/programYears';
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+export function getStaticPaths() {
+  return programYearRosters.map((roster) => ({ params: { year: roster.slug }, props: { roster } }));
+}
+
+interface Props {
+  roster: ProgramYearRosterData;
+}
+
+const { roster } = Astro.props;
+---
+
+<BaseLayout
+  title={roster.title}
+  description={`${roster.title} roster for the Community Phages program.`}
+>
+  <PageHero
+    title={roster.title}
+    text={roster.summary}
+    actions={[
+      { label: 'All people', href: '/people/' },
+      { label: 'History', href: '/history/', variant: 'secondary' },
+    ]}
+  />
+  <section class="section">
+    <div class="section-heading">
+      <h2>{roster.year} roster.</h2>
+      <p>
+        Faculty, program staff, instructors, and mentors listed for this program year.
+      </p>
+    </div>
+    <ProgramYearRoster roster={roster} />
+  </section>
+</BaseLayout>

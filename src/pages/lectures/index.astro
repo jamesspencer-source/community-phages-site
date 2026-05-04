@@ -1,0 +1,23 @@
+---
+import ManualCategory from '@components/ManualCategory.astro';
+import PageHero from '@components/PageHero.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Resources"
+  description="Community Phages student and instructor resources."
+>
+  <PageHero
+    title="Resources."
+    text="Student and instructor resources from the Community Phages manual."
+    actions={[
+      { label: 'Resource hub', href: '/resources/' },
+      { label: 'Lab protocols', href: '/labprotocols/', variant: 'secondary' },
+    ]}
+  />
+  <ManualCategory
+    section="resources"
+    text="Day 1 material, videos, IT instructions, lab notebook guidance, glossary, and instructor information."
+  />
+</BaseLayout>

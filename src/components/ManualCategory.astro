@@ -1,0 +1,35 @@
+---
+import { manualPagesBySection, manualSectionLabels, type ManualPageData } from '@data/manual';
+import { withBase } from '@utils/urls';
+
+interface Props {
+  section: ManualPageData['section'];
+  title?: string;
+  text?: string;
+}
+
+const { section, title = manualSectionLabels[section], text } = Astro.props;
+const pages = manualPagesBySection(section);
+---
+
+<section class="section">
+  <div class="manual-category">
+    <div class="manual-category__intro">
+      <span>{pages.length} pages</span>
+      <h2>{title}</h2>
+      {text && <p>{text}</p>}
+    </div>
+    <ol class="manual-list manual-list--large">
+      {
+        pages.map((page) => (
+          <li>
+            <a href={withBase(page.path)}>
+              <strong>{String(page.order).padStart(2, '0')} · {page.title}</strong>
+              <span>{page.summary}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>

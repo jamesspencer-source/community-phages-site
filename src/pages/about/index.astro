@@ -1,0 +1,50 @@
+---
+import PageHero from '@components/PageHero.astro';
+import ProgramYearRoster from '@components/ProgramYearRoster.astro';
+import { programYearRosters } from '@data/programYears';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { withBase } from '@utils/urls';
+---
+
+<BaseLayout
+  title="About the Program"
+  description="Community Phages program background and prior-year rosters."
+>
+  <PageHero
+    title="About Community Phages."
+    text="Community Phages is an 8-week summer research program for RCC students at Harvard Medical School."
+    actions={[
+      { label: 'People', href: '/people/' },
+      { label: 'History', href: '/history/', variant: 'secondary' },
+    ]}
+  />
+  <section class="section">
+    <div class="section-heading">
+      <h2>Prior program years.</h2>
+      <p>
+        Public rosters for prior instructor teams.
+      </p>
+    </div>
+    <div class="year-index">
+      {
+        programYearRosters.map((roster) => (
+          <article>
+            <span>{roster.year}</span>
+            <h3>{roster.title}</h3>
+            <p>{roster.summary}</p>
+            <a href={withBase(`/about/${roster.slug}`)}>View roster</a>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+  <section class="section section--band">
+    <div class="section-heading">
+      <h2>Program archive.</h2>
+      <p>
+        Current faculty, program leads, instructors, mentors, and alumni are listed on the People page.
+      </p>
+    </div>
+    <ProgramYearRoster roster={programYearRosters[programYearRosters.length - 1]} />
+  </section>
+</BaseLayout>

@@ -1,0 +1,24 @@
+---
+import ManualPage from '@components/ManualPage.astro';
+import { manualPages, type ManualPageData } from '@data/manual';
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+export function getStaticPaths() {
+  return manualPages
+    .filter((page) => page.section === 'resources' && !page.slug.endsWith('.html'))
+    .map((page) => ({
+      params: { slug: page.slug },
+      props: { page },
+    }));
+}
+
+interface Props {
+  page: ManualPageData;
+}
+
+const { page } = Astro.props;
+---
+
+<BaseLayout title={page.title} description={page.summary}>
+  <ManualPage page={page} />
+</BaseLayout>

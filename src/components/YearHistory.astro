@@ -1,17 +1,23 @@
 ---
 import { historyYears } from '@data/site';
+import { programYearRosters } from '@data/programYears';
+import { withBase } from '@utils/urls';
 ---
 
 <div class="history-river">
   {
-    historyYears.map((year) => (
-      <article>
-        <span>{year.year}</span>
-        <div>
-          <h2>{year.title}</h2>
-          <p>{year.text}</p>
-        </div>
-      </article>
-    ))
+    historyYears.map((year) => {
+      const roster = programYearRosters.find((item) => item.year === year.year);
+      return (
+        <article>
+          <span>{year.year}</span>
+          <div>
+            <h2>{year.title}</h2>
+            <p>{year.text}</p>
+            {roster && <a href={withBase(`/about/${roster.slug}`)}>View {year.year} roster</a>}
+          </div>
+        </article>
+      );
+    })
   }
 </div>

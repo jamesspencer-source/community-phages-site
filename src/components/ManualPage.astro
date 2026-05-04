@@ -1,0 +1,38 @@
+---
+import { manualPagesBySection, manualSectionLabels, type ManualPageData } from '@data/manual';
+import { withBase } from '@utils/urls';
+
+interface Props {
+  page: ManualPageData;
+}
+
+const { page } = Astro.props;
+const sectionPages = manualPagesBySection(page.section);
+const base = withBase('/');
+const basePrefix = base.endsWith('/') ? base : `${base}/`;
+const localizedHtml = page.bodyHtml.replace(/\b(href|src)="\/(?!\/)/g, `$1="${basePrefix}`);
+---
+
+<section class="section manual-page-section">
+  <div class="manual-page-layout">
+    <aside class="manual-page-nav" aria-label={`${manualSectionLabels[page.section]} pages`}>
+      <a href={withBase(`/${page.section === 'resources' ? 'resources' : page.section}/`)}>All {manualSectionLabels[page.section]}</a>
+      {
+        sectionPages.map((item) => (
+          <a href={withBase(item.path)} class:list={{ 'is-active': item.path === page.path }}>
+            <span>{String(item.order).padStart(2, '0')}</span>
+            {item.title}
+          </a>
+        ))
+      }
+    </aside>
+    <article class="manual-article">
+      <header class="manual-article__head">
+        <span>{page.group} / {String(page.order).padStart(2, '0')}</span>
+        <h1>{page.title}</h1>
+        <p>{page.summary}</p>
+      </header>
+      <div class="manual-content" set:html={localizedHtml} />
+    </article>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+---
+import ManualCategory from '@components/ManualCategory.astro';
+import PageHero from '@components/PageHero.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Lab Protocols"
+  description="Community Phages lab protocols for sampling, plating, purification, lysates, DNA work, and host range experiments."
+>
+  <PageHero
+    title="Lab protocols."
+    text="Bench protocols from the Community Phages manual."
+    actions={[
+      { label: 'Resources', href: '/resources/' },
+      { label: 'Bioinformatics', href: '/bioinformatics/', variant: 'secondary' },
+    ]}
+  />
+  <ManualCategory
+    section="labprotocols"
+    text="A sequence of protocols for sampling, plating, purification, lysates, DNA work, host range, and phage characterization."
+  />
+</BaseLayout>

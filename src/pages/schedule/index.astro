@@ -1,0 +1,30 @@
+---
+import FactStrip from '@components/FactStrip.astro';
+import PageHero from '@components/PageHero.astro';
+import ProgramNotebookTimeline from '@components/ProgramNotebookTimeline.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Schedule"
+  description="Community Phages 8-week program schedule from lab bootcamp through final posters."
+>
+  <PageHero
+    title="Program schedule."
+    text="An 8-week outline from lab bootcamp and environmental sampling through genome analysis and final posters."
+    actions={[
+      { label: 'Program', href: '/program/' },
+      { label: 'Lab protocols', href: '/labprotocols/', variant: 'secondary' },
+    ]}
+  />
+  <FactStrip />
+  <section class="section section--band">
+    <div class="section-heading">
+      <h2>Eight-week outline.</h2>
+      <p>
+        Safety and pipetting, environmental sampling, plaque work, purification, lysates, microscopy, DNA, genome analysis, and final posters.
+      </p>
+    </div>
+    <ProgramNotebookTimeline />
+  </section>
+</BaseLayout>
