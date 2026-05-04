@@ -31,7 +31,7 @@ const signals = [
         <article class="method-step">
           <AtlasLabel code={`W${week.week}`} title={week.title} />
           <p>{week.short}</p>
-          <MethodSignal {...signals[index % signals.length]} />
+          <MethodSignal {...signals[index % signals.length]} variantIndex={index} />
         </article>
       ))
     }

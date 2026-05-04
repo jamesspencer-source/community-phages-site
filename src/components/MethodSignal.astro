@@ -2,12 +2,14 @@
 interface Props {
   label: string;
   variant: 'sample' | 'plaques' | 'purify' | 'image' | 'host' | 'genome' | 'figures' | 'poster';
+  variantIndex?: number;
 }
 
-const { label, variant } = Astro.props;
+const { label, variant, variantIndex = 0 } = Astro.props;
+const normalizedVariant = ((((Number(variantIndex) || 0) % 5) + 5) % 5) + 1;
 ---
 
-<div class:list={['method-signal', `method-signal--${variant}`]} aria-hidden="true">
+<div class:list={['method-signal', `method-signal--${variant}`, `method-signal--i${normalizedVariant}`]} aria-hidden="true">
   <span class="method-signal__label">{label}</span>
   {
     variant === 'sample' && (
@@ -25,10 +27,14 @@ const { label, variant } = Astro.props;
     variant === 'plaques' && (
       <svg viewBox="0 0 160 86" focusable="false">
         <circle class="method-signal__plate" cx="82" cy="43" r="31" />
+        <circle class="method-signal__plaque method-signal__plaque--wash" cx="61" cy="36" r="12" />
+        <circle class="method-signal__plaque method-signal__plaque--wash" cx="95" cy="43" r="9" />
         <circle class="method-signal__plaque" cx="65" cy="35" r="8" />
         <circle class="method-signal__plaque" cx="93" cy="42" r="6" />
         <circle class="method-signal__plaque" cx="78" cy="57" r="9" />
         <circle class="method-signal__plaque" cx="101" cy="60" r="4" />
+        <circle class="method-signal__dot method-signal__dot--teal" cx="56" cy="54" r="2" />
+        <circle class="method-signal__dot method-signal__dot--amber" cx="107" cy="30" r="2.5" />
         <path class="method-signal__line" d="M20 68h124" />
       </svg>
     )
@@ -40,6 +46,7 @@ const { label, variant } = Astro.props;
         <circle class="method-signal__mini-plate" cx="39" cy="43" r="17" />
         <circle class="method-signal__mini-plate" cx="84" cy="43" r="17" />
         <circle class="method-signal__mini-plate" cx="129" cy="43" r="17" />
+        <circle class="method-signal__plaque method-signal__plaque--wash" cx="39" cy="43" r="8" />
         <circle class="method-signal__plaque" cx="34" cy="38" r="4" />
         <circle class="method-signal__plaque" cx="45" cy="49" r="5" />
         <circle class="method-signal__plaque" cx="84" cy="43" r="6" />
@@ -52,7 +59,7 @@ const { label, variant } = Astro.props;
       <svg viewBox="0 0 160 86" focusable="false">
         <path class="method-signal__gel" d="M20 18h42v52H20z" />
         <path class="method-signal__band" d="M30 30h7M45 38h7M30 52h7M45 60h7" />
-        <path class="method-signal__phage" d="M111 12l24 14v27l-24 17-24-17V26zM111 69v12M99 76l-15 8M123 76l15 8" />
+        <path class="method-signal__phage" d="M111 10l24 14v27l-24 17-24-17V24zM111 68v15M99 76l-16 9M123 76l16 9M105 82l-8 4M117 82l8 4" />
         <circle class="method-signal__dot method-signal__dot--teal" cx="111" cy="41" r="7" />
       </svg>
     )
@@ -84,6 +91,7 @@ const { label, variant } = Astro.props;
         <path class="method-signal__sheet" d="M24 18h112v50H24z" />
         <path class="method-signal__line" d="M37 56h28M37 45h18M37 34h38" />
         <circle class="method-signal__plate" cx="105" cy="43" r="18" />
+        <circle class="method-signal__plaque method-signal__plaque--wash" cx="100" cy="39" r="7" />
         <circle class="method-signal__plaque" cx="100" cy="38" r="4" />
         <circle class="method-signal__plaque" cx="111" cy="48" r="5" />
       </svg>

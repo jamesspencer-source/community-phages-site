@@ -386,10 +386,10 @@ main {
 
 .hero-phage {
   position: absolute;
-  left: 10%;
-  top: 1.1rem;
+  left: 9%;
+  top: 0.35rem;
   z-index: 3;
-  width: 14.75rem;
+  width: 13.9rem;
   color: var(--ink);
   filter: drop-shadow(0 24px 42px rgba(7, 27, 34, 0.13));
 }
@@ -414,11 +414,28 @@ main {
   stroke-width: 2;
 }
 
+.hero-phage__facet-line,
+.hero-phage__strand {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.hero-phage__strand {
+  stroke: var(--field);
+  stroke-width: 2.4;
+}
+
 .hero-phage__capsid {
-  fill: var(--field);
+  fill: var(--amber);
+  stroke: currentColor;
+  stroke-width: 2;
 }
 
 .hero-phage__neck,
+.hero-phage__collar,
 .hero-phage__tail-sheath,
 .hero-phage__base {
   fill: var(--paper);
@@ -429,6 +446,7 @@ main {
 
 .hero-phage__tail-core,
 .hero-phage__tail-rings,
+.hero-phage__tail-tip,
 .hero-phage__fibers {
   fill: none;
   stroke: currentColor;
@@ -454,29 +472,63 @@ main {
   border: 1.1rem solid rgba(7, 27, 34, 0.09);
   border-radius: 50%;
   background:
-    radial-gradient(circle at 32% 33%, rgba(7, 27, 34, 0.36) 0 1.25rem, transparent 1.31rem),
-    radial-gradient(circle at 67% 42%, rgba(7, 27, 34, 0.42) 0 1rem, transparent 1.06rem),
-    radial-gradient(circle at 49% 66%, rgba(7, 27, 34, 0.3) 0 1.4rem, transparent 1.47rem),
-    radial-gradient(circle at 78% 74%, rgba(7, 27, 34, 0.36) 0 0.84rem, transparent 0.9rem),
+    radial-gradient(circle at 29% 31%, rgba(7, 27, 34, 0.34) 0 1.18rem, transparent 1.26rem),
+    radial-gradient(ellipse at 69% 39%, rgba(7, 27, 34, 0.4) 0 1.18rem, transparent 1.27rem),
+    radial-gradient(circle at 51% 69%, rgba(7, 27, 34, 0.28) 0 1.55rem, transparent 1.66rem),
+    radial-gradient(circle at 79% 73%, rgba(7, 27, 34, 0.34) 0 0.78rem, transparent 0.86rem),
+    radial-gradient(circle at 37% 79%, rgba(0, 122, 120, 0.2) 0 0.64rem, transparent 0.72rem),
+    conic-gradient(from 24deg at 50% 50%, rgba(255, 255, 255, 0.16), transparent 16%, rgba(7, 27, 34, 0.05) 29%, transparent 46%, rgba(255, 255, 255, 0.14) 72%, transparent),
     #dce872;
   box-shadow:
     inset 0 0 0 2px rgba(7, 27, 34, 0.22),
+    inset -1.3rem -1.1rem 2.4rem rgba(7, 27, 34, 0.08),
+    inset 1.25rem 1.1rem 2.6rem rgba(255, 255, 255, 0.34),
     0 26px 60px rgba(7, 27, 34, 0.12);
+}
+
+.hero-plate::before,
+.hero-plate::after {
+  position: absolute;
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+.hero-plate::before {
+  inset: -0.56rem;
+  border: 1px solid rgba(7, 27, 34, 0.3);
+  box-shadow: inset 0 0 0 0.42rem rgba(255, 255, 255, 0.14);
+}
+
+.hero-plate::after {
+  inset: 13%;
+  background:
+    radial-gradient(ellipse at 24% 35%, rgba(255, 255, 255, 0.24), transparent 30%),
+    radial-gradient(circle at 72% 68%, rgba(0, 122, 120, 0.12), transparent 22%);
+  mix-blend-mode: multiply;
+  opacity: 0.72;
 }
 
 .hero-plate span {
   position: absolute;
+  z-index: 1;
   width: 0.48rem;
   height: 0.48rem;
   border-radius: 50%;
   background: var(--field);
+  box-shadow:
+    0 0 0 0.17rem rgba(251, 253, 251, 0.32),
+    0 0.1rem 0.22rem rgba(7, 27, 34, 0.18);
 }
 
-.hero-plate span:nth-child(1) { left: 23%; top: 24%; }
-.hero-plate span:nth-child(2) { right: 28%; top: 32%; }
-.hero-plate span:nth-child(3) { left: 45%; bottom: 29%; }
-.hero-plate span:nth-child(4) { right: 20%; bottom: 20%; }
-.hero-plate span:nth-child(5) { left: 32%; bottom: 17%; }
+.hero-plate span:nth-child(1) { left: 22%; top: 23%; }
+.hero-plate span:nth-child(2) { right: 27%; top: 31%; width: 0.38rem; height: 0.38rem; }
+.hero-plate span:nth-child(3) { left: 45%; bottom: 28%; width: 0.56rem; height: 0.56rem; }
+.hero-plate span:nth-child(4) { right: 19%; bottom: 19%; }
+.hero-plate span:nth-child(5) { left: 31%; bottom: 16%; width: 0.34rem; height: 0.34rem; }
+.hero-plate span:nth-child(6) { left: 58%; top: 24%; width: 0.28rem; height: 0.28rem; }
+.hero-plate span:nth-child(7) { right: 35%; bottom: 12%; width: 0.32rem; height: 0.32rem; }
+.hero-plate span:nth-child(8) { left: 18%; bottom: 42%; width: 0.26rem; height: 0.26rem; }
 
 .hero-trace {
   position: absolute;
@@ -745,7 +797,30 @@ main {
   aspect-ratio: 1;
   border: 0.65rem solid rgba(0, 122, 120, 0.08);
   border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 38%, rgba(0, 122, 120, 0.1) 0 12%, transparent 13%),
+    radial-gradient(circle at 68% 64%, rgba(243, 106, 61, 0.08) 0 9%, transparent 10%);
   content: "";
+}
+
+.method-sequence-card:nth-child(2n)::after {
+  right: 1.25rem;
+  top: 1.4rem;
+  width: 5rem;
+  border-color: rgba(243, 106, 61, 0.08);
+  background:
+    radial-gradient(circle at 58% 34%, rgba(0, 122, 120, 0.12) 0 10%, transparent 11%),
+    radial-gradient(circle at 34% 70%, rgba(7, 27, 34, 0.08) 0 12%, transparent 13%);
+}
+
+.method-sequence-card:nth-child(3n)::after {
+  right: 0.75rem;
+  top: 0.7rem;
+  width: 4.15rem;
+  border-width: 0.48rem;
+  background:
+    radial-gradient(circle at 31% 58%, rgba(243, 106, 61, 0.1) 0 13%, transparent 14%),
+    radial-gradient(circle at 73% 34%, rgba(0, 122, 120, 0.1) 0 8%, transparent 9%);
 }
 
 .method-sequence-card__marker {
@@ -2099,16 +2174,77 @@ main {
 }
 
 .specimen-plate {
+  --agar-base: #e1ea83;
+  --plaque-a: rgba(7, 27, 34, 0.2);
+  --plaque-b: rgba(7, 27, 34, 0.22);
+  --plaque-c: rgba(7, 27, 34, 0.18);
+  --plaque-d: rgba(0, 122, 120, 0.14);
+  --p1: 32% 36%;
+  --p1r: 12%;
+  --p2: 68% 48%;
+  --p2r: 9%;
+  --p3: 46% 70%;
+  --p3r: 8%;
+  --p4: 74% 24%;
+  --p4r: 5%;
+  --s1x: 24%;
+  --s1y: 26%;
+  --s1s: 0.42rem;
+  --s2x: 78%;
+  --s2y: 52%;
+  --s2s: 0.42rem;
+  --s3x: 48%;
+  --s3y: 76%;
+  --s3s: 0.42rem;
+  --s4x: 64%;
+  --s4y: 20%;
+  --s4s: 0.42rem;
+  --s5x: 37%;
+  --s5y: 58%;
+  --s5s: 0.28rem;
+  --s6x: 58%;
+  --s6y: 38%;
+  --s6s: 0.24rem;
+  --s7x: 30%;
+  --s7y: 73%;
+  --s7s: 0.3rem;
   position: relative;
   aspect-ratio: 1;
   border: 0.9rem solid rgba(7, 27, 34, 0.08);
   border-radius: 50%;
+  overflow: hidden;
   background:
-    radial-gradient(circle at 32% 36%, rgba(7, 27, 34, 0.2) 0 12%, transparent 13%),
-    radial-gradient(circle at 68% 48%, rgba(7, 27, 34, 0.22) 0 9%, transparent 10%),
-    radial-gradient(circle at 46% 70%, rgba(7, 27, 34, 0.18) 0 8%, transparent 9%),
-    #e1ea83;
-  box-shadow: inset 0 0 0 1px rgba(7, 27, 34, 0.16);
+    radial-gradient(circle at var(--p1), var(--plaque-a) 0 var(--p1r), transparent calc(var(--p1r) + 1.1%)),
+    radial-gradient(circle at var(--p2), var(--plaque-b) 0 var(--p2r), transparent calc(var(--p2r) + 1%)),
+    radial-gradient(circle at var(--p3), var(--plaque-c) 0 var(--p3r), transparent calc(var(--p3r) + 1%)),
+    radial-gradient(circle at var(--p4), var(--plaque-d) 0 var(--p4r), transparent calc(var(--p4r) + 0.8%)),
+    conic-gradient(from 18deg at 49% 48%, rgba(255, 255, 255, 0.2), transparent 20%, rgba(7, 27, 34, 0.05) 38%, transparent 61%, rgba(255, 255, 255, 0.16) 82%, transparent),
+    var(--agar-base);
+  box-shadow:
+    inset 0 0 0 1px rgba(7, 27, 34, 0.16),
+    inset 0.85rem 0.75rem 1.6rem rgba(255, 255, 255, 0.32),
+    inset -0.8rem -0.7rem 1.55rem rgba(7, 27, 34, 0.07);
+}
+
+.specimen-plate::before {
+  position: absolute;
+  inset: -0.35rem;
+  border: 1px solid rgba(7, 27, 34, 0.22);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+.specimen-plate::after {
+  position: absolute;
+  inset: 13%;
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 28% 31%, rgba(255, 255, 255, 0.2), transparent 28%),
+    radial-gradient(circle at 70% 74%, rgba(0, 122, 120, 0.08), transparent 24%);
+  content: "";
+  opacity: 0.78;
+  pointer-events: none;
 }
 
 .specimen-plate--compact {
@@ -2116,34 +2252,169 @@ main {
 }
 
 .specimen-plate--teal {
-  background:
-    radial-gradient(circle at 31% 38%, rgba(255, 255, 255, 0.34) 0 12%, transparent 13%),
-    radial-gradient(circle at 68% 50%, rgba(255, 255, 255, 0.25) 0 8%, transparent 9%),
-    radial-gradient(circle at 48% 72%, rgba(255, 255, 255, 0.22) 0 9%, transparent 10%),
-    #7ccac0;
+  --agar-base: #7ccac0;
+  --plaque-a: rgba(255, 255, 255, 0.34);
+  --plaque-b: rgba(255, 255, 255, 0.25);
+  --plaque-c: rgba(255, 255, 255, 0.22);
+  --plaque-d: rgba(7, 27, 34, 0.11);
 }
 
 .specimen-plate--paper {
+  --agar-base: #ffffff;
+  --plaque-a: rgba(0, 63, 60, 0.18);
+  --plaque-b: rgba(0, 63, 60, 0.16);
+  --plaque-c: rgba(0, 63, 60, 0.14);
+  --plaque-d: rgba(243, 106, 61, 0.12);
   border-color: rgba(255, 255, 255, 0.34);
-  background:
-    radial-gradient(circle at 31% 38%, rgba(0, 63, 60, 0.18) 0 12%, transparent 13%),
-    radial-gradient(circle at 68% 50%, rgba(0, 63, 60, 0.16) 0 8%, transparent 9%),
-    radial-gradient(circle at 48% 72%, rgba(0, 63, 60, 0.14) 0 9%, transparent 10%),
-    #ffffff;
+}
+
+.specimen-plate--v2 {
+  --p1: 26% 34%;
+  --p1r: 9%;
+  --p2: 61% 36%;
+  --p2r: 12%;
+  --p3: 72% 72%;
+  --p3r: 7%;
+  --p4: 37% 67%;
+  --p4r: 10%;
+  --s1x: 28%;
+  --s1y: 33%;
+  --s1s: 0.32rem;
+  --s2x: 62%;
+  --s2y: 37%;
+  --s2s: 0.48rem;
+  --s3x: 72%;
+  --s3y: 73%;
+  --s3s: 0.28rem;
+  --s4x: 36%;
+  --s4y: 67%;
+  --s4s: 0.4rem;
+  --s5x: 78%;
+  --s5y: 48%;
+  --s5s: 0.22rem;
+  --s6x: 42%;
+  --s6y: 21%;
+  --s6s: 0.26rem;
+  --s7x: 21%;
+  --s7y: 56%;
+  --s7s: 0.22rem;
+}
+
+.specimen-plate--v3 {
+  --p1: 36% 29%;
+  --p1r: 7%;
+  --p2: 70% 56%;
+  --p2r: 13%;
+  --p3: 43% 74%;
+  --p3r: 10%;
+  --p4: 52% 45%;
+  --p4r: 5%;
+  --s1x: 36%;
+  --s1y: 28%;
+  --s1s: 0.3rem;
+  --s2x: 70%;
+  --s2y: 55%;
+  --s2s: 0.52rem;
+  --s3x: 43%;
+  --s3y: 75%;
+  --s3s: 0.38rem;
+  --s4x: 52%;
+  --s4y: 46%;
+  --s4s: 0.22rem;
+  --s5x: 23%;
+  --s5y: 46%;
+  --s5s: 0.24rem;
+  --s6x: 81%;
+  --s6y: 30%;
+  --s6s: 0.2rem;
+  --s7x: 66%;
+  --s7y: 79%;
+  --s7s: 0.26rem;
+}
+
+.specimen-plate--v4 {
+  --p1: 29% 56%;
+  --p1r: 13%;
+  --p2: 66% 30%;
+  --p2r: 8%;
+  --p3: 64% 72%;
+  --p3r: 8%;
+  --p4: 42% 31%;
+  --p4r: 6%;
+  --s1x: 30%;
+  --s1y: 55%;
+  --s1s: 0.52rem;
+  --s2x: 67%;
+  --s2y: 30%;
+  --s2s: 0.32rem;
+  --s3x: 64%;
+  --s3y: 73%;
+  --s3s: 0.3rem;
+  --s4x: 42%;
+  --s4y: 31%;
+  --s4s: 0.24rem;
+  --s5x: 79%;
+  --s5y: 51%;
+  --s5s: 0.22rem;
+  --s6x: 21%;
+  --s6y: 29%;
+  --s6s: 0.2rem;
+  --s7x: 41%;
+  --s7y: 82%;
+  --s7s: 0.22rem;
+}
+
+.specimen-plate--v5 {
+  --p1: 25% 25%;
+  --p1r: 8%;
+  --p2: 57% 51%;
+  --p2r: 12%;
+  --p3: 79% 34%;
+  --p3r: 7%;
+  --p4: 33% 76%;
+  --p4r: 8%;
+  --s1x: 26%;
+  --s1y: 25%;
+  --s1s: 0.3rem;
+  --s2x: 58%;
+  --s2y: 51%;
+  --s2s: 0.48rem;
+  --s3x: 79%;
+  --s3y: 34%;
+  --s3s: 0.24rem;
+  --s4x: 33%;
+  --s4y: 77%;
+  --s4s: 0.32rem;
+  --s5x: 70%;
+  --s5y: 75%;
+  --s5s: 0.24rem;
+  --s6x: 44%;
+  --s6y: 39%;
+  --s6s: 0.22rem;
+  --s7x: 20%;
+  --s7y: 53%;
+  --s7s: 0.2rem;
 }
 
 .specimen-plate span {
   position: absolute;
-  width: 0.42rem;
-  height: 0.42rem;
+  z-index: 1;
+  width: var(--s1s);
+  height: var(--s1s);
   border-radius: 50%;
   background: var(--field);
+  box-shadow:
+    0 0 0 0.12rem rgba(251, 253, 251, 0.34),
+    0 0.08rem 0.18rem rgba(7, 27, 34, 0.16);
 }
 
-.specimen-plate span:nth-child(1) { left: 24%; top: 26%; }
-.specimen-plate span:nth-child(2) { right: 22%; top: 52%; }
-.specimen-plate span:nth-child(3) { left: 48%; bottom: 24%; }
-.specimen-plate span:nth-child(4) { right: 36%; top: 20%; }
+.specimen-plate span:nth-child(1) { left: var(--s1x); top: var(--s1y); }
+.specimen-plate span:nth-child(2) { left: var(--s2x); top: var(--s2y); width: var(--s2s); height: var(--s2s); }
+.specimen-plate span:nth-child(3) { left: var(--s3x); top: var(--s3y); width: var(--s3s); height: var(--s3s); }
+.specimen-plate span:nth-child(4) { left: var(--s4x); top: var(--s4y); width: var(--s4s); height: var(--s4s); }
+.specimen-plate span:nth-child(5) { left: var(--s5x); top: var(--s5y); width: var(--s5s); height: var(--s5s); }
+.specimen-plate span:nth-child(6) { left: var(--s6x); top: var(--s6y); width: var(--s6s); height: var(--s6s); }
+.specimen-plate span:nth-child(7) { left: var(--s7x); top: var(--s7y); width: var(--s7s); height: var(--s7s); }
 
 .genome-trace {
   display: grid;
@@ -2249,6 +2520,9 @@ main {
 
 .method-signal {
   position: relative;
+  --signal-shift-x: 0;
+  --signal-shift-y: 0;
+  --signal-accent: var(--acid);
   min-height: 5.1rem;
   overflow: hidden;
   border: 1px solid var(--rule);
@@ -2263,7 +2537,7 @@ main {
   position: absolute;
   inset: auto 0 0;
   height: 0.28rem;
-  background: var(--acid);
+  background: var(--signal-accent);
   content: "";
   opacity: 0.86;
 }
@@ -2287,6 +2561,35 @@ main {
   width: 100%;
   height: 100%;
   color: var(--ink);
+  transform: translate(var(--signal-shift-x), var(--signal-shift-y));
+}
+
+.method-signal--i2 {
+  --signal-shift-x: -0.08rem;
+  --signal-shift-y: 0.04rem;
+  --signal-accent: var(--teal-bright);
+  background-position: 7px 3px;
+}
+
+.method-signal--i3 {
+  --signal-shift-x: 0.09rem;
+  --signal-shift-y: -0.03rem;
+  --signal-accent: var(--amber);
+  background-position: 4px 8px;
+}
+
+.method-signal--i4 {
+  --signal-shift-x: -0.04rem;
+  --signal-shift-y: -0.08rem;
+  --signal-accent: var(--teal);
+  background-size: 20px 20px;
+}
+
+.method-signal--i5 {
+  --signal-shift-x: 0.06rem;
+  --signal-shift-y: 0.05rem;
+  --signal-accent: var(--acid);
+  background-position: 10px 5px;
 }
 
 .method-signal__sheet,
@@ -2337,6 +2640,12 @@ main {
   stroke: currentColor;
   stroke-width: 1.7;
   vector-effect: non-scaling-stroke;
+}
+
+.method-signal__plaque--wash {
+  fill: rgba(251, 253, 251, 0.38);
+  stroke: rgba(7, 27, 34, 0.18);
+  stroke-width: 1.1;
 }
 
 .method-signal__dot {
