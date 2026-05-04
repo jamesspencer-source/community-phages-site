@@ -1116,8 +1116,75 @@ main {
   font-weight: 900;
 }
 
-.partner-logo-home {
-  margin-top: 1.2rem;
+.section--institutions {
+  padding-top: 2.8rem;
+  padding-bottom: 3.4rem;
+}
+
+.section--institutions-home {
+  padding-top: 2.6rem;
+  padding-bottom: 2.8rem;
+}
+
+.institution-block {
+  display: grid;
+  grid-template-columns: minmax(16rem, 0.42fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: stretch;
+  border-top: 2px solid var(--rule-strong);
+  border-bottom: 2px solid var(--rule-strong);
+  background:
+    linear-gradient(90deg, rgba(0, 122, 120, 0.055), transparent 34%),
+    rgba(251, 253, 251, 0.82);
+}
+
+.institution-block__intro {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid var(--rule);
+  padding: 1.15rem 1.25rem 1.25rem 0;
+}
+
+.institution-block__intro h2 {
+  max-width: 11ch;
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 4.1vw, 3.25rem);
+  font-weight: 700;
+  line-height: 0.98;
+}
+
+.institution-block__intro p {
+  max-width: 25rem;
+  margin: 1.4rem 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.58;
+}
+
+.institution-block .partner-logo-grid {
+  border: 0;
+  background: transparent;
+}
+
+.institution-block--compact {
+  grid-template-columns: minmax(14rem, 0.34fr) minmax(0, 1fr);
+  gap: 1.5rem;
+}
+
+.institution-block--compact .institution-block__intro h2 {
+  font-size: clamp(2rem, 3.4vw, 2.75rem);
+}
+
+.institution-block--compact .partner-logo-card {
+  min-height: 10.6rem;
+  padding: 1.05rem 1rem;
+}
+
+.institution-block--compact .partner-logo-card__media img {
+  max-height: 5.15rem;
 }
 
 .partner-logo-grid {
@@ -3036,6 +3103,7 @@ main {
   .manual-page-layout,
   .method-step,
   .teaching-map,
+  .institution-block,
   .people-section,
   .people-group,
   .callout--wide {
@@ -3097,9 +3165,16 @@ main {
   .manual-nav,
   .manual-category__intro,
   .manual-page-nav,
+  .institution-block__intro,
   .people-section__heading,
   .people-group__heading {
     position: static;
+  }
+
+  .institution-block__intro {
+    border-right: 0;
+    border-bottom: 1px solid var(--rule);
+    padding-right: 0;
   }
 
   .notebook-timeline {

@@ -1,5 +1,6 @@
 ---
 import PageHero from '@components/PageHero.astro';
+import PartnerLogoGrid from '@components/PartnerLogoGrid.astro';
 import ProgramYearRoster from '@components/ProgramYearRoster.astro';
 import { programYearRosters } from '@data/programYears';
 import BaseLayout from '@layouts/BaseLayout.astro';
@@ -18,6 +19,17 @@ import { withBase } from '@utils/urls';
       { label: 'History', href: '/history/', variant: 'secondary' },
     ]}
   />
+  <section class="section section--institutions">
+    <div class="institution-block">
+      <div class="institution-block__intro">
+        <h2>Affiliated institutions.</h2>
+        <p>
+          The program connects RCC students with HMS Microbiology instructors and receives support from HHMI and New England Biolabs.
+        </p>
+      </div>
+      <PartnerLogoGrid />
+    </div>
+  </section>
   <section class="section">
     <div class="section-heading">
       <h2>Prior program years.</h2>

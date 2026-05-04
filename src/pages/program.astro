@@ -1,6 +1,7 @@
 ---
 import FactStrip from '@components/FactStrip.astro';
 import PageHero from '@components/PageHero.astro';
+import PartnerLogoGrid from '@components/PartnerLogoGrid.astro';
 import ProgramNotebookTimeline from '@components/ProgramNotebookTimeline.astro';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { withBase } from '@utils/urls';
@@ -19,6 +20,18 @@ import { withBase } from '@utils/urls';
     ]}
   />
   <FactStrip />
+
+  <section class="section section--institutions">
+    <div class="institution-block">
+      <div class="institution-block__intro">
+        <h2>Affiliated institutions.</h2>
+        <p>
+          Community Phages is based in HMS Microbiology and built with Roxbury Community College, with support from HHMI and New England Biolabs.
+        </p>
+      </div>
+      <PartnerLogoGrid />
+    </div>
+  </section>
 
   <section class="section section--band">
     <div class="section-heading">
