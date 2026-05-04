@@ -1,0 +1,108 @@
+---
+interface Props {
+  visual: string;
+  index: number;
+}
+
+const { visual, index } = Astro.props;
+---
+
+<div class:list={['week-visual', `week-visual--${visual}`, `week-visual--i${(index % 4) + 1}`]} aria-hidden="true">
+  <svg viewBox="0 0 220 150" focusable="false">
+    {
+      visual === 'pipette' && (
+        <>
+          <path class="week-visual__glass" d="M36 98h42l-6 29H42z" />
+          <path class="week-visual__glass" d="M90 45h25v82H90z" />
+          <path class="week-visual__pipette" d="M143 16l18 11-52 86-14 8 4-16 52-86Z" />
+          <path class="week-visual__line" d="M45 38h44M45 53h30M45 68h38" />
+          <circle class="week-visual__dot" cx="152" cy="117" r="7" />
+        </>
+      )
+    }
+    {
+      visual === 'plaques' && (
+        <>
+          <circle class="week-visual__plate" cx="112" cy="73" r="52" />
+          <circle class="week-visual__plaque" cx="83" cy="62" r="13" />
+          <circle class="week-visual__plaque" cx="123" cy="49" r="9" />
+          <circle class="week-visual__plaque" cx="139" cy="88" r="16" />
+          <circle class="week-visual__plaque week-visual__plaque--small" cx="91" cy="100" r="7" />
+          <path class="week-visual__line" d="M47 121h130" />
+        </>
+      )
+    }
+    {
+      visual === 'purify' && (
+        <>
+          <circle class="week-visual__mini-plate" cx="53" cy="68" r="25" />
+          <circle class="week-visual__mini-plate" cx="110" cy="68" r="25" />
+          <circle class="week-visual__mini-plate" cx="167" cy="68" r="25" />
+          <path class="week-visual__line" d="M77 68h19M134 68h19M91 58l12 10-12 10M148 58l12 10-12 10" />
+          <circle class="week-visual__plaque" cx="53" cy="68" r="9" />
+          <circle class="week-visual__plaque" cx="110" cy="68" r="6" />
+          <circle class="week-visual__plaque week-visual__plaque--small" cx="167" cy="68" r="4" />
+          <path class="week-visual__tick" d="M44 114h132M63 107v14M110 104v17M157 109v12" />
+        </>
+      )
+    }
+    {
+      visual === 'em-dna' && (
+        <>
+          <path class="week-visual__gel" d="M31 31h61v88H31z" />
+          <path class="week-visual__band" d="M47 49h12M69 62h12M47 81h21M69 101h12" />
+          <path class="week-visual__phage" d="M154 23 185 41v36l-31 23-31-23V41zM154 100v21M138 112l-22 13M170 112l22 13M146 120l-9 8M162 120l9 8" />
+          <circle class="week-visual__dot" cx="154" cy="61" r="8" />
+        </>
+      )
+    }
+    {
+      visual === 'host-range' && (
+        <>
+          <path class="week-visual__grid" d="M35 31h150v88H35zM72 31v88M110 31v88M148 31v88M35 60h150M35 90h150" />
+          <circle class="week-visual__dot" cx="53" cy="45" r="7" />
+          <circle class="week-visual__dot week-visual__dot--teal" cx="91" cy="75" r="8" />
+          <circle class="week-visual__dot week-visual__dot--amber" cx="129" cy="104" r="6" />
+          <path class="week-visual__line" d="M166 45l-9 9M157 45l9 9M53 75l-9 9M44 75l9 9M91 104l-9 9M82 104l9 9" />
+        </>
+      )
+    }
+    {
+      visual === 'genome' && (
+        <>
+          <path class="week-visual__line" d="M28 77h164" />
+          <path class="week-visual__gene week-visual__gene--teal" d="M36 58h32l11 19-11 19H36z" />
+          <path class="week-visual__gene" d="M84 58h42l11 19-11 19H84z" />
+          <path class="week-visual__gene week-visual__gene--amber" d="M144 58h30l11 19-11 19h-30z" />
+          <path class="week-visual__trace" d="M35 32h14v12h13V31h15v15h18V34h15v12h16V29h14v17h17V35h17" />
+          <path class="week-visual__line week-visual__line--thin" d="M45 119h114M61 128h82" />
+        </>
+      )
+    }
+    {
+      visual === 'figures' && (
+        <>
+          <path class="week-visual__sheet" d="M39 24h143v101H39z" />
+          <path class="week-visual__line" d="M58 49h48M58 62h34M58 103h100" />
+          <circle class="week-visual__plate" cx="139" cy="61" r="20" />
+          <path class="week-visual__tree" d="M66 80v27M66 91h26M92 91v-12M92 91v16M66 103h20M86 103v11" />
+          <circle class="week-visual__plaque week-visual__plaque--small" cx="136" cy="57" r="5" />
+          <circle class="week-visual__plaque week-visual__plaque--small" cx="147" cy="69" r="4" />
+        </>
+      )
+    }
+    {
+      visual === 'poster' && (
+        <>
+          <path class="week-visual__sheet" d="M43 19h134v101H43z" />
+          <path class="week-visual__line" d="M60 39h56M60 52h38M60 105h98" />
+          <path class="week-visual__figure" d="M121 36h35v34h-35z" />
+          <path class="week-visual__gene week-visual__gene--teal" d="M59 77h31l8 10-8 10H59z" />
+          <path class="week-visual__gene week-visual__gene--amber" d="M103 77h40l8 10-8 10h-40z" />
+          <path class="week-visual__pin" d="M110 120v16M93 136h34" />
+          <circle class="week-visual__dot week-visual__dot--amber" cx="139" cy="53" r="8" />
+        </>
+      )
+    }
+  </svg>
+</div>

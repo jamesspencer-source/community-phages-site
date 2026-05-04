@@ -87,48 +87,56 @@ export const programWeeks = [
     title: 'Bootcamp and sampling',
     short: 'Safety, pipetting, sterile technique, host bacteria, lab notebooks, and the first environmental samples.',
     tags: ['farm samples', 'pipettes', 'C. glutamicum'],
+    visual: 'pipette',
   },
   {
     week: '2',
     title: 'Plaque hunting',
     short: 'Filtered samples, direct plating, enrichments, bacterial lawns, and first evidence of phages.',
     tags: ['lawns', 'plaques', 'enrichments'],
+    visual: 'plaques',
   },
   {
     week: '3',
     title: 'Purify and titer',
     short: 'Students pick plaques, purify isolates, calculate titers, and prepare lysates for downstream work.',
     tags: ['purification', 'titers', 'lysates'],
+    visual: 'purify',
   },
   {
     week: '4',
     title: 'Image and extract DNA',
     short: 'Electron microscopy, DNA extraction, restriction digests, and scientific meeting exposure.',
     tags: ['EM grids', 'DNA digest', 'BBM'],
+    visual: 'em-dna',
   },
   {
     week: '5',
     title: 'Ask what the phage can do',
     short: 'Host range, receptors, defense systems, and bacterial strain comparisons turn plaques into questions.',
     tags: ['mutants', 'defense', 'receptors'],
+    visual: 'host-range',
   },
   {
     week: '6',
     title: 'Assemble genomes',
     short: 'Geneious, BLAST, genome assembly, annotation, and figures connect each phage to its relatives.',
     tags: ['sequencing', 'Geneious', 'BLAST'],
+    visual: 'genome',
   },
   {
     week: '7',
-    title: 'Build the story',
-    short: 'Phage names, figures, trees, posters, and data interpretation come together before final presentations.',
+    title: 'Posters and figures',
+    short: 'Phage names, figures, trees, posters, and data interpretation before final presentations.',
     tags: ['posters', 'figures', 'phylogeny'],
+    visual: 'figures',
   },
   {
     week: '8',
     title: 'Present and share',
     short: 'Practice talks, final posters, PhagesDB records where appropriate, reflection, and lab cleanup.',
     tags: ['poster session', 'PhagesDB', 'reflection'],
+    visual: 'poster',
   },
 ];
 
@@ -283,7 +291,7 @@ export const resourceGroups = [
     items: [
       {
         title: 'Instructor info',
-        text: 'Instructor rotation, handoff practices, and teaching expectations.',
+        text: 'Instructor reference notes and weekly teaching materials.',
         href: '/resources/07_instructorinfo.html',
       },
       {
@@ -298,7 +306,7 @@ export const resourceGroups = [
       },
       {
         title: 'Program history',
-        text: 'Prior years, mission, and acknowledgments.',
+        text: 'Prior years and acknowledgments.',
         href: '/history/',
       },
     ],
@@ -372,12 +380,12 @@ export const partnerLogos = [
 ];
 
 export const studentInfo = {
-  status: 'Student selection and dates are coordinated each year with Roxbury Community College and program leads. The usual summer window is May-July.',
+  status: 'Student selection and dates are coordinated each year with Roxbury Community College. The usual summer window is May-July.',
   eligibility:
-    'The program is built for Roxbury Community College students who can commit to the full 8-week schedule and are excited to learn in a research lab.',
+    'The program is for Roxbury Community College students who can commit to the full 8-week schedule and are excited to learn in a research lab.',
   schedule: 'Typical hours are Monday-Thursday, 9am-2pm, for 8 weeks.',
   note:
-    'Current-year timing, student participation, and teaching questions can go through the contact link.',
+    'Questions about timing, student participation, or teaching can go through the contact link.',
 };
 
 export const historyYears = [
@@ -393,8 +401,8 @@ export const historyYears = [
   },
   {
     year: '2024',
-    title: 'More public materials',
-    text: 'Protocols, year-specific resources, instructor rotation, and student materials became more formalized.',
+    title: 'Expanded public materials',
+    text: 'Protocols, year-specific resources, and student materials were expanded.',
   },
   {
     year: '2025',
@@ -403,7 +411,7 @@ export const historyYears = [
   },
   {
     year: '2026',
-    title: 'Current planning cycle',
+    title: 'Current program',
     text: 'The program continues as an 8-week May-July research internship with field sampling, bioinformatics, partner visits, and a final poster session.',
   },
 ];

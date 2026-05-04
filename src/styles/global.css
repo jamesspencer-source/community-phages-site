@@ -1590,7 +1590,7 @@ main {
   grid-template-columns: 5rem minmax(0, 1fr) minmax(10rem, 0.34fr);
 }
 
-.notebook-entry--alt .specimen-visual {
+.notebook-entry--alt .week-visual {
   grid-column: 3;
   grid-row: 1;
 }
@@ -1618,32 +1618,142 @@ main {
   text-transform: uppercase;
 }
 
-.specimen-visual {
+.week-visual {
   position: relative;
   min-height: 11rem;
   border: 1px solid var(--rule);
   background:
-    radial-gradient(circle at 34% 42%, rgba(255, 255, 255, 0.84) 0 8%, transparent 9%),
-    radial-gradient(circle at 62% 58%, rgba(255, 255, 255, 0.72) 0 6%, transparent 7%),
-    linear-gradient(135deg, rgba(217, 239, 69, 0.78), rgba(0, 170, 160, 0.22));
+    linear-gradient(rgba(7, 27, 34, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(7, 27, 34, 0.026) 1px, transparent 1px),
+    radial-gradient(circle at var(--visual-spot-x, 72%) var(--visual-spot-y, 30%), var(--visual-glow, rgba(207, 228, 90, 0.36)), transparent 34%),
+    rgba(251, 253, 251, 0.8);
+  background-position: 0 0, 0 0, center;
+  background-size: var(--visual-grid, 24px 24px), var(--visual-grid, 24px 24px), auto;
   overflow: hidden;
 }
 
-.plate-ring {
-  position: absolute;
-  inset: 1rem;
-  border: 0.75rem solid rgba(255, 255, 255, 0.22);
-  border-radius: 50%;
+.week-visual--i2 {
+  --visual-spot-x: 28%;
+  --visual-spot-y: 68%;
+  --visual-glow: rgba(0, 170, 160, 0.2);
+  --visual-grid: 20px 20px;
 }
 
-.trace-line {
+.week-visual--i3 {
+  --visual-spot-x: 82%;
+  --visual-spot-y: 76%;
+  --visual-glow: rgba(243, 106, 61, 0.18);
+  --visual-grid: 28px 28px;
+}
+
+.week-visual--i4 {
+  --visual-spot-x: 38%;
+  --visual-spot-y: 22%;
+  --visual-glow: rgba(0, 122, 120, 0.18);
+  --visual-grid: 18px 18px;
+}
+
+.week-visual svg {
   position: absolute;
-  left: 0.8rem;
-  right: 0.8rem;
-  bottom: 1.1rem;
-  height: 3rem;
-  background:
-    linear-gradient(90deg, transparent 0 4%, var(--amber) 4% 5%, transparent 5% 10%, var(--teal-bright) 10% 11%, transparent 11% 18%, var(--acid) 18% 19%, transparent 19% 100%);
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--ink);
+}
+
+.week-visual__glass,
+.week-visual__sheet,
+.week-visual__gel,
+.week-visual__figure {
+  fill: var(--paper);
+  stroke: currentColor;
+  stroke-width: 3;
+  vector-effect: non-scaling-stroke;
+}
+
+.week-visual__pipette,
+.week-visual__phage,
+.week-visual__tree,
+.week-visual__pin,
+.week-visual__tick,
+.week-visual__line,
+.week-visual__grid,
+.week-visual__trace,
+.week-visual__band {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3.2;
+  vector-effect: non-scaling-stroke;
+}
+
+.week-visual__line--thin,
+.week-visual__tick {
+  stroke-width: 2;
+}
+
+.week-visual__grid {
+  stroke-width: 2.4;
+}
+
+.week-visual__plate,
+.week-visual__mini-plate {
+  fill: var(--acid-soft);
+  stroke: currentColor;
+  stroke-width: 3;
+  vector-effect: non-scaling-stroke;
+}
+
+.week-visual__plaque {
+  fill: var(--paper);
+  stroke: currentColor;
+  stroke-width: 2.4;
+  vector-effect: non-scaling-stroke;
+}
+
+.week-visual__plaque--small {
+  fill: rgba(251, 253, 251, 0.72);
+}
+
+.week-visual__dot {
+  fill: var(--acid);
+  stroke: currentColor;
+  stroke-width: 2.3;
+  vector-effect: non-scaling-stroke;
+}
+
+.week-visual__dot--teal,
+.week-visual__gene--teal {
+  fill: rgba(0, 122, 120, 0.26);
+}
+
+.week-visual__dot--amber,
+.week-visual__gene--amber {
+  fill: rgba(243, 106, 61, 0.26);
+}
+
+.week-visual__gene {
+  fill: var(--acid-soft);
+  stroke: currentColor;
+  stroke-linejoin: round;
+  stroke-width: 2.8;
+  vector-effect: non-scaling-stroke;
+}
+
+.week-visual__band,
+.week-visual__trace {
+  stroke: var(--teal);
+}
+
+.week-visual--plaques .week-visual__plate,
+.week-visual--purify .week-visual__mini-plate {
+  fill: rgba(207, 228, 90, 0.54);
+}
+
+.week-visual--em-dna .week-visual__dot,
+.week-visual--poster .week-visual__dot {
+  fill: var(--amber);
 }
 
 .notebook-entry__copy h3 {
@@ -2926,6 +3036,13 @@ main {
   text-wrap: normal;
 }
 
+.people-section__heading p {
+  max-width: 18rem;
+  color: var(--muted);
+  font-size: 0.93rem;
+  line-height: 1.48;
+}
+
 .people-feature-grid {
   display: grid;
   gap: 0;
@@ -2944,9 +3061,53 @@ main {
   border-top: 1px solid var(--rule-strong);
 }
 
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.people-grid--compact {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.alumni-year-groups {
+  display: grid;
+  gap: 2rem;
+}
+
+.alumni-year-group {
+  border-top: 1px solid var(--rule-strong);
+  padding-top: 1rem;
+}
+
+.alumni-year-group__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.alumni-year-group__head span {
+  color: var(--amber);
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  line-height: 0.9;
+}
+
+.alumni-year-group__head strong {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
 .person-profile--primary,
 .person-profile--secondary,
-.person-profile--roster {
+.person-profile--roster,
+.person-profile--grid,
+.person-profile--compact {
   position: relative;
   display: grid;
   gap: 1rem;
@@ -2980,6 +3141,19 @@ main {
   padding: 0.95rem 0;
 }
 
+.person-profile--grid,
+.person-profile--compact {
+  grid-template-columns: minmax(0, 1fr);
+  border: 1px solid var(--rule);
+  background: rgba(251, 253, 251, 0.78);
+  padding: 0.85rem;
+}
+
+.person-profile--compact {
+  gap: 0.72rem;
+  padding: 0.72rem;
+}
+
 .person-profile--primary .person-photo {
   min-height: auto;
   aspect-ratio: 1;
@@ -2993,6 +3167,16 @@ main {
 .person-profile--roster .person-photo {
   min-height: auto;
   aspect-ratio: 1;
+}
+
+.person-profile--grid .person-photo {
+  min-height: auto;
+  aspect-ratio: 5 / 4;
+}
+
+.person-profile--compact .person-photo {
+  min-height: auto;
+  aspect-ratio: 4 / 3;
 }
 
 .person-profile--primary .person-copy h3 {
@@ -3009,22 +3193,47 @@ main {
   line-height: 1.08;
 }
 
+.person-profile--grid .person-copy h3,
+.person-profile--compact .person-copy h3 {
+  margin: 0;
+  font-size: 1.28rem;
+  line-height: 1.05;
+}
+
+.person-profile--compact .person-copy h3 {
+  font-size: 1.08rem;
+}
+
 .person-profile--roster .person-copy {
   min-width: 0;
   padding: 0;
 }
 
-.person-profile--roster .person-role {
+.person-profile--grid .person-copy,
+.person-profile--compact .person-copy {
+  min-width: 0;
+  padding: 0;
+}
+
+.person-profile--roster .person-role,
+.person-profile--grid .person-role,
+.person-profile--compact .person-role {
   margin: 0.15rem 0 0.2rem;
   font-size: 0.88rem;
   line-height: 1.35;
 }
 
-.person-profile--roster p:last-child {
+.person-profile--roster p:last-child,
+.person-profile--grid p:last-child,
+.person-profile--compact p:last-child {
   margin: 0;
   color: var(--muted);
   line-height: 1.45;
   max-width: 52rem;
+}
+
+.person-profile--compact p:last-child {
+  font-size: 0.88rem;
 }
 
 .people-section--alumni {
@@ -3136,6 +3345,7 @@ main {
   .inset-row,
   .people-feature-grid,
   .people-leadership,
+  .people-grid,
   .teaching-map__items,
   .people-list--featured,
   .protocol-ledger__counts {
@@ -3190,8 +3400,8 @@ main {
     grid-template-columns: 4.6rem minmax(0, 1fr);
   }
 
-  .notebook-entry .specimen-visual,
-  .notebook-entry--alt .specimen-visual {
+  .notebook-entry .week-visual,
+  .notebook-entry--alt .week-visual {
     grid-column: 1 / -1;
     grid-row: auto;
   }
@@ -3300,6 +3510,7 @@ main {
   .inset-row,
   .people-feature-grid,
   .people-leadership,
+  .people-grid,
   .teaching-map__items,
   .people-list--featured,
   .protocol-ledger__counts {

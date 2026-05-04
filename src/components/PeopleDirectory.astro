@@ -1,20 +1,44 @@
 ---
-import { people, type Person, type PersonGroup } from '@data/people';
+import { people, type Person, type PersonDirectoryGroup } from '@data/people';
 import { withBase } from '@utils/urls';
 
-const byGroup = (group: PersonGroup) =>
-  people
-    .filter((person) => person.group === group)
-    .sort((a, b) => (a.order ?? 99) - (b.order ?? 99) || a.name.localeCompare(b.name));
+const sortPeople = (items: Person[]) =>
+  [...items].sort((a, b) => (a.directoryOrder ?? a.order ?? 99) - (b.directoryOrder ?? b.order ?? 99) || a.name.localeCompare(b.name));
 
-const faculty = byGroup('Faculty Sponsors');
-const leadership = byGroup('Program Leadership');
-const mentors = byGroup('Mentors and Instructors');
-const alumni = byGroup('Program Alumni');
+const byDirectoryGroup = (group: PersonDirectoryGroup) => sortPeople(people.filter((person) => person.directoryGroup === group));
 
-const profileClass = (person: Person, level: 'primary' | 'secondary' | 'roster') => [
+const faculty = byDirectoryGroup('facultySponsor');
+const coordination = byDirectoryGroup('programCoordination');
+const currentSections: { group: PersonDirectoryGroup; title: string; label: string; text: string }[] = [
+  {
+    group: 'facultyPartner',
+    title: 'Faculty partners',
+    label: 'Faculty',
+    text: 'Faculty partners connect the program to microbial genetics, phage biology, immunity, and computational genomics.',
+  },
+  {
+    group: 'labInstructor',
+    title: 'Lab instructors and mentors',
+    label: 'Bench',
+    text: 'Current instructors help students with sampling, plating, purification, microscopy, DNA work, troubleshooting, and poster preparation.',
+  },
+  {
+    group: 'bioinformaticsPoster',
+    title: 'Bioinformatics and posters',
+    label: 'Data',
+    text: 'Bioinformatics and poster instructors help students assemble genomes, compare sequences, build figures, and present results.',
+  },
+];
+
+const alumni = sortPeople(people.filter((person) => person.directoryGroup === 'alumni'));
+const latestYear = (person: Person) => person.years?.[person.years.length - 1];
+const alumniYears = Array.from(new Set(alumni.map((person) => person.alumniDisplayYear ?? latestYear(person)).filter(Boolean) as string[])).sort(
+  (a, b) => Number(b) - Number(a),
+);
+
+const profileClass = (person: Person, level: 'primary' | 'secondary' | 'grid' | 'compact') => [
   'person-profile',
-  `person-profile--${person.featureLevel ?? level}`,
+  `person-profile--${level}`,
   !person.current && 'person-profile--past',
 ];
 
@@ -28,14 +52,14 @@ const yearText = (person: Person) => person.years?.join(', ');
   <section class="people-section people-section--faculty">
     <div class="people-section__heading">
       <span>{faculty.length} current</span>
-      <h2><span class="no-break">Main faculty sponsor</span></h2>
+      <h2>Faculty sponsor</h2>
     </div>
     <div class="people-feature-grid">
       {
         faculty.map((person) => (
           <article class:list={profileClass(person, 'primary')}>
             <div class="person-photo" style={imageStyle(person)}>
-              {person.image ? <img src={withBase(person.image)} alt={`${person.name} headshot`} loading="lazy" /> : <span>{person.initials}</span>}
+              {person.image ? <img src={withBase(person.image)} alt={`${person.name} portrait`} loading="lazy" /> : <span>{person.initials}</span>}
             </div>
             <div class="person-copy">
               <h3>{person.name}</h3>
@@ -51,39 +75,15 @@ const yearText = (person: Person) => person.years?.join(', ');
 
   <section class="people-section">
     <div class="people-section__heading">
-      <span>{leadership.length} current</span>
-      <h2><span class="no-break">Program leads</span></h2>
+      <span>{coordination.length} current</span>
+      <h2>Program coordination and instruction</h2>
     </div>
     <div class="people-leadership">
       {
-        leadership.map((person) => (
+        coordination.map((person) => (
           <article class:list={profileClass(person, 'secondary')}>
             <div class="person-photo" style={imageStyle(person)}>
-              {person.image ? <img src={withBase(person.image)} alt={`${person.name} headshot`} loading="lazy" /> : <span>{person.initials}</span>}
-            </div>
-            <div class="person-copy">
-              <h3>{person.name}</h3>
-              <p class="person-role">{person.role} · {person.affiliation}</p>
-              {yearText(person) && <p class="person-years">Program years: {yearText(person)}</p>}
-              <p>{person.bio}</p>
-            </div>
-          </article>
-        ))
-      }
-    </div>
-  </section>
-
-  <section class="people-section">
-    <div class="people-section__heading">
-      <span>{mentors.length} current</span>
-      <h2>Mentors, instructors, and faculty partners</h2>
-    </div>
-    <div class="people-roster">
-      {
-        mentors.map((person) => (
-          <article class:list={profileClass(person, 'roster')}>
-            <div class="person-photo" style={imageStyle(person)}>
-              {person.image ? <img src={withBase(person.image)} alt={`${person.name} headshot`} loading="lazy" /> : <span>{person.initials}</span>}
+              {person.image ? <img src={withBase(person.image)} alt={`${person.name} portrait`} loading="lazy" /> : <span>{person.initials}</span>}
             </div>
             <div class="person-copy">
               <h3>{person.name}</h3>
@@ -98,26 +98,75 @@ const yearText = (person: Person) => person.years?.join(', ');
   </section>
 
   {
+    currentSections.map((section) => {
+      const members = byDirectoryGroup(section.group);
+
+      return (
+        members.length > 0 && (
+          <section class="people-section people-section--grid">
+            <div class="people-section__heading">
+              <span>{members.length} current</span>
+              <h2>{section.title}</h2>
+              <p>{section.text}</p>
+            </div>
+            <div class="people-grid" aria-label={section.title}>
+              {members.map((person) => (
+                <article class:list={profileClass(person, 'grid')}>
+                  <div class="person-photo" style={imageStyle(person)}>
+                    {person.image ? <img src={withBase(person.image)} alt={`${person.name} portrait`} loading="lazy" /> : <span>{person.initials}</span>}
+                  </div>
+                  <div class="person-copy">
+                    <p class="small-label">{section.label}</p>
+                    <h3>{person.name}</h3>
+                    <p class="person-role">{person.role} · {person.affiliation}</p>
+                    {yearText(person) && <p class="person-years">Program years: {yearText(person)}</p>}
+                    <p>{person.bio}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+        )
+      );
+    })
+  }
+
+  {
     alumni.length > 0 && (
       <section class="people-section people-section--alumni">
         <div class="people-section__heading">
           <span>{alumni.length} past</span>
-          <h2><span class="no-break">Program alumni</span></h2>
+          <h2>Program alumni</h2>
+          <p>Former instructors, mentors, faculty partners, and program staff.</p>
         </div>
-        <div class="people-roster people-roster--archive">
-          {alumni.map((person) => (
-            <article class:list={profileClass(person, 'roster')}>
-              <div class="person-photo" style={imageStyle(person)}>
-                {person.image ? <img src={withBase(person.image)} alt={`${person.name} headshot`} loading="lazy" /> : <span>{person.initials}</span>}
-              </div>
-              <div class="person-copy">
-                <h3>{person.name}</h3>
-                <p class="person-role">{person.role} · {person.affiliation}</p>
-                {yearText(person) && <p class="person-years">Program years: {yearText(person)}</p>}
-                <p>{person.bio}</p>
-              </div>
-            </article>
-          ))}
+        <div class="alumni-year-groups">
+          {alumniYears.map((year) => {
+            const members = sortPeople(alumni.filter((person) => (person.alumniDisplayYear ?? latestYear(person)) === year));
+
+            return (
+              <section class="alumni-year-group">
+                <div class="alumni-year-group__head">
+                  <span>{year}</span>
+                  <strong>{members.length} alumni</strong>
+                </div>
+                <div class="people-grid people-grid--compact">
+                  {members.map((person) => (
+                    <article class:list={profileClass(person, 'compact')}>
+                      <div class="person-photo" style={imageStyle(person)}>
+                        {person.image ? <img src={withBase(person.image)} alt={`${person.name} portrait`} loading="lazy" /> : <span>{person.initials}</span>}
+                      </div>
+                      <div class="person-copy">
+                        <h3>{person.name}</h3>
+                        <p class="person-role">{person.role} · {person.affiliation}</p>
+                        {yearText(person) && <p class="person-years">Program years: {yearText(person)}</p>}
+                        <p>{person.bio}</p>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            );
+          })}
         </div>
       </section>
     )

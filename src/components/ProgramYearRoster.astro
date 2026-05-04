@@ -18,7 +18,7 @@ const peopleByName = new Map(people.map((person) => [person.name, person]));
       return (
         <article>
           <div class="year-roster__photo">
-            {person?.image ? <img src={withBase(person.image)} alt={`${name} headshot`} loading="lazy" /> : <span>{person?.initials ?? name.split(' ').map((part) => part[0]).join('').slice(0, 2)}</span>}
+            {person?.image ? <img src={withBase(person.image)} alt={`${name} portrait`} loading="lazy" /> : <span>{person?.initials ?? name.split(' ').map((part) => part[0]).join('').slice(0, 2)}</span>}
           </div>
           <div>
             <h3>{name}</h3>
