@@ -161,7 +161,6 @@ export const people: Person[] = [
     bio: 'Helps teach phage ecology, evolution, and wet-lab troubleshooting.',
     featureLevel: 'roster',
     order: 8,
-    image: '/assets/people/blox-bloxham.jpg',
     initials: 'BB',
     current: true,
     years: ['2026'],
