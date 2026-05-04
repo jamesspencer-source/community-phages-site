@@ -2378,7 +2378,7 @@ main {
   height: 100%;
   min-height: 0;
   object-fit: cover;
-  object-position: var(--person-image-position, center center);
+  object-position: var(--person-image-position, center 38%);
   background: transparent;
   filter: saturate(0.95) contrast(1.03);
 }
@@ -3210,27 +3210,27 @@ main {
 
 .person-profile--primary .person-photo {
   min-height: auto;
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 5;
 }
 
 .person-profile--secondary .person-photo {
   min-height: auto;
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 5;
 }
 
 .person-profile--roster .person-photo {
   min-height: auto;
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 5;
 }
 
 .person-profile--grid .person-photo {
   min-height: auto;
-  aspect-ratio: 5 / 4;
+  aspect-ratio: 4 / 5;
 }
 
 .person-profile--compact .person-photo {
   min-height: auto;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4 / 5;
 }
 
 .person-profile--primary .person-copy h3 {
