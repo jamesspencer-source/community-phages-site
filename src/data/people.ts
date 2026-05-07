@@ -222,7 +222,7 @@ export const people: Person[] = [
     directoryGroup: 'labInstructor',
     directoryOrder: 7,
     affiliation: 'Choe Lab',
-    bio: 'Claire works with students during lab work and data interpretation, helping connect experimental results to clear scientific claims.',
+    bio: 'Claire works with students during lab work and data interpretation, helping students turn experimental results into clear scientific claims.',
     featureLevel: 'roster',
     order: 10,
     image: '/assets/people/claire-kitzmiller.jpg',

@@ -2,8 +2,8 @@
   --ink: #071b22;
   --ink-soft: #243840;
   --muted: #66777a;
-  --page: #f6faf8;
-  --paper: #fbfdfb;
+  --page: #f7faf7;
+  --paper: #fffefa;
   --field: #003f3c;
   --field-deep: #002c31;
   --field-soft: #edf5f2;
@@ -15,10 +15,12 @@
   --acid-soft: #eef6b3;
   --amber: #f36a3d;
   --blue: #235bd3;
-  --shadow: 0 22px 60px rgba(7, 27, 34, 0.14);
+  --shadow: 0 18px 48px rgba(7, 27, 34, 0.12);
   --radius: 6px;
-  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-serif: Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --measure: 62rem;
+  --measure-text: 42rem;
 }
 
 * {
@@ -29,6 +31,8 @@ html {
   background: var(--page);
   color: var(--ink);
   font-family: var(--font-sans);
+  font-size: 16.5px;
+  font-optical-sizing: auto;
   line-height: 1.5;
   scroll-behavior: smooth;
 }
@@ -44,6 +48,7 @@ body {
     var(--page);
   background-size: auto, auto, 52px 52px, 52px 52px, auto;
   letter-spacing: 0;
+  text-rendering: optimizeLegibility;
 }
 
 body::before {
@@ -78,6 +83,7 @@ h3 {
   word-break: normal;
   hyphens: none;
   text-wrap: balance;
+  font-optical-sizing: auto;
 }
 
 p,
@@ -351,8 +357,8 @@ dd {
   border: 1px solid transparent;
   border-radius: var(--radius);
   padding: 0.72rem 1rem;
-  font-size: 0.92rem;
-  font-weight: 900;
+  font-size: 0.88rem;
+  font-weight: 780;
   text-decoration: none;
   transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
 }
@@ -405,10 +411,10 @@ main {
 .page-hero {
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(18rem, 0.42fr);
-  gap: 2rem;
-  align-items: end;
+  gap: 2.6rem;
+  align-items: center;
   border-bottom: 2px solid var(--rule-strong);
-  padding: 4.6rem 0 3rem;
+  padding: 4.25rem 0 3rem;
 }
 
 .page-hero:not(.page-hero--image)::after {
@@ -427,7 +433,7 @@ main {
   grid-template-columns: minmax(0, 0.84fr) minmax(24rem, 0.92fr);
   width: 100%;
   max-width: none;
-  min-height: 41rem;
+  min-height: 39rem;
   margin-top: -4.2rem;
   border-bottom: 0;
   border-bottom: 1px solid var(--rule);
@@ -438,7 +444,7 @@ main {
     var(--page);
   background-size: 48px 48px, 48px 48px, auto, auto;
   color: var(--ink);
-  padding: 8rem max(1rem, calc((100% - 1180px) / 2)) 4rem;
+  padding: 7.4rem max(1rem, calc((100% - 1180px) / 2)) 3.6rem;
 }
 
 .page-hero--image::before {
@@ -457,25 +463,26 @@ main {
 
 .page-hero__copy h1 {
   margin: 0;
-  max-width: 11ch;
+  max-width: 14ch;
   color: var(--ink);
   font-family: var(--font-serif);
-  font-size: clamp(3.65rem, 7.4vw, 4.85rem);
-  font-weight: 700;
-  line-height: 0.95;
+  font-size: 4.15rem;
+  font-weight: 680;
+  line-height: 1.02;
 }
 
 .page-hero--image .page-hero__copy h1 {
   color: var(--ink);
-  font-size: clamp(3.85rem, 7.8vw, 5.05rem);
+  max-width: 15ch;
+  font-size: 4.35rem;
 }
 
 .page-hero__copy p {
-  max-width: 43rem;
-  margin: 1.35rem 0 0;
+  max-width: var(--measure-text);
+  margin: 1.25rem 0 0;
   color: var(--ink-soft);
-  font-size: 1.12rem;
-  line-height: 1.6;
+  font-size: 1.05rem;
+  line-height: 1.66;
 }
 
 .page-hero--image .page-hero__copy p {
@@ -758,8 +765,8 @@ main {
   display: block;
   color: var(--ink);
   font-family: var(--font-serif);
-  font-size: 2rem;
-  line-height: 0.95;
+  font-size: 1.75rem;
+  line-height: 1.03;
 }
 
 .fact-strip span:last-child {
@@ -770,7 +777,7 @@ main {
 }
 
 .section {
-  padding: 4.6rem 0;
+  padding: 4.25rem 0;
 }
 
 .section--band {
@@ -794,29 +801,29 @@ main {
 
 .section-heading {
   display: grid;
-  grid-template-columns: minmax(22rem, 0.82fr) minmax(18rem, 0.45fr);
+  grid-template-columns: minmax(22rem, 0.76fr) minmax(18rem, 0.54fr);
   gap: 2rem;
   align-items: end;
-  margin-bottom: 2rem;
+  margin-bottom: 2.1rem;
   border-top: 2px solid var(--rule-strong);
-  padding-top: 1rem;
+  padding-top: 1.15rem;
 }
 
 .section-heading h2 {
   margin: 0;
-  max-width: 16ch;
+  max-width: 20ch;
   font-family: var(--font-serif);
-  font-size: clamp(2.75rem, 4.7vw, 3.55rem);
-  font-weight: 700;
-  line-height: 0.97;
+  font-size: 2.85rem;
+  font-weight: 660;
+  line-height: 1.06;
 }
 
 .section-heading p {
-  max-width: 47rem;
+  max-width: var(--measure-text);
   margin: 0;
   color: var(--muted);
-  font-size: 1.04rem;
-  line-height: 1.62;
+  font-size: 1rem;
+  line-height: 1.68;
 }
 
 .section--band .section-heading {
@@ -832,6 +839,7 @@ main {
   color: var(--teal);
   font-size: 0.78rem;
   font-weight: 950;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -1187,9 +1195,9 @@ main {
   max-width: 11ch;
   margin: 0;
   font-family: var(--font-serif);
-  font-size: clamp(2.4rem, 4.1vw, 3.25rem);
-  font-weight: 700;
-  line-height: 0.98;
+  font-size: 2.75rem;
+  font-weight: 660;
+  line-height: 1.04;
 }
 
 .institution-block__intro p {
@@ -1211,7 +1219,7 @@ main {
 }
 
 .institution-block--compact .institution-block__intro h2 {
-  font-size: clamp(2rem, 3.4vw, 2.75rem);
+  font-size: 2.35rem;
 }
 
 .institution-block--compact .partner-logo-card {
@@ -1240,7 +1248,7 @@ main {
 
 .institution-block--home-feature .institution-block__intro h2 {
   max-width: none;
-  font-size: clamp(2.15rem, 3.6vw, 2.95rem);
+  font-size: 2.55rem;
 }
 
 .institution-block--home-feature .institution-block__intro p {
@@ -1313,7 +1321,7 @@ main {
   color: var(--teal);
   font-size: 0.76rem;
   font-weight: 950;
-  letter-spacing: 0.05em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -1374,8 +1382,8 @@ main {
 .callout h3 {
   margin: 0;
   font-family: var(--font-serif);
-  font-size: clamp(1.75rem, 3vw, 2rem);
-  line-height: 1.04;
+  font-size: 1.85rem;
+  line-height: 1.08;
 }
 
 .inset-row {
@@ -1475,7 +1483,7 @@ main {
   color: var(--teal);
   font-size: 0.73rem;
   font-weight: 950;
-  letter-spacing: 0.04em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -1571,14 +1579,14 @@ main {
   white-space: nowrap;
 }
 
-.story-spread {
+.method-spread {
   display: grid;
   grid-template-columns: minmax(18rem, 0.8fr) minmax(0, 1.2fr);
   gap: 1.2rem;
   align-items: stretch;
 }
 
-.story-spread__main {
+.method-spread__main {
   position: relative;
   min-height: 27rem;
   background: var(--field);
@@ -1587,7 +1595,7 @@ main {
   overflow: hidden;
 }
 
-.story-spread__main::before {
+.method-spread__main::before {
   position: absolute;
   right: -7rem;
   top: -7rem;
@@ -1598,7 +1606,7 @@ main {
   content: "";
 }
 
-.story-spread__main::after {
+.method-spread__main::after {
   position: absolute;
   right: 1.4rem;
   bottom: 1.4rem;
@@ -1613,17 +1621,17 @@ main {
   content: "";
 }
 
-.story-spread__main h3 {
+.method-spread__main h3 {
   position: relative;
   z-index: 1;
   max-width: 12ch;
   margin: 0;
   font-family: var(--font-serif);
-  font-size: clamp(2.25rem, 4.1vw, 2.75rem);
-  line-height: 1;
+  font-size: 2.35rem;
+  line-height: 1.06;
 }
 
-.story-spread__main p {
+.method-spread__main p {
   position: relative;
   z-index: 1;
   max-width: 28rem;
@@ -1920,8 +1928,8 @@ main {
 .lab-blocks h3 {
   margin: 0.45rem 0 0;
   font-family: var(--font-serif);
-  font-size: clamp(1.65rem, 2.6vw, 1.9rem);
-  line-height: 1;
+  font-size: 1.72rem;
+  line-height: 1.08;
 }
 
 .lab-blocks p {
@@ -1950,8 +1958,8 @@ main {
   max-width: 12ch;
   margin: 0;
   font-family: var(--font-serif);
-  font-size: clamp(2.65rem, 4.8vw, 3.05rem);
-  line-height: 0.98;
+  font-size: 2.55rem;
+  line-height: 1.04;
 }
 
 .protocol-ledger__copy p {
@@ -2062,8 +2070,8 @@ main {
 .manual-section__head h2 {
   margin: 0;
   font-family: var(--font-serif);
-  font-size: clamp(2.45rem, 4.5vw, 3.1rem);
-  line-height: 0.98;
+  font-size: 2.6rem;
+  line-height: 1.04;
 }
 
 .manual-section__head p {
@@ -2133,8 +2141,8 @@ main {
 .manual-category__intro h2 {
   margin: 0.45rem 0 0;
   font-family: var(--font-serif);
-  font-size: clamp(2.65rem, 4.6vw, 3.25rem);
-  line-height: 0.96;
+  font-size: 2.75rem;
+  line-height: 1.04;
 }
 
 .manual-category__intro p {
@@ -2205,8 +2213,8 @@ main {
 .manual-article__head h1 {
   margin: 0;
   font-family: var(--font-serif);
-  font-size: clamp(3rem, 6vw, 4.65rem);
-  line-height: 0.95;
+  font-size: 3.55rem;
+  line-height: 1.02;
 }
 
 .manual-article__head p {
@@ -2233,11 +2241,11 @@ main {
 }
 
 .manual-content h1 {
-  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-size: 2.35rem;
 }
 
 .manual-content h2 {
-  font-size: clamp(1.65rem, 3vw, 2.15rem);
+  font-size: 1.85rem;
 }
 
 .manual-content h3 {
@@ -2332,8 +2340,8 @@ main {
 .people-group__heading h2 {
   margin: 0.45rem 0 0;
   font-family: var(--font-serif);
-  font-size: clamp(2.45rem, 4.3vw, 2.95rem);
-  line-height: 0.98;
+  font-size: 2.35rem;
+  line-height: 1.04;
 }
 
 .people-list {
@@ -2799,31 +2807,76 @@ main {
 .genome-trace span:nth-child(3) { height: 58%; }
 .genome-trace span:nth-child(4) { height: 86%; }
 
-.story-spread__main {
+.method-spread__main {
   display: grid;
   align-content: space-between;
   background: var(--field-soft);
   color: var(--ink);
 }
 
-.story-spread__main::before {
+.method-spread__main::before {
   border-color: rgba(0, 122, 120, 0.08);
 }
 
-.story-spread__main::after {
+.method-spread__main::after {
   display: none;
 }
 
-.story-spread__main p {
+.method-spread__main p {
   color: var(--ink-soft);
 }
 
-.story-spread__graphics {
+.method-spread__graphics {
   display: grid;
   grid-template-columns: 8rem minmax(0, 1fr);
   gap: 1rem;
   align-items: end;
   margin-top: 2rem;
+}
+
+.student-evidence-strip {
+  display: grid;
+  grid-template-columns: 8rem minmax(0, 1fr) minmax(12rem, 0.38fr);
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1.6rem;
+  border-top: 1px solid var(--rule-strong);
+  border-bottom: 1px solid var(--rule-strong);
+  background:
+    linear-gradient(rgba(7, 27, 34, 0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(7, 27, 34, 0.016) 1px, transparent 1px),
+    rgba(251, 253, 251, 0.68);
+  background-size: 26px 26px;
+  padding: 1rem;
+}
+
+.student-evidence-strip__trace {
+  align-self: stretch;
+  display: grid;
+  align-items: end;
+  min-height: 6.5rem;
+  border-left: 1px solid var(--rule);
+  border-right: 1px solid var(--rule);
+  padding: 0 1rem;
+}
+
+.student-evidence-strip__note {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.student-evidence-strip__note span {
+  color: var(--teal);
+  font-size: 0.76rem;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.student-evidence-strip__note strong {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.08;
 }
 
 .team-bridge {
@@ -2912,7 +2965,7 @@ main {
   color: var(--ink-soft);
   font-size: 0.68rem;
   font-weight: 950;
-  letter-spacing: 0.04em;
+  letter-spacing: 0;
   line-height: 1;
   text-transform: uppercase;
 }
@@ -3121,8 +3174,8 @@ main {
 .people-section__heading h2 {
   margin: 0.45rem 0 0;
   font-family: var(--font-serif);
-  font-size: clamp(2rem, 2.7vw, 2.45rem);
-  line-height: 1;
+  font-size: 2.1rem;
+  line-height: 1.05;
   text-wrap: normal;
 }
 
@@ -3182,8 +3235,8 @@ main {
 .alumni-year-group__head span {
   color: var(--amber);
   font-family: var(--font-serif);
-  font-size: clamp(2.2rem, 4vw, 3rem);
-  line-height: 0.9;
+  font-size: 2.6rem;
+  line-height: 0.95;
 }
 
 .alumni-year-group__head strong {
@@ -3270,11 +3323,11 @@ main {
 }
 
 .person-profile--primary .person-copy h3 {
-  font-size: clamp(2rem, 3.1vw, 2.55rem);
+  font-size: 2.25rem;
 }
 
 .person-profile--secondary .person-copy h3 {
-  font-size: clamp(1.75rem, 2.6vw, 2.15rem);
+  font-size: 1.95rem;
 }
 
 .person-profile--roster .person-copy h3 {
@@ -3364,8 +3417,8 @@ main {
 .history-river article > span {
   color: var(--amber);
   font-family: var(--font-serif);
-  font-size: clamp(2.65rem, 4.2vw, 3.1rem);
-  line-height: 0.94;
+  font-size: 2.65rem;
+  line-height: 0.98;
 }
 
 .history-river h2 {
@@ -3395,7 +3448,7 @@ main {
   .page-hero,
   .page-hero--image,
   .section-heading,
-  .story-spread,
+  .method-spread,
   .protocol-ledger,
   .manual-layout,
   .manual-category,
@@ -3432,6 +3485,7 @@ main {
   .partner-logo-grid,
   .team-bridge,
   .lab-blocks,
+  .student-evidence-strip,
   .inset-row,
   .people-feature-grid,
   .people-leadership,
@@ -3565,7 +3619,7 @@ main {
     font-size: 2.55rem;
   }
 
-  .story-spread__main h3,
+  .method-spread__main h3,
   .protocol-ledger__copy h2,
   .manual-section__head h2,
   .people-group__heading h2 {
@@ -3603,6 +3657,7 @@ main {
   .partner-logo-grid,
   .team-bridge,
   .lab-blocks,
+  .student-evidence-strip,
   .inset-row,
   .people-feature-grid,
   .people-leadership,
@@ -3670,8 +3725,16 @@ main {
     grid-template-columns: 1fr;
   }
 
-  .story-spread__graphics {
+  .method-spread__graphics {
     grid-template-columns: 1fr;
+  }
+
+  .student-evidence-strip__trace {
+    border-left: 0;
+    border-right: 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 1rem 0;
   }
 
   .people-list--compact .person-profile,

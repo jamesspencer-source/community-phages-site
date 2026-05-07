@@ -1,6 +1,7 @@
 ---
 import PageHero from '@components/PageHero.astro';
-import InsetFigure from '@components/InsetFigure.astro';
+import GenomeTrace from '@components/GenomeTrace.astro';
+import SpecimenPlate from '@components/SpecimenPlate.astro';
 import { contact, studentHighlights, studentInfo } from '@data/site';
 import BaseLayout from '@layouts/BaseLayout.astro';
 import { mailto, withBase } from '@utils/urls';
@@ -14,7 +15,7 @@ const contactHref = mailto(contact.email, contact.subject);
 >
   <PageHero
     title="Your first research lab experience can start here."
-    text="Community Phages is for Roxbury Community College students who want hands-on experience in a research lab. Students work with HMS researchers to isolate environmental bacteriophages and learn the methods needed to describe them."
+    text="Community Phages is a paid summer research program for Roxbury Community College students. You work in an HMS teaching lab, learn microbiology methods, isolate environmental bacteriophages, and present your results."
     actions={[
       { label: 'Program schedule', href: '/program/' },
       { label: 'Get in touch', href: contactHref, variant: 'secondary' },
@@ -23,9 +24,9 @@ const contactHref = mailto(contact.email, contact.subject);
 
   <section class="section">
     <div class="section-heading">
-      <h2>What the summer is.</h2>
+      <h2>What the summer looks like.</h2>
       <p>
-        The program is a paid 8-week research internship. Students are usually on campus Monday through Thursday, 9am-2pm, and spend the summer moving from basic lab technique to their own phage data and poster.
+        Students are usually on campus Monday through Thursday, 9am-2pm. The work starts with basic lab technique and builds toward each student’s own phage data and poster.
       </p>
     </div>
     <div class="lab-blocks">
@@ -45,14 +46,14 @@ const contactHref = mailto(contact.email, contact.subject);
     <div class="section-heading">
       <h2>What students actually work on.</h2>
       <p>
-        The summer is organized around one real question: can students find and characterize bacteriophages from environmental samples that infect corynebacterial hosts?
+        The summer is organized around a real question: can students find bacteriophages from environmental samples that infect corynebacterial hosts?
       </p>
     </div>
     <div class="method-sequence method-sequence--compact">
       <article class="method-sequence-card">
         <div class="method-sequence-card__marker"><span>1</span></div>
         <h3>Learn the bench</h3>
-        <p>Pipetting, sterile technique, bacterial cultures, plates, lawns, safety, labels, and notebook habits.</p>
+        <p>Pipetting, sterile technique, bacterial cultures, plates, lawns, safety, labeling, and notebook habits.</p>
       </article>
       <article class="method-sequence-card">
         <div class="method-sequence-card__marker"><span>2</span></div>
@@ -67,17 +68,18 @@ const contactHref = mailto(contact.email, contact.subject);
       <article class="method-sequence-card">
         <div class="method-sequence-card__marker"><span>4</span></div>
         <h3>Prepare posters and figures</h3>
-        <p>Genome analysis, figures, phage names, poster practice, and final presentations turn results into a scientific explanation.</p>
+        <p>Genome analysis, figures, phage names, poster practice, and final presentations turn results into a clear explanation.</p>
       </article>
     </div>
-    <div class="inset-row inset-row--after inset-row--single">
-      <InsetFigure
-        src="/assets/community-phages-archive-banner.png"
-        alt="Community Phages banner"
-        label="RCC + HMS"
-        caption="A paid summer research program."
-        tone="graphic"
-      />
+    <div class="student-evidence-strip" aria-hidden="true">
+      <SpecimenPlate compact tone="paper" variant={2} />
+      <div class="student-evidence-strip__trace">
+        <GenomeTrace />
+      </div>
+      <div class="student-evidence-strip__note">
+        <span>Lab work</span>
+        <strong>Plaque assay / DNA / BLAST</strong>
+      </div>
     </div>
   </section>
 
@@ -85,7 +87,7 @@ const contactHref = mailto(contact.email, contact.subject);
     <div class="section-heading">
       <h2>Selection and timing.</h2>
       <p>
-        Selection and dates are coordinated each year with Roxbury Community College.
+        Student selection and program dates are coordinated each year with Roxbury Community College.
       </p>
     </div>
     <div class="audience-grid">

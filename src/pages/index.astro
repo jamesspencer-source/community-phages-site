@@ -15,8 +15,8 @@ import { withBase } from '@utils/urls';
 <BaseLayout>
   <PageHero
     image
-    title="An 8-week phage discovery program for RCC students and HMS instructors."
-    text="Community Phages is a paid summer research internship at Harvard Medical School. Roxbury Community College students partner with researchers and instructors to isolate environmental bacteriophages, characterize what they find, and present the results."
+    title="An 8-week phage discovery program for RCC students at HMS."
+    text="Community Phages is a paid summer research program at Harvard Medical School. Roxbury Community College students work with HMS instructors to isolate environmental bacteriophages, characterize what they find, and present the results."
     actions={[
       { label: 'For students', href: '/students/' },
       { label: 'For instructors', href: '/instructors/', variant: 'secondary' },
@@ -28,7 +28,7 @@ import { withBase } from '@utils/urls';
     <div class="institution-block institution-block--home-feature">
       <div class="institution-block__intro">
         <h2>Affiliated institutions.</h2>
-        <p>HMS Microbiology, Roxbury Community College, HHMI, and New England Biolabs.</p>
+        <p>HMS Microbiology and Roxbury Community College run the program with support from HHMI and New England Biolabs.</p>
       </div>
       <PartnerLogoGrid />
     </div>
@@ -38,16 +38,16 @@ import { withBase } from '@utils/urls';
     <div class="section-heading">
       <h2>For RCC students and HMS instructors.</h2>
       <p>
-        Students learn lab methods by working on their own phage samples. Instructors teach the bench work, bioinformatics, troubleshooting, and poster preparation.
+        Students learn research by doing the experiments. Instructors teach the methods, help troubleshoot, and guide the work from plaques to posters.
       </p>
     </div>
-    <div class="story-spread">
-      <div class="story-spread__main">
-        <h3>Environmental samples, plaques, DNA, posters.</h3>
+    <div class="method-spread">
+      <div class="method-spread__main">
+        <h3>Samples, plaques, DNA, posters.</h3>
         <p>
-          The program starts with pipetting, sterile technique, and sample collection. Students then plate samples, purify phages, prepare lysates, work with DNA, analyze genomes, and present final posters.
+          The summer starts with pipetting, sterile technique, and sample collection. Students then plate samples, purify phages, prepare lysates, work with DNA, analyze genomes, and present final posters.
         </p>
-        <div class="story-spread__graphics" aria-hidden="true">
+        <div class="method-spread__graphics" aria-hidden="true">
           <SpecimenPlate compact tone="paper" variant={4} />
           <GenomeTrace />
         </div>
@@ -60,14 +60,14 @@ import { withBase } from '@utils/urls';
     <div class="section-heading">
       <h2>The 8-week schedule.</h2>
       <p>
-        The exact dates change each year, but the structure is stable: field sampling and bench skills first, plaques and lysates next, then micrographs, DNA, genome assembly, figures, and a final poster.
+        Exact dates change each year. The work usually starts with sampling and bench skills, moves through plaques and lysates, and ends with microscopy, DNA, genome analysis, figures, and a final poster.
       </p>
     </div>
     <MethodRail limit={5} />
     <div class="callout callout--wide">
       <div>
         <h3>Program schedule</h3>
-        <p>Weekly plan for students and instructors.</p>
+        <p>The weekly lab outline for students and instructors.</p>
       </div>
       <a class="button button--primary" href={withBase('/program/')}>Program schedule</a>
     </div>
@@ -75,7 +75,7 @@ import { withBase } from '@utils/urls';
 
   <section class="section">
     <div class="section-heading">
-      <h2>Student discoveries become PhagesDB records.</h2>
+      <h2>Student phage records.</h2>
       <p>
         Student isolates can lead to phage names, genome assemblies, PhagesDB records, and final posters.
       </p>
@@ -87,18 +87,18 @@ import { withBase } from '@utils/urls';
     <div class="section-heading">
       <h2>Faculty, instructors, and mentors.</h2>
       <p>
-        HMS faculty, staff, graduate students, postdocs, alumni, RCC partners, and sponsors contribute to the program.
+        HMS faculty, staff, graduate students, postdocs, alumni, RCC partners, and sponsors teach and maintain the program.
       </p>
     </div>
     <div class="team-bridge">
       <article>
-        <AtlasLabel code="Faculty" title="Scientific direction" text="Corynephage biology, bacterial evolution, immunity, and host-phage context." />
+        <AtlasLabel code="Faculty" title="Scientific direction" text="Corynephage biology, bacterial evolution, immunity, and host-phage experiments." />
       </article>
       <article>
-        <AtlasLabel code="Program" title="Lab and teaching support" text="Lab setup, safety, sampling, bench work, bioinformatics, and poster support." />
+        <AtlasLabel code="Program" title="Lab operations" text="Lab setup, safety, sampling, bench work, bioinformatics, and posters." />
       </article>
       <article>
-        <AtlasLabel code="Mentors" title="Troubleshooting and student support" text="Graduate students, postdocs, staff, alumni, and partner instructors support the work." />
+        <AtlasLabel code="Mentors" title="Teaching and troubleshooting" text="Graduate students, postdocs, staff, alumni, and partner instructors work with students at the bench." />
       </article>
     </div>
     <div class="callout callout--wide">

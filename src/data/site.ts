@@ -1,7 +1,7 @@
 export const siteMeta = {
   title: 'Community Phages',
   description:
-    'An 8-week summer research internship and teaching program where Roxbury Community College students partner with Harvard Medical School researchers to isolate and characterize environmental bacteriophages.',
+    'An 8-week paid summer research program where Roxbury Community College students work with Harvard Medical School instructors to isolate and characterize environmental bacteriophages.',
   url: 'https://phages.hms.harvard.edu',
 };
 
@@ -38,14 +38,14 @@ export const audiencePaths = [
   {
     audience: 'Students',
     title: 'A paid 8-week summer research internship for RCC students.',
-    text: 'Students come to Harvard Medical School Monday through Thursday, learn the bench skills needed for phage experiments, and build a poster from their own samples and data.',
+    text: 'Students spend the summer at HMS learning microbiology by doing the experiments: sampling, plating, purification, DNA work, genome analysis, and a final poster.',
     href: '/students/',
     action: 'Student information',
   },
   {
     audience: 'Instructors',
-    title: 'HMS instructors teach bench work, bioinformatics, and posters.',
-    text: 'Instructors help students learn methods, read experimental results, analyze genomes, and prepare final posters.',
+    title: 'HMS instructors teach the experiments and help students interpret the results.',
+    text: 'Instructors teach the bench work, help troubleshoot, guide genome analysis, and work with students as they turn data into poster figures.',
     href: '/instructors/',
     action: 'Instructor information',
   },
@@ -54,30 +54,30 @@ export const audiencePaths = [
 export const studentHighlights = [
   {
     title: 'What students do in the lab',
-    text: 'Collect environmental samples, plate them on host bacteria, look for plaques, purify phages, prepare lysates, extract DNA, analyze genomes, and present final posters.',
+    text: 'Collect environmental samples, plate them on corynebacterial hosts, look for plaques, purify phages, prepare lysates, extract DNA, analyze genomes, and present final posters.',
   },
   {
-    title: 'What students learn along the way',
-    text: 'Sterile technique, pipetting, bacterial lawns, phage purification, titers, microscopy, restriction digests, Geneious, BLAST, notebook habits, and scientific communication.',
+    title: 'Skills students practice',
+    text: 'Pipetting, sterile technique, bacterial lawns, phage purification, titers, microscopy, restriction digests, Geneious, BLAST, notebook habits, and explaining results clearly.',
   },
   {
-    title: 'What the schedule is like',
-    text: 'The program typically runs Monday through Thursday, 9am-2pm, for eight weeks from May to July, with exact dates set each year.',
+    title: 'Time commitment',
+    text: 'The program usually runs Monday through Thursday, 9am-2pm, for eight weeks from May to July. Exact dates are set each year with RCC.',
   },
 ];
 
 export const instructorHighlights = [
   {
-    title: 'How instructors plug in',
-    text: 'Graduate students, postdocs, staff, alumni, and faculty help teach bench work, troubleshoot experiments, guide bioinformatics sessions, and support poster preparation.',
+    title: 'Bench teaching',
+    text: 'Instructors show students how to set up plates, handle bacterial cultures, read lawns and plaques, repeat experiments, and keep useful notebooks.',
   },
   {
-    title: 'Instructor materials',
-    text: 'Protocols, bioinformatics chapters, Day 1 notes, lab notebook guidance, glossary, schedule context, and instructor references.',
+    title: 'Genome and data work',
+    text: 'Instructors help students assemble genomes, use BLAST, annotate genes, compare phages, and decide what belongs in figures.',
   },
   {
-    title: 'What students need from mentors',
-    text: 'Clear instructions, patient troubleshooting, help connecting experiments to phage biology, and support turning raw observations into poster figures and claims.',
+    title: 'Poster mentoring',
+    text: 'Students need help choosing the right evidence, writing claims they can defend, and practicing a clear explanation of their isolate.',
   },
 ];
 
@@ -99,7 +99,7 @@ export const programWeeks = [
   {
     week: '3',
     title: 'Purify and titer',
-    short: 'Students pick plaques, purify isolates, calculate titers, and prepare lysates for downstream work.',
+    short: 'Students pick plaques, purify isolates, calculate titers, and prepare lysates for DNA work and characterization.',
     tags: ['purification', 'titers', 'lysates'],
     visual: 'purify',
   },
@@ -120,14 +120,14 @@ export const programWeeks = [
   {
     week: '6',
     title: 'Assemble genomes',
-    short: 'Geneious, BLAST, genome assembly, annotation, and figures connect each phage to its relatives.',
+    short: 'Geneious, BLAST, genome assembly, annotation, and figures place each phage next to related isolates.',
     tags: ['sequencing', 'Geneious', 'BLAST'],
     visual: 'genome',
   },
   {
     week: '7',
     title: 'Posters and figures',
-    short: 'Phage names, figures, trees, posters, and data interpretation before final presentations.',
+    short: 'Phage names, figures, trees, data interpretation, and poster practice before final presentations.',
     tags: ['posters', 'figures', 'phylogeny'],
     visual: 'figures',
   },
@@ -144,19 +144,19 @@ export const discoveries = [
   {
     name: 'Flashwig',
     year: '2025',
-    summary: 'A student-isolated phage from the 2025 cohort with a PhagesDB record.',
+    summary: 'A Community Phages isolate from the 2025 cohort with a public PhagesDB record.',
     href: 'https://phagesdb.org/phages/Flashwig/',
   },
   {
     name: 'Spartan',
     year: '2025',
-    summary: 'One of the Community Phages discoveries posted through the Harvard institution page.',
+    summary: 'A student-isolated phage listed through the Harvard PhagesDB institution page.',
     href: 'https://phagesdb.org/phages/Spartan/',
   },
   {
     name: 'Harvard phage collection',
     year: 'PhagesDB',
-    summary: 'Community Phages discoveries are represented on the Harvard PhagesDB institution page.',
+    summary: 'The Harvard institution page includes public records from Community Phages.',
     href: 'https://phagesdb.org/institutions/HARV/',
   },
 ];
@@ -168,7 +168,7 @@ export const resourceGroups = [
     items: [
       {
         title: '1. Project introduction',
-        text: 'Program question, host strains, and phage discovery overview.',
+        text: 'The host strains, the scientific question, and why corynephages are useful.',
         href: '/labprotocols/protocol_01-intro.html',
       },
       {
@@ -183,7 +183,7 @@ export const resourceGroups = [
       },
       {
         title: '4. Acquiring and processing environmental samples',
-        text: 'How samples are collected, labeled, filtered, and prepared for screening.',
+        text: 'Collect, label, filter, and prepare environmental samples for screening.',
         href: '/labprotocols/protocol_04-sampling.html',
       },
       {
@@ -193,17 +193,17 @@ export const resourceGroups = [
       },
       {
         title: '6. Phage enrichment',
-        text: 'Increasing the chance of finding phages from environmental samples.',
+        text: 'Use host bacteria to enrich samples before plaque screening.',
         href: '/labprotocols/protocol_06-enrichments.html',
       },
       {
         title: '7. Phage purification',
-        text: 'Turning a plaque into a clean isolate through repeated purification.',
+        text: 'Use repeated plaque purification to move toward a clean isolate.',
         href: '/labprotocols/protocol_07-purification.html',
       },
       {
         title: '8. Preparing high titer lysates',
-        text: 'Building enough phage stock for DNA extraction and characterization.',
+        text: 'Prepare enough phage stock for DNA extraction and other assays.',
         href: '/labprotocols/protocol_08-lysates.html',
       },
       {
@@ -234,7 +234,7 @@ export const resourceGroups = [
     items: [
       {
         title: '1. Introduction',
-        text: 'Command line basics, sequence context, BLAST, and how phage genomes are read.',
+        text: 'Command line basics, BLAST, sequence files, and how phage genomes are read.',
         href: '/bioinformatics/protocol01_introduction.html',
       },
       {
@@ -244,7 +244,7 @@ export const resourceGroups = [
       },
       {
         title: '3. Annotating genomes',
-        text: 'Finding genes, assigning likely functions, and building interpretable genome maps.',
+        text: 'Find genes, assign likely functions, and make genome maps students can explain.',
         href: '/bioinformatics/protocol03_annotation.html',
       },
     ],
@@ -255,7 +255,7 @@ export const resourceGroups = [
     items: [
       {
         title: 'Day 1',
-        text: 'Where to arrive, what to bring, dress code, and first lab activities.',
+        text: 'First-day expectations, lab safety, clothing, and pipetting practice.',
         href: '/resources/day1',
       },
       {
@@ -265,12 +265,12 @@ export const resourceGroups = [
       },
       {
         title: 'IT instructions',
-        text: 'Computer, browser, network, and software setup notes for the program.',
+        text: 'Public notes on the software used during bioinformatics sessions.',
         href: '/resources/03_ITinstructions.html',
       },
       {
         title: 'Everyday lab checklist',
-        text: 'A daily reference for lab readiness, notebook habits, and cleanup.',
+        text: 'Daily reminders for lab readiness, notebook habits, and cleanup.',
         href: '/resources/04_everydaychecklist.html',
       },
       {
@@ -291,22 +291,22 @@ export const resourceGroups = [
     items: [
       {
         title: 'Instructor info',
-        text: 'Instructor reference notes and weekly teaching materials.',
+        text: 'Teaching notes for weekly experiments, genome work, and posters.',
         href: '/resources/07_instructorinfo.html',
       },
       {
         title: 'Program schedule',
-        text: 'The 8-week schedule and daily blocks.',
+        text: 'The 8-week outline and typical daily schedule.',
         href: '/program/',
       },
       {
         title: 'People and mentors',
-        text: 'Current team, faculty sponsors, instructors, and mentors.',
+        text: 'Current faculty sponsor, instructors, mentors, and alumni.',
         href: '/people/',
       },
       {
         title: 'Program history',
-        text: 'Prior years and acknowledgments.',
+        text: 'Prior program years, rosters, and acknowledgments.',
         href: '/history/',
       },
     ],
@@ -316,17 +316,17 @@ export const resourceGroups = [
 export const partners = [
   {
     name: 'Roxbury Community College',
-    role: 'RCC student recruitment and academic partnership.',
+    role: 'Student partnership and RCC coordination.',
     href: 'https://www.rcc.mass.edu/',
   },
   {
     name: 'HMS Department of Microbiology',
-    role: 'HMS labs, instructors, research equipment, and meeting space.',
+    role: 'Teaching lab, instructors, equipment, and scientific home.',
     href: 'https://micro.hms.harvard.edu/',
   },
   {
     name: 'Bernhardt Lab and HMS mentors',
-    role: 'Faculty sponsorship, lab leadership, instructor network, and program continuity.',
+    role: 'Faculty sponsorship, lab operations, and instructor network.',
   },
   {
     name: 'New England Biolabs',
@@ -335,12 +335,12 @@ export const partners = [
   },
   {
     name: 'HHMI',
-    role: 'Program support for summer research education.',
+    role: 'Support for summer research education.',
     href: 'https://www.hhmi.org/',
   },
   {
     name: 'Field, microscopy, and community partners',
-    role: 'Sampling sites, microscopy access, career panels, and science connections.',
+    role: 'Sampling sites, microscopy access, career panels, and scientific resources.',
   },
 ];
 
@@ -348,7 +348,7 @@ export const partnerLogos = [
   {
     code: 'HMS',
     name: 'Harvard Medical School Department of Microbiology',
-    role: 'Teaching lab, mentors, and scientific community.',
+    role: 'Teaching lab, instructors, and scientific home.',
     href: 'https://micro.hms.harvard.edu/',
     logo: '/assets/logos/hms-microbiology-logo.svg',
     alt: 'Harvard Medical School Department of Microbiology logo',
@@ -356,7 +356,7 @@ export const partnerLogos = [
   {
     code: 'RCC',
     name: 'Roxbury Community College',
-    role: 'Student partnership and recruitment.',
+    role: 'Student partnership and coordination.',
     href: 'https://www.rcc.mass.edu/',
     logo: '/assets/logos/rcc-logo.svg',
     alt: 'Roxbury Community College logo',
@@ -364,7 +364,7 @@ export const partnerLogos = [
   {
     code: 'HHMI',
     name: 'Howard Hughes Medical Institute',
-    role: 'Program support and science education.',
+    role: 'Support for summer research education.',
     href: 'https://www.hhmi.org/',
     logo: '/assets/logos/hhmi-logo.png',
     alt: 'Howard Hughes Medical Institute logo',
@@ -372,7 +372,7 @@ export const partnerLogos = [
   {
     code: 'NEB',
     name: 'New England Biolabs',
-    role: 'Program sponsor and funding support, with reagents and sequencing-related resources.',
+    role: 'Program sponsor and funding backer, with reagents and sequencing-related resources.',
     href: 'https://www.neb.com/',
     logo: '/assets/neb-logo.png',
     alt: 'New England Biolabs logo',
@@ -382,32 +382,32 @@ export const partnerLogos = [
 export const studentInfo = {
   status: 'Student selection and dates are coordinated each year with Roxbury Community College. The usual summer window is May-July.',
   eligibility:
-    'The program is for Roxbury Community College students who can commit to the full 8-week schedule and are excited to learn in a research lab.',
+    'The program is for Roxbury Community College students who can commit to the full 8-week schedule and want hands-on research experience.',
   schedule: 'Typical hours are Monday-Thursday, 9am-2pm, for 8 weeks.',
   note:
-    'Questions about timing, student participation, or teaching can go through the contact link.',
+    'Email with questions about timing, student participation, or teaching.',
 };
 
 export const historyYears = [
   {
     year: '2022',
     title: 'Pilot year',
-    text: 'The program began as a discovery-based summer research experience inspired by SEA-PHAGES and adapted for RCC students working at HMS.',
+    text: 'The program began as a discovery-based summer research experience adapted for RCC students working at HMS.',
   },
   {
     year: '2023',
     title: 'More instructors',
-    text: 'The teaching team broadened across HMS labs, adding more phage defense, microbial evolution, and microscopy expertise.',
+    text: 'The teaching team broadened across HMS labs, adding expertise in phage defense, microbial evolution, and microscopy.',
   },
   {
     year: '2024',
-    title: 'Expanded public materials',
+    title: 'Expanded manual',
     text: 'Protocols, year-specific resources, and student materials were expanded.',
   },
   {
     year: '2025',
     title: 'Public phage collection',
-    text: 'Student discoveries were prepared for PhagesDB records, and poster-session practices became a stronger capstone.',
+    text: 'Student discoveries were prepared for PhagesDB records, with final posters as the capstone.',
   },
   {
     year: '2026',
