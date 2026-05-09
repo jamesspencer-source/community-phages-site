@@ -1,7 +1,7 @@
 export const siteMeta = {
   title: 'Community Phages',
   description:
-    'An 8-week paid summer research program where Roxbury Community College students work with Harvard Medical School instructors to isolate and characterize environmental bacteriophages.',
+    'An 8-week paid summer research program where Roxbury Community College students work with Harvard Medical School instructors to find and characterize environmental bacteriophages.',
   url: 'https://phages.hms.harvard.edu',
 };
 
@@ -37,15 +37,15 @@ export const programFacts = [
 export const audiencePaths = [
   {
     audience: 'Students',
-    title: 'A paid 8-week summer research internship for RCC students.',
-    text: 'Students spend the summer at HMS learning microbiology by doing the experiments: sampling, plating, purification, DNA work, genome analysis, and a final poster.',
+    title: 'Paid research time in an HMS lab.',
+    text: 'RCC students spend the summer doing microbiology experiments with real outcomes: sampling, plating, purification, DNA work, genome analysis, and a final poster.',
     href: '/students/',
     action: 'Student information',
   },
   {
     audience: 'Instructors',
-    title: 'HMS instructors teach the experiments and help students interpret the results.',
-    text: 'Instructors teach the bench work, help troubleshoot, guide genome analysis, and work with students as they turn data into poster figures.',
+    title: 'Mentored bench teaching.',
+    text: 'Instructors teach the methods, help students troubleshoot unclear results, guide genome analysis, and help students decide what the evidence supports.',
     href: '/instructors/',
     action: 'Instructor information',
   },
@@ -57,12 +57,12 @@ export const studentHighlights = [
     text: 'Collect environmental samples, plate them on corynebacterial hosts, look for plaques, purify phages, prepare lysates, extract DNA, analyze genomes, and present final posters.',
   },
   {
-    title: 'Skills students practice',
-    text: 'Pipetting, sterile technique, bacterial lawns, phage purification, titers, microscopy, restriction digests, Geneious, BLAST, notebook habits, and explaining results clearly.',
+    title: 'A real research problem',
+    text: 'Students do not follow a lab exercise with a guaranteed result. Some samples produce plaques, some do not, and the next experiment depends on what the plate shows.',
   },
   {
-    title: 'Time commitment',
-    text: 'The program usually runs Monday through Thursday, 9am-2pm, for eight weeks from May to July. Exact dates are set each year with RCC.',
+    title: 'Paid summer time',
+    text: 'The 2026 program runs May 18-July 9, Monday through Thursday, 9:00 AM-2:00 PM. Student pay helps students commit to the full summer schedule.',
   },
 ];
 
@@ -72,8 +72,8 @@ export const instructorHighlights = [
     text: 'Instructors show students how to set up plates, handle bacterial cultures, read lawns and plaques, repeat experiments, and keep useful notebooks.',
   },
   {
-    title: 'Genome and data work',
-    text: 'Instructors help students assemble genomes, use BLAST, annotate genes, compare phages, and decide what belongs in figures.',
+    title: 'Research troubleshooting',
+    text: 'Instructors help students decide what a plate, gel, titer, image, or genome result means and what experiment should come next.',
   },
   {
     title: 'Poster mentoring',
@@ -316,17 +316,17 @@ export const resourceGroups = [
 export const partners = [
   {
     name: 'Roxbury Community College',
-    role: 'Student partnership and RCC coordination.',
+    role: 'Student partnership, local coordination, and cohort selection.',
     href: 'https://www.rcc.mass.edu/',
   },
   {
     name: 'HMS Department of Microbiology',
-    role: 'Teaching lab, instructors, equipment, and scientific home.',
+    role: 'Teaching lab, instructors, equipment, and scientific home for the summer.',
     href: 'https://micro.hms.harvard.edu/',
   },
   {
     name: 'Bernhardt Lab and HMS mentors',
-    role: 'Faculty sponsorship, lab operations, and instructor network.',
+    role: 'Faculty sponsorship, lab operations, bench mentoring, and instructor network.',
   },
   {
     name: 'New England Biolabs',
@@ -335,12 +335,12 @@ export const partners = [
   },
   {
     name: 'HHMI',
-    role: 'Support for summer research education.',
+    role: 'Support for paid student research time and cohort-based undergraduate research.',
     href: 'https://www.hhmi.org/',
   },
   {
     name: 'Field, microscopy, and community partners',
-    role: 'Sampling sites, microscopy access, career panels, and scientific resources.',
+    role: 'Sampling sites, microscopy access, scientific resources, and poster-session opportunities.',
   },
 ];
 
@@ -348,7 +348,7 @@ export const partnerLogos = [
   {
     code: 'HMS',
     name: 'Harvard Medical School Department of Microbiology',
-    role: 'Teaching lab, instructors, and scientific home.',
+    role: 'Teaching lab, instructors, and scientific home for the summer.',
     href: 'https://micro.hms.harvard.edu/',
     logo: '/assets/logos/hms-microbiology-logo.svg',
     alt: 'Harvard Medical School Department of Microbiology logo',
@@ -356,7 +356,7 @@ export const partnerLogos = [
   {
     code: 'RCC',
     name: 'Roxbury Community College',
-    role: 'Student partnership and coordination.',
+    role: 'Student partnership and cohort coordination.',
     href: 'https://www.rcc.mass.edu/',
     logo: '/assets/logos/rcc-logo.svg',
     alt: 'Roxbury Community College logo',
@@ -364,7 +364,7 @@ export const partnerLogos = [
   {
     code: 'HHMI',
     name: 'Howard Hughes Medical Institute',
-    role: 'Support for summer research education.',
+    role: 'Support for paid summer research time.',
     href: 'https://www.hhmi.org/',
     logo: '/assets/logos/hhmi-logo.png',
     alt: 'Howard Hughes Medical Institute logo',
@@ -380,10 +380,10 @@ export const partnerLogos = [
 ];
 
 export const studentInfo = {
-  status: 'Student selection and dates are coordinated each year with Roxbury Community College. The usual summer window is May-July.',
+  status: 'The 2026 program runs May 18-July 9. Student selection and dates are coordinated each year with Roxbury Community College.',
   eligibility:
-    'The program is for Roxbury Community College students who can commit to the full 8-week schedule and want hands-on research experience.',
-  schedule: 'Typical hours are Monday-Thursday, 9am-2pm, for 8 weeks.',
+    'The program is for Roxbury Community College students who can commit to the full 8-week schedule and want a first research lab experience.',
+  schedule: 'For 2026, expected hours are Monday-Thursday, 9:00 AM-2:00 PM, May 18-July 9.',
   note:
     'Email with questions about timing, student participation, or teaching.',
 };
@@ -392,7 +392,7 @@ export const historyYears = [
   {
     year: '2022',
     title: 'Pilot year',
-    text: 'The program began as a discovery-based summer research experience adapted for RCC students working at HMS.',
+    text: 'The program launched as a paid summer research experience for RCC students working in an HMS microbiology lab.',
   },
   {
     year: '2023',
@@ -412,6 +412,6 @@ export const historyYears = [
   {
     year: '2026',
     title: 'Current program',
-    text: 'The program continues as an 8-week May-July research internship with field sampling, bioinformatics, partner visits, and a final poster session.',
+    text: 'The 2026 program runs May 18-July 9 as an 8-week research internship with field sampling, bioinformatics, partner visits, and a final poster session.',
   },
 ];
