@@ -82,15 +82,16 @@ h3 {
   overflow-wrap: normal;
   word-break: normal;
   hyphens: none;
-  text-wrap: balance;
+  text-wrap: normal;
   font-optical-sizing: auto;
 }
 
 p,
 li,
 dd {
-  overflow-wrap: break-word;
-  text-wrap: pretty;
+  overflow-wrap: normal;
+  word-break: normal;
+  text-wrap: normal;
 }
 
 .no-break {
@@ -130,6 +131,7 @@ dd {
   color: var(--ink);
   padding: 0.68rem 0.75rem;
   box-shadow: 0 16px 42px rgba(7, 27, 34, 0.08);
+  -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
 }
 
@@ -230,7 +232,7 @@ dd {
   position: relative;
   color: var(--ink-soft);
   font-size: 0.92rem;
-  font-weight: 760;
+  font-weight: 700;
   line-height: 1.2;
   text-decoration: none;
 }
@@ -315,7 +317,7 @@ dd {
   color: var(--ink-soft);
   padding: 0.62rem 0.72rem;
   font-size: 0.9rem;
-  font-weight: 820;
+  font-weight: 800;
   text-decoration: none;
 }
 
@@ -358,7 +360,7 @@ dd {
   border-radius: var(--radius);
   padding: 0.72rem 1rem;
   font-size: 0.88rem;
-  font-weight: 780;
+  font-weight: 700;
   text-decoration: none;
   transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
 }
@@ -467,7 +469,7 @@ main {
   color: var(--ink);
   font-family: var(--font-serif);
   font-size: 4.15rem;
-  font-weight: 680;
+  font-weight: 600;
   line-height: 1.02;
 }
 
@@ -728,7 +730,7 @@ main {
 .specimen-record dd {
   margin: 0.2rem 0 0;
   color: var(--ink);
-  font-weight: 850;
+  font-weight: 800;
 }
 
 .fact-strip {
@@ -757,7 +759,7 @@ main {
   margin-bottom: 0.9rem;
   color: var(--teal);
   font-size: 0.8rem;
-  font-weight: 950;
+  font-weight: 900;
   text-transform: uppercase;
 }
 
@@ -814,7 +816,7 @@ main {
   max-width: 20ch;
   font-family: var(--font-serif);
   font-size: 2.85rem;
-  font-weight: 660;
+  font-weight: 600;
   line-height: 1.06;
 }
 
@@ -838,7 +840,7 @@ main {
   margin: 0;
   color: var(--teal);
   font-size: 0.78rem;
-  font-weight: 950;
+  font-weight: 900;
   letter-spacing: 0;
   text-transform: uppercase;
 }
@@ -1040,7 +1042,7 @@ main {
 
 .resource-group__heading span {
   color: var(--muted);
-  font-weight: 850;
+  font-weight: 800;
 }
 
 .resource-list {
@@ -1196,7 +1198,7 @@ main {
   margin: 0;
   font-family: var(--font-serif);
   font-size: 2.75rem;
-  font-weight: 660;
+  font-weight: 600;
   line-height: 1.04;
 }
 
@@ -1320,7 +1322,7 @@ main {
 .partner-logo-card__index {
   color: var(--teal);
   font-size: 0.76rem;
-  font-weight: 950;
+  font-weight: 900;
   letter-spacing: 0;
   text-transform: uppercase;
 }
@@ -1482,7 +1484,7 @@ main {
 .inset-figure figcaption span {
   color: var(--teal);
   font-size: 0.73rem;
-  font-weight: 950;
+  font-weight: 900;
   letter-spacing: 0;
   text-transform: uppercase;
 }
@@ -1542,7 +1544,7 @@ main {
   margin: 0 auto 1rem;
   color: var(--field);
   font-size: 0.82rem;
-  font-weight: 950;
+  font-weight: 900;
   text-transform: uppercase;
 }
 
@@ -1917,7 +1919,7 @@ main {
 .lab-blocks span {
   color: var(--teal);
   font-size: 0.78rem;
-  font-weight: 950;
+  font-weight: 900;
   text-transform: uppercase;
 }
 
@@ -2011,7 +2013,7 @@ main {
   padding: 0.8rem 0;
   border-bottom: 1px solid var(--rule);
   font-size: 0.86rem;
-  font-weight: 950;
+  font-weight: 900;
   text-transform: uppercase;
 }
 
@@ -2022,7 +2024,7 @@ main {
   border-bottom: 1px solid var(--rule);
   padding: 0.72rem 0;
   color: var(--ink-soft);
-  font-weight: 850;
+  font-weight: 800;
   text-decoration: none;
 }
 
@@ -2134,7 +2136,7 @@ main {
 .year-index > article > span {
   color: var(--teal);
   font-size: 0.76rem;
-  font-weight: 950;
+  font-weight: 900;
   text-transform: uppercase;
 }
 
@@ -2176,14 +2178,14 @@ main {
   padding: 0.72rem 0;
   color: var(--ink-soft);
   font-size: 0.92rem;
-  font-weight: 820;
+  font-weight: 800;
   text-decoration: none;
 }
 
 .manual-page-nav a:first-child {
   display: block;
   color: var(--teal);
-  font-weight: 950;
+  font-weight: 900;
   text-transform: uppercase;
 }
 
@@ -2260,7 +2262,8 @@ main {
 
 .manual-content a {
   color: var(--teal);
-  font-weight: 850;
+  font-weight: 800;
+  overflow-wrap: anywhere;
 }
 
 .manual-content img {
@@ -2308,7 +2311,7 @@ main {
 }
 
 .manual-link-note {
-  font-weight: 850;
+  font-weight: 800;
 }
 
 .people-directory {
@@ -2333,7 +2336,7 @@ main {
 .people-group__heading span {
   color: var(--teal);
   font-size: 0.8rem;
-  font-weight: 950;
+  font-weight: 900;
   text-transform: uppercase;
 }
 
@@ -2445,7 +2448,7 @@ main {
 .person-role {
   margin: 0.5rem 0;
   color: var(--ink);
-  font-weight: 850;
+  font-weight: 800;
 }
 
 .person-years {
@@ -2527,7 +2530,7 @@ main {
 .atlas-label span {
   color: var(--teal);
   font-size: 0.74rem;
-  font-weight: 950;
+  font-weight: 900;
   text-transform: uppercase;
 }
 
@@ -2868,7 +2871,7 @@ main {
 .student-evidence-strip__note span {
   color: var(--teal);
   font-size: 0.76rem;
-  font-weight: 950;
+  font-weight: 900;
   text-transform: uppercase;
 }
 
@@ -2964,7 +2967,7 @@ main {
   z-index: 1;
   color: var(--ink-soft);
   font-size: 0.68rem;
-  font-weight: 950;
+  font-weight: 900;
   letter-spacing: 0;
   line-height: 1;
   text-transform: uppercase;
@@ -3167,7 +3170,7 @@ main {
 .people-section__heading span {
   color: var(--teal);
   font-size: 0.8rem;
-  font-weight: 950;
+  font-weight: 900;
   text-transform: uppercase;
 }
 
@@ -3242,7 +3245,7 @@ main {
 .alumni-year-group__head strong {
   color: var(--muted);
   font-size: 0.78rem;
-  font-weight: 950;
+  font-weight: 900;
   text-transform: uppercase;
 }
 
@@ -3393,7 +3396,7 @@ main {
 }
 
 .person-copy h3 {
-  text-wrap: balance;
+  text-wrap: normal;
 }
 
 .person-role {
