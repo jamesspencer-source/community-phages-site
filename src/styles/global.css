@@ -3264,19 +3264,21 @@ main {
 }
 
 .person-profile--primary {
-  grid-template-columns: minmax(11rem, 13rem) minmax(0, 1fr);
+  grid-template-columns: minmax(15rem, 18rem) minmax(0, 1fr);
   align-items: start;
   border-top: 0;
   border-bottom: 1px solid var(--rule);
-  padding: 1.2rem 0;
+  gap: 1.35rem;
+  padding: 1.3rem 0;
 }
 
 .person-profile--secondary {
-  grid-template-columns: minmax(10rem, 12rem) minmax(0, 1fr);
+  grid-template-columns: minmax(13.5rem, 15.5rem) minmax(0, 1fr);
   align-items: start;
   border-top: 0;
   border-bottom: 1px solid var(--rule);
-  padding: 1.05rem 0;
+  gap: 1.25rem;
+  padding: 1.15rem 0;
 }
 
 .person-profile--roster {
@@ -3289,13 +3291,15 @@ main {
 
 .person-profile--grid,
 .person-profile--compact {
-  grid-template-columns: minmax(0, 1fr);
+  grid-template-columns: 7.2rem minmax(0, 1fr);
+  align-items: start;
   border: 1px solid var(--rule);
   background: rgba(251, 253, 251, 0.78);
   padding: 0.85rem;
 }
 
 .person-profile--compact {
+  grid-template-columns: 5.8rem minmax(0, 1fr);
   gap: 0.72rem;
   padding: 0.72rem;
 }
