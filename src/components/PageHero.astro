@@ -1,15 +1,17 @@
 ---
 import HeroPhage from './HeroPhage.astro';
+import PageMotif from './PageMotif.astro';
 import { withBase } from '@utils/urls';
 
 interface Props {
   title: string;
   text: string;
   image?: boolean;
+  motif?: 'program' | 'students' | 'instructors' | 'people' | 'resources' | 'discoveries' | 'partners' | 'history' | 'atlas';
   actions?: { label: string; href: string; variant?: 'primary' | 'secondary' }[];
 }
 
-const { title, text, image = false, actions = [] } = Astro.props;
+const { title, text, image = false, motif = 'atlas', actions = [] } = Astro.props;
 ---
 
 <section class:list={['page-hero', image && 'page-hero--image']}>
@@ -67,4 +69,5 @@ const { title, text, image = false, actions = [] } = Astro.props;
       </div>
     )
   }
+  {!image && <PageMotif variant={motif} />}
 </section>

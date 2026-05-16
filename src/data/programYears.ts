@@ -104,7 +104,6 @@ export const programYearRosters: ProgramYearRoster[] = [
       'Claire Kitzmiller',
       'Sam Fernandez',
       'Doug Wassarman',
-      'Tien Nguyen',
     ],
   },
 ];

@@ -419,15 +419,91 @@ main {
   padding: 4.25rem 0 3rem;
 }
 
-.page-hero:not(.page-hero--image)::after {
+.page-motif {
   align-self: stretch;
   min-height: 16rem;
   border-left: 2px solid var(--rule-strong);
+  display: grid;
+  place-items: center;
   background:
-    radial-gradient(circle at 28% 28%, rgba(0, 122, 120, 0.22) 0 0.35rem, transparent 0.38rem),
-    radial-gradient(circle at 68% 62%, rgba(243, 106, 61, 0.26) 0 0.28rem, transparent 0.31rem),
-    linear-gradient(135deg, transparent 0 46%, var(--rule) 46% 47%, transparent 47% 100%);
-  content: "";
+    linear-gradient(rgba(7, 27, 34, 0.026) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(7, 27, 34, 0.02) 1px, transparent 1px),
+    radial-gradient(circle at 28% 28%, rgba(0, 122, 120, 0.1), transparent 7rem),
+    var(--paper);
+  background-size: 24px 24px, 24px 24px, auto, auto;
+  overflow: hidden;
+}
+
+.page-motif svg {
+  width: min(100%, 23rem);
+  height: auto;
+  color: var(--ink);
+}
+
+.page-motif__sheet,
+.page-motif__fold,
+.page-motif__mark,
+.page-motif__plate,
+.page-motif__gene {
+  fill: rgba(251, 253, 251, 0.78);
+  stroke: currentColor;
+  stroke-linejoin: round;
+  stroke-width: 3;
+}
+
+.page-motif__fold {
+  fill: rgba(0, 122, 120, 0.12);
+}
+
+.page-motif__plate {
+  fill: rgba(207, 228, 90, 0.4);
+}
+
+.page-motif__plate-small {
+  fill: rgba(207, 228, 90, 0.28);
+}
+
+.page-motif__line,
+.page-motif__rule,
+.page-motif__trace {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+}
+
+.page-motif__rule {
+  stroke: var(--rule-strong);
+  stroke-width: 2;
+}
+
+.page-motif__trace {
+  stroke: var(--teal);
+}
+
+.page-motif__plaque,
+.page-motif__core {
+  fill: var(--paper);
+  stroke: currentColor;
+  stroke-width: 2.4;
+}
+
+.page-motif__wash {
+  fill: rgba(255, 254, 250, 0.58);
+  stroke: rgba(7, 27, 34, 0.22);
+}
+
+.page-motif__small {
+  fill: var(--acid-soft);
+}
+
+.page-motif__teal {
+  fill: rgba(0, 122, 120, 0.18);
+}
+
+.page-motif__amber {
+  fill: rgba(243, 106, 61, 0.18);
 }
 
 .page-hero--image {
@@ -2096,11 +2172,24 @@ main {
 }
 
 .manual-list a {
+  position: relative;
   display: grid;
-  grid-template-columns: minmax(12rem, 0.36fr) minmax(0, 1fr);
+  grid-template-columns: minmax(12rem, 0.36fr) minmax(0, 1fr) auto;
   gap: 1rem;
   padding: 0.92rem 0;
   text-decoration: none;
+}
+
+.manual-list a::after {
+  grid-column: 3;
+  align-self: center;
+  border: 1px solid var(--rule);
+  padding: 0.3rem 0.48rem;
+  color: var(--teal);
+  content: "Open";
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 
 .manual-list strong {
@@ -2112,7 +2201,7 @@ main {
 }
 
 .manual-list--large a {
-  grid-template-columns: minmax(15rem, 0.34fr) minmax(0, 1fr);
+  grid-template-columns: minmax(15rem, 0.34fr) minmax(0, 1fr) auto;
   padding: 1.05rem 0;
 }
 
@@ -3214,7 +3303,52 @@ main {
 }
 
 .people-grid--compact {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.people-text-list {
+  display: grid;
+  gap: 0;
+  margin-top: 1rem;
+  border-top: 1px solid var(--rule-strong);
+}
+
+.people-text-list article {
+  display: grid;
+  grid-template-columns: 3.2rem minmax(0, 1fr);
+  gap: 0.85rem;
+  border-bottom: 1px solid var(--rule);
+  padding: 0.95rem 0;
+}
+
+.people-text-list__initials {
+  display: grid;
+  width: 3.2rem;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid var(--rule);
+  background: var(--field-soft);
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.people-text-list h3 {
+  margin: 0.1rem 0 0;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  line-height: 1.08;
+}
+
+.people-text-list p:last-child {
+  max-width: 54rem;
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+}
+
+.people-text-list--compact {
+  margin-top: 0.75rem;
 }
 
 .alumni-year-groups {
@@ -3473,7 +3607,7 @@ main {
     min-height: auto;
   }
 
-  .page-hero:not(.page-hero--image)::after {
+  .page-motif {
     min-height: 7rem;
     border-left: 0;
     border-top: 2px solid var(--rule-strong);
@@ -3606,12 +3740,12 @@ main {
 
   .page-hero--image {
     margin-top: -6.5rem;
-    padding-top: 10rem;
+    padding: 10rem 1.35rem 3rem;
   }
 
   .page-hero__copy h1,
   .page-hero--image .page-hero__copy h1 {
-    font-size: 3.15rem;
+    font-size: 2.92rem;
   }
 
   .page-hero__copy p {
@@ -3634,22 +3768,38 @@ main {
   }
 
   .hero-visual {
-    min-height: 24rem;
+    min-height: 0;
+    padding-top: 20rem;
+    overflow: hidden;
   }
 
   .hero-phage {
-    left: 4%;
-    top: 0.8rem;
-    width: 10.75rem;
+    left: 0.25rem;
+    top: 1.1rem;
+    width: 10.4rem;
   }
 
   .hero-plate {
-    right: -8rem;
-    width: 21rem;
+    right: -3.8rem;
+    top: 2.9rem;
+    width: 17.8rem;
+  }
+
+  .hero-trace {
+    top: 15rem;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    height: 3.6rem;
   }
 
   .specimen-record {
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
     grid-template-columns: 1fr;
+    margin-top: 1rem;
   }
 
   .specimen-record div + div {
@@ -3710,6 +3860,11 @@ main {
   .year-roster,
   .history-river article {
     grid-template-columns: 1fr;
+  }
+
+  .manual-list a::after {
+    grid-column: 1;
+    justify-self: start;
   }
 
   .manual-article__head h1 {

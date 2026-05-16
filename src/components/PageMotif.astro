@@ -1,0 +1,84 @@
+---
+interface Props {
+  variant?: 'program' | 'students' | 'instructors' | 'people' | 'resources' | 'discoveries' | 'partners' | 'history' | 'atlas';
+}
+
+const { variant = 'atlas' } = Astro.props;
+---
+
+<div class:list={['page-motif', `page-motif--${variant}`]} aria-hidden="true">
+  {
+    variant === 'students' && (
+      <svg viewBox="0 0 360 240" focusable="false">
+        <circle class="page-motif__plate" cx="168" cy="116" r="74" />
+        <circle class="page-motif__plaque page-motif__wash" cx="134" cy="94" r="17" />
+        <circle class="page-motif__plaque" cx="132" cy="93" r="10" />
+        <circle class="page-motif__plaque" cx="186" cy="126" r="12" />
+        <circle class="page-motif__plaque page-motif__small" cx="209" cy="82" r="6" />
+        <path class="page-motif__line" d="M42 199h242M57 39h70M57 58h42M249 55l34 20-34 20-34-20zM249 95v45M225 131l-25 17M273 131l25 17" />
+        <path class="page-motif__rule" d="M52 206v14M112 206v14M172 206v14M232 206v14" />
+      </svg>
+    )
+  }
+  {
+    variant === 'instructors' && (
+      <svg viewBox="0 0 360 240" focusable="false">
+        <path class="page-motif__sheet" d="M58 40h150v160H58z" />
+        <path class="page-motif__line" d="M84 78h88M84 101h62M84 146h100M84 169h76" />
+        <path class="page-motif__mark" d="M235 62h72v48h-72zM248 86h46M248 130h70M248 154h50" />
+        <circle class="page-motif__plate page-motif__plate-small" cx="268" cy="174" r="35" />
+        <circle class="page-motif__plaque" cx="257" cy="165" r="6" />
+        <circle class="page-motif__plaque page-motif__small" cx="280" cy="184" r="5" />
+      </svg>
+    )
+  }
+  {
+    variant === 'resources' && (
+      <svg viewBox="0 0 360 240" focusable="false">
+        <path class="page-motif__sheet" d="M66 36h190l38 38v130H66z" />
+        <path class="page-motif__fold" d="M256 36v38h38" />
+        <path class="page-motif__line" d="M96 82h105M96 108h150M96 134h95M96 160h126" />
+        <path class="page-motif__rule" d="M82 82h8M82 108h8M82 134h8M82 160h8" />
+        <circle class="page-motif__plate page-motif__plate-small" cx="266" cy="151" r="24" />
+        <circle class="page-motif__plaque page-motif__small" cx="260" cy="146" r="4" />
+        <circle class="page-motif__plaque" cx="273" cy="158" r="5" />
+      </svg>
+    )
+  }
+  {
+    variant === 'people' && (
+      <svg viewBox="0 0 360 240" focusable="false">
+        <path class="page-motif__sheet" d="M52 47h256v147H52z" />
+        <path class="page-motif__mark" d="M76 71h62v74H76zM158 71h62v74h-62zM240 71h44v74h-44z" />
+        <circle class="page-motif__core" cx="107" cy="99" r="15" />
+        <path class="page-motif__line" d="M82 162h50M158 162h58M240 162h42M82 176h36M158 176h40M240 176h32" />
+        <path class="page-motif__rule" d="M52 194h256" />
+      </svg>
+    )
+  }
+  {
+    variant === 'discoveries' && (
+      <svg viewBox="0 0 360 240" focusable="false">
+        <path class="page-motif__line" d="M42 119h260" />
+        <path class="page-motif__gene page-motif__teal" d="M58 96h50l15 23-15 23H58z" />
+        <path class="page-motif__gene" d="M133 96h70l15 23-15 23h-70z" />
+        <path class="page-motif__gene page-motif__amber" d="M232 96h45l15 23-15 23h-45z" />
+        <path class="page-motif__trace" d="M56 55h22v21h20V53h22v26h26V58h24v21h24V50h22v29h26V61h24" />
+        <path class="page-motif__rule" d="M74 171h164M98 190h116" />
+      </svg>
+    )
+  }
+  {
+    (variant === 'program' || variant === 'partners' || variant === 'history' || variant === 'atlas') && (
+      <svg viewBox="0 0 360 240" focusable="false">
+        <path class="page-motif__sheet" d="M57 50h116l30 30v102H57z" />
+        <path class="page-motif__fold" d="M173 50v30h30" />
+        <path class="page-motif__line" d="M83 91h72M83 115h93M83 139h63" />
+        <circle class="page-motif__plate" cx="257" cy="128" r="47" />
+        <circle class="page-motif__plaque" cx="239" cy="116" r="9" />
+        <circle class="page-motif__plaque page-motif__small" cx="273" cy="140" r="6" />
+        <path class="page-motif__rule" d="M54 200h252" />
+      </svg>
+    )
+  }
+</div>

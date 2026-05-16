@@ -1,15 +1,15 @@
 ---
 import AudiencePaths from '@components/AudiencePaths.astro';
-import AtlasLabel from '@components/AtlasLabel.astro';
 import DiscoveryShowcase from '@components/DiscoveryShowcase.astro';
 import FactStrip from '@components/FactStrip.astro';
-import GenomeTrace from '@components/GenomeTrace.astro';
 import MethodRail from '@components/MethodRail.astro';
 import PageHero from '@components/PageHero.astro';
 import PartnerLogoGrid from '@components/PartnerLogoGrid.astro';
-import SpecimenPlate from '@components/SpecimenPlate.astro';
+import { contact } from '@data/site';
 import BaseLayout from '@layouts/BaseLayout.astro';
-import { withBase } from '@utils/urls';
+import { mailto, withBase } from '@utils/urls';
+
+const contactHref = mailto(contact.email, contact.subject);
 ---
 
 <BaseLayout>
@@ -36,34 +36,22 @@ import { withBase } from '@utils/urls';
 
   <section class="section">
     <div class="section-heading">
-      <h2>For RCC students and HMS instructors.</h2>
+      <h2>Students and instructors.</h2>
       <p>
-        Students learn research by doing experiments without a guaranteed answer. Instructors teach the methods, help troubleshoot, and guide the work from plaques to posters.
+        RCC students spend regular summer hours in an HMS lab. Instructors teach the methods, help students read results, and guide the work from plaques to posters.
       </p>
     </div>
-    <div class="method-spread">
-      <div class="method-spread__main">
-        <h3>Environmental samples, plaques, DNA, posters.</h3>
-        <p>
-          The summer starts with pipetting, sterile technique, and sample collection. Students plate samples, look for plaques, purify phages, prepare lysates, work with DNA, analyze genomes, and present what the evidence supports.
-        </p>
-        <div class="method-spread__graphics" aria-hidden="true">
-          <SpecimenPlate compact tone="paper" variant={4} />
-          <GenomeTrace />
-        </div>
-      </div>
-      <AudiencePaths />
-    </div>
+    <AudiencePaths />
   </section>
 
   <section class="section section--band section--method">
     <div class="section-heading">
-      <h2>The 8-week schedule.</h2>
+      <h2>8-week lab schedule.</h2>
       <p>
-        The 2026 program runs May 18-July 9. The work starts with sampling and bench skills, moves through plaques and lysates, and ends with microscopy, DNA, genome analysis, figures, and a final poster.
+        The 2026 program runs May 18-July 9. Students start with sampling and bench skills, then move through plaque work, lysates, microscopy, DNA, genome analysis, and final posters.
       </p>
     </div>
-    <MethodRail limit={5} />
+    <MethodRail limit={4} />
     <div class="callout callout--wide">
       <div>
         <h3>Program schedule</h3>
@@ -77,36 +65,22 @@ import { withBase } from '@utils/urls';
     <div class="section-heading">
       <h2>Student phage records.</h2>
       <p>
-        Student isolates can lead to phage names, genome assemblies, PhagesDB records, and final posters.
+        Student isolates can become named phages, genome assemblies, public PhagesDB records, and final posters.
       </p>
     </div>
     <DiscoveryShowcase />
   </section>
 
   <section class="section">
-    <div class="section-heading">
-      <h2>Faculty, instructors, and mentors.</h2>
-      <p>
-        HMS faculty, staff, graduate students, postdocs, alumni, RCC partners, and sponsors teach, fund, and run the summer program.
-      </p>
-    </div>
-    <div class="team-bridge">
-      <article>
-        <AtlasLabel code="Faculty" title="Scientific direction" text="Corynephage biology, bacterial evolution, immunity, and host-phage experiments." />
-      </article>
-      <article>
-        <AtlasLabel code="Program" title="Lab operations" text="Lab setup, safety, sampling, bench work, bioinformatics, and posters." />
-      </article>
-      <article>
-        <AtlasLabel code="Mentors" title="Teaching and troubleshooting" text="Graduate students, postdocs, staff, alumni, and partner instructors work with students at the bench." />
-      </article>
-    </div>
     <div class="callout callout--wide">
       <div>
-        <h3>Meet the current team</h3>
-        <p>Faculty, staff, instructors, mentors, and alumni.</p>
+        <h2>Questions about Community Phages?</h2>
+        <p>Email about student participation, teaching, resources, or program partnerships.</p>
       </div>
-      <a class="button button--primary" href={withBase('/people/')}>People</a>
+      <div class="action-row">
+        <a class="button button--primary" href={contactHref}>Get in touch</a>
+        <a class="button button--secondary" href={withBase('/people/')}>People</a>
+      </div>
     </div>
   </section>
 </BaseLayout>

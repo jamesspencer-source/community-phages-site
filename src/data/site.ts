@@ -112,8 +112,8 @@ export const programWeeks = [
   },
   {
     week: '5',
-    title: 'Ask what the phage can do',
-    short: 'Host range, receptors, defense systems, and bacterial strain comparisons turn plaques into questions.',
+    title: 'Host range and phage behavior',
+    short: 'Students compare bacterial strains and look for differences in phage sensitivity, resistance, receptors, and defense systems.',
     tags: ['mutants', 'defense', 'receptors'],
     visual: 'host-range',
   },
@@ -133,7 +133,7 @@ export const programWeeks = [
   },
   {
     week: '8',
-    title: 'Present and share',
+    title: 'Final posters',
     short: 'Practice talks, final posters, PhagesDB records where appropriate, reflection, and lab cleanup.',
     tags: ['poster session', 'PhagesDB', 'reflection'],
     visual: 'poster',

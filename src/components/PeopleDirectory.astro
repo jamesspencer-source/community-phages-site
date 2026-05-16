@@ -100,6 +100,8 @@ const yearText = (person: Person) => person.years?.join(', ');
   {
     currentSections.map((section) => {
       const members = byDirectoryGroup(section.group);
+      const photoMembers = members.filter((person) => person.image);
+      const textMembers = members.filter((person) => !person.image);
 
       return (
         members.length > 0 && (
@@ -109,21 +111,41 @@ const yearText = (person: Person) => person.years?.join(', ');
               <h2>{section.title}</h2>
               <p>{section.text}</p>
             </div>
-            <div class="people-grid" aria-label={section.title}>
-              {members.map((person) => (
-                <article class:list={profileClass(person, 'grid')}>
-                  <div class="person-photo" style={imageStyle(person)}>
-                    {person.image ? <img src={withBase(person.image)} alt={`${person.name} portrait`} loading="lazy" /> : <span>{person.initials}</span>}
-                  </div>
-                  <div class="person-copy">
-                    <p class="small-label">{section.label}</p>
-                    <h3>{person.name}</h3>
-                    <p class="person-role">{person.role} · {person.affiliation}</p>
-                    {yearText(person) && <p class="person-years">Program years: {yearText(person)}</p>}
-                    <p>{person.bio}</p>
-                  </div>
-                </article>
-              ))}
+            <div>
+              {photoMembers.length > 0 && (
+                <div class="people-grid" aria-label={section.title}>
+                  {photoMembers.map((person) => (
+                    <article class:list={profileClass(person, 'grid')}>
+                      <div class="person-photo" style={imageStyle(person)}>
+                        <img src={withBase(person.image ?? '')} alt={`${person.name} portrait`} loading="lazy" />
+                      </div>
+                      <div class="person-copy">
+                        <p class="small-label">{section.label}</p>
+                        <h3>{person.name}</h3>
+                        <p class="person-role">{person.role} · {person.affiliation}</p>
+                        {yearText(person) && <p class="person-years">Program years: {yearText(person)}</p>}
+                        <p>{person.bio}</p>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              )}
+              {textMembers.length > 0 && (
+                <div class="people-text-list" aria-label={`${section.title} without photos`}>
+                  {textMembers.map((person) => (
+                    <article>
+                      <div class="people-text-list__initials">{person.initials}</div>
+                      <div>
+                        <p class="small-label">{section.label}</p>
+                        <h3>{person.name}</h3>
+                        <p class="person-role">{person.role} · {person.affiliation}</p>
+                        {yearText(person) && <p class="person-years">Program years: {yearText(person)}</p>}
+                        <p>{person.bio}</p>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              )}
             </div>
           </section>
         )
@@ -142,6 +164,8 @@ const yearText = (person: Person) => person.years?.join(', ');
         <div class="alumni-year-groups">
           {alumniYears.map((year) => {
             const members = sortPeople(alumni.filter((person) => (person.alumniDisplayYear ?? latestYear(person)) === year));
+            const photoMembers = members.filter((person) => person.image);
+            const textMembers = members.filter((person) => !person.image);
 
             return (
               <section class="alumni-year-group">
@@ -149,21 +173,38 @@ const yearText = (person: Person) => person.years?.join(', ');
                   <span>{year}</span>
                   <strong>{members.length} alumni</strong>
                 </div>
-                <div class="people-grid people-grid--compact">
-                  {members.map((person) => (
-                    <article class:list={profileClass(person, 'compact')}>
-                      <div class="person-photo" style={imageStyle(person)}>
-                        {person.image ? <img src={withBase(person.image)} alt={`${person.name} portrait`} loading="lazy" /> : <span>{person.initials}</span>}
-                      </div>
-                      <div class="person-copy">
-                        <h3>{person.name}</h3>
-                        <p class="person-role">{person.role} · {person.affiliation}</p>
-                        {yearText(person) && <p class="person-years">Program years: {yearText(person)}</p>}
-                        <p>{person.bio}</p>
-                      </div>
-                    </article>
-                  ))}
-                </div>
+                {photoMembers.length > 0 && (
+                  <div class="people-grid people-grid--compact">
+                    {photoMembers.map((person) => (
+                      <article class:list={profileClass(person, 'compact')}>
+                        <div class="person-photo" style={imageStyle(person)}>
+                          <img src={withBase(person.image ?? '')} alt={`${person.name} portrait`} loading="lazy" />
+                        </div>
+                        <div class="person-copy">
+                          <h3>{person.name}</h3>
+                          <p class="person-role">{person.role} · {person.affiliation}</p>
+                          {yearText(person) && <p class="person-years">Program years: {yearText(person)}</p>}
+                          <p>{person.bio}</p>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                )}
+                {textMembers.length > 0 && (
+                  <div class="people-text-list people-text-list--compact">
+                    {textMembers.map((person) => (
+                      <article>
+                        <div class="people-text-list__initials">{person.initials}</div>
+                        <div>
+                          <h3>{person.name}</h3>
+                          <p class="person-role">{person.role} · {person.affiliation}</p>
+                          {yearText(person) && <p class="person-years">Program years: {yearText(person)}</p>}
+                          <p>{person.bio}</p>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                )}
               </section>
             );
           })}
