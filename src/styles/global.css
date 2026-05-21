@@ -1480,6 +1480,11 @@ main {
   justify-content: center;
 }
 
+.inset-row--wide {
+  grid-template-columns: minmax(0, 58rem);
+  justify-content: center;
+}
+
 .inset-row--compact {
   grid-template-columns: minmax(16rem, 0.42fr);
 }
@@ -1510,6 +1515,10 @@ main {
   min-height: 13rem;
   object-fit: cover;
   filter: saturate(0.9) contrast(1.02);
+}
+
+.inset-figure--photo .inset-figure__media {
+  aspect-ratio: 4 / 3;
 }
 
 .inset-figure--graphic .inset-figure__media {

@@ -1,5 +1,6 @@
 ---
 import FactStrip from '@components/FactStrip.astro';
+import InsetFigure from '@components/InsetFigure.astro';
 import PageHero from '@components/PageHero.astro';
 import PartnerLogoGrid from '@components/PartnerLogoGrid.astro';
 import ProgramNotebookTimeline from '@components/ProgramNotebookTimeline.astro';
@@ -31,6 +32,23 @@ import { withBase } from '@utils/urls';
         </p>
       </div>
       <PartnerLogoGrid />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <h2>Environmental sampling.</h2>
+      <p>
+        Students collect samples outside the lab, then test them on corynebacterial hosts back at HMS.
+      </p>
+    </div>
+    <div class="inset-row inset-row--wide">
+      <InsetFigure
+        src="/assets/photos/appleton-farms-2026.jpg"
+        alt="Community Phages students and instructors at Appleton Farms in Ipswich, Massachusetts"
+        label="Appleton Farms, 2026"
+        caption="Farm trip to Appleton Farms in Ipswich, Massachusetts."
+      />
     </div>
   </section>
 
